@@ -1613,6 +1613,32 @@
       }
     }
 
+
+    /* === LIVE YOUTUBE VIDEO === */
+    .youtube-poster {
+      position: relative;
+      background: #1f261e;
+    }
+
+    .youtube-frame {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      z-index: 1;
+    }
+
+    .youtube-caption {
+      pointer-events: none;
+      padding-top: 45px;
+      background: linear-gradient(to top, rgba(10,17,9,.76), transparent);
+    }
+
+    .hero-video-poster::before {
+      display: none;
+    }
+
   </style>
 
   <script defer>
@@ -1815,13 +1841,21 @@
           </div>
 
           <div class="hero-video" aria-label="Место для презентационного видеоролика">
-            <div class="hero-video-poster">
-              <button class="hero-play" type="button" aria-label="Воспроизвести презентационный ролик">▶</button>
-              <div class="hero-video-caption">
-                <strong>О центре и нашей работе</strong>
-                <span>сюда подключим презентационный видеоролик</span>
+            <div class="hero-video-poster youtube-poster">
+              <iframe
+                id="hero-youtube"
+                class="youtube-frame"
+                title="Видео с YouTube-канала Русская речь"
+                src=""
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+              <div class="hero-video-caption youtube-caption">
+                <strong id="hero-youtube-title">Видео с нашего YouTube-канала</strong>
+                <span>при каждом открытии страницы выбирается другой ролик</span>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </div>
@@ -2252,5 +2286,20 @@
       <a href="#">Наверх ↑</a>
     </div>
   </footer>
+
+<script>
+(function() {
+  const videos = [{"id": "7FvZi2aTFrg", "title": "Изучение второго языка при сенсорной и моторной алалии. Билингвизм и двуязычие у детей."}, {"id": "DvUeB6ALW8g", "title": "Логопедическая группа и алалия. Польза или вред?"}, {"id": "9X7bKBQUA00", "title": "Дневник мамы ребёнка с алалией. Успехи и трудности на занятиях."}, {"id": "Qu3hkOyIfKE", "title": "Заикание и запинки в речи у детей с моторной и сенсорной алалией."}, {"id": "ziNFGXaL2Xc", "title": "Как исправить звукопроизношение у ребёнка с моторной алалией?"}];
+  const chosen = videos[Math.floor(Math.random() * videos.length)];
+  const frame = document.getElementById('hero-youtube');
+  const title = document.getElementById('hero-youtube-title');
+
+  if (frame && chosen) {
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + chosen.id + '?rel=0';
+    if (title) title.textContent = chosen.title;
+  }
+})();
+</script>
+
 </body>
 </html>
