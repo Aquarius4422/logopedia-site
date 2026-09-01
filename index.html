@@ -1051,6 +1051,431 @@
         flex-direction: column;
       }
     }
+
+    /* === V3 COMPOSITION OVERRIDES === */
+
+    :root {
+      --text-container: 900px;
+      --content-wide: 1060px;
+    }
+
+    /* Заголовки уменьшены примерно на треть */
+    h1 {
+      font-size: clamp(2.25rem, 4.25vw, 4rem);
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 2.8vw, 2.7rem);
+    }
+
+    h3 {
+      font-size: clamp(1.22rem, 1.6vw, 1.55rem);
+    }
+
+    .lead {
+      font-size: clamp(1rem, 1.15vw, 1.12rem);
+    }
+
+    .section {
+      padding: 74px 0;
+    }
+
+    /* Единая центральная ось внутренних блоков */
+    .text-container {
+      width: min(100%, var(--text-container));
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .content-wide {
+      width: min(100%, var(--content-wide));
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Шапка: зелёная зона слева, белое меню в центре, зелёная зона справа */
+    .header-inner {
+      min-height: 68px;
+      gap: 18px;
+    }
+
+    .brand-zone {
+      flex: 0 0 auto;
+      padding: 7px 18px 7px 8px;
+      border-radius: 999px;
+      background: var(--green);
+    }
+
+    .brand-zone .brand {
+      min-width: 210px;
+      color: white;
+    }
+
+    .brand-zone .brand-mark {
+      background: white;
+      color: var(--green);
+    }
+
+    .brand-zone .brand-text small {
+      color: rgba(255,255,255,.82);
+    }
+
+    .main-nav {
+      margin-left: auto;
+    }
+
+    .nav-appointment .btn {
+      min-height: 46px;
+      padding: 0 17px;
+    }
+
+    /* Первый экран 50/50 */
+    .hero {
+      padding-top: 52px;
+      padding-bottom: 58px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 46px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: none;
+    }
+
+    .hero-copy h1 {
+      max-width: 520px;
+    }
+
+    .hero-copy .lead {
+      max-width: 570px;
+    }
+
+    .hero-facts {
+      margin-top: 36px;
+    }
+
+    .hero-fact {
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+
+    .hero-video {
+      width: 100%;
+    }
+
+    .hero-video-poster {
+      position: relative;
+      min-height: 390px;
+      aspect-ratio: 16 / 11;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 25% 18%, rgba(255,255,255,.18), transparent 28%),
+        linear-gradient(145deg, #6bb64c 0%, #3c7b2d 48%, #1f4219 100%);
+      box-shadow: 0 18px 50px rgba(39, 82, 30, .15);
+    }
+
+    .hero-video-poster::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(9,24,8,.7), transparent 45%),
+        repeating-linear-gradient(
+          115deg,
+          rgba(255,255,255,.035) 0 1px,
+          transparent 1px 18px
+        );
+    }
+
+    .hero-play {
+      position: relative;
+      z-index: 2;
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      padding-left: 5px;
+      border: 0;
+      border-radius: 50%;
+      background: white;
+      color: var(--green);
+      font-size: 1.25rem;
+      cursor: pointer;
+      box-shadow: 0 8px 28px rgba(0,0,0,.18);
+    }
+
+    .hero-video-caption {
+      position: absolute;
+      z-index: 2;
+      left: 24px;
+      right: 24px;
+      bottom: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      color: white;
+    }
+
+    .hero-video-caption strong {
+      font-size: 1.05rem;
+    }
+
+    .hero-video-caption span {
+      color: rgba(255,255,255,.78);
+      font-size: .84rem;
+    }
+
+    /* Блок диагнозов — плотнее и без нумерации */
+    .section-intro {
+      margin-bottom: 28px;
+    }
+
+    .direction {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+
+    .direction + .direction {
+      padding-left: 28px;
+    }
+
+    .direction-label {
+      min-height: 0;
+      margin-bottom: 8px;
+      font-size: .76rem;
+    }
+
+    .direction h3 {
+      margin-bottom: 8px;
+    }
+
+    .direction p {
+      min-height: 0;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    /* Результаты: два видео */
+    .video-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .video-placeholder {
+      min-height: 230px;
+    }
+
+    /* Истории держим на той же центральной оси */
+    .story {
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+    }
+
+    /* Соцсети с иконками */
+    .social-card {
+      min-height: 126px;
+      gap: 10px;
+    }
+
+    .social-icon {
+      width: 31px;
+      height: 31px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 31px;
+      color: var(--green);
+    }
+
+    .social-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+
+    .social-card.primary .social-icon {
+      color: white;
+    }
+
+    .social-icon-letter {
+      border-radius: 8px;
+      background: var(--green);
+      color: white;
+      font-size: .86rem;
+      font-weight: 900;
+      letter-spacing: -.04em;
+    }
+
+    .social-card.primary .social-icon-letter {
+      background: white;
+      color: var(--green);
+    }
+
+    .social-icon-vk {
+      font-size: .68rem;
+      letter-spacing: -.08em;
+    }
+
+    .social-icon-facebook {
+      font-family: Arial, sans-serif;
+      font-size: 1.35rem;
+    }
+
+    .icon-cut {
+      fill: white;
+    }
+
+    .social-card.primary .icon-cut {
+      fill: var(--green);
+    }
+
+    .icon-cut-stroke {
+      fill: none;
+      stroke: white;
+      stroke-width: 2;
+    }
+
+    .social-card.primary .icon-cut-stroke {
+      stroke: var(--green);
+    }
+
+    /* Форма связи существенно ниже по высоте */
+    .final-consult {
+      padding-top: 58px;
+      padding-bottom: 58px;
+    }
+
+    .consult-layout {
+      grid-template-columns: minmax(0, 1fr) 390px;
+      gap: 54px;
+    }
+
+    .consult-form {
+      padding: 18px;
+    }
+
+    .consult-form label {
+      margin-bottom: 9px;
+    }
+
+    .consult-form label span {
+      margin-bottom: 4px;
+      font-size: .8rem;
+    }
+
+    .consult-form input,
+    .consult-form textarea {
+      padding: 9px 11px;
+      border-radius: 8px;
+    }
+
+    .consult-form textarea {
+      min-height: 68px;
+    }
+
+    .consult-form .btn {
+      min-height: 44px;
+    }
+
+    .form-note {
+      margin-top: 7px;
+      font-size: .7rem;
+    }
+
+    @media (max-width: 1120px) {
+      .brand-zone .brand {
+        min-width: 185px;
+      }
+
+      .brand-zone {
+        padding-right: 12px;
+      }
+
+      .nav-link {
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: .86rem;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .brand-zone .brand {
+        min-width: 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        max-width: 760px;
+      }
+
+      .hero-video {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .direction + .direction {
+        padding-left: 0;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .consult-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      h1 {
+        font-size: clamp(2.15rem, 10.8vw, 3.25rem);
+      }
+
+      h2 {
+        font-size: clamp(1.75rem, 8.4vw, 2.55rem);
+      }
+
+      .brand-zone {
+        padding: 5px 11px 5px 6px;
+      }
+
+      .brand-zone .brand-mark {
+        width: 35px;
+        height: 35px;
+      }
+
+      .hero-video-poster {
+        min-height: 250px;
+      }
+
+      .hero-facts {
+        margin-top: 28px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .video-placeholder {
+        min-height: 210px;
+      }
+
+      .story {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 
   <script defer>
@@ -1128,13 +1553,15 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">Р</span>
-        <span class="brand-text">
-          <strong>Русская речь</strong>
-          <small>речевой онлайн-центр</small>
-        </span>
-      </a>
+      <div class="brand-zone">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">Р</span>
+          <span class="brand-text">
+            <strong>Русская речь</strong>
+            <small>речевой онлайн-центр</small>
+          </span>
+        </a>
+      </div>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
         <span></span><span></span><span></span>
@@ -1219,7 +1646,7 @@
 
     <section class="hero section">
       <div class="container">
-        <div class="text-container">
+        <div class="hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Речевой онлайн-центр</p>
             <h1>Развиваем речь</h1>
@@ -1249,6 +1676,16 @@
               </div>
             </div>
           </div>
+
+          <div class="hero-video" aria-label="Место для презентационного видеоролика">
+            <div class="hero-video-poster">
+              <button class="hero-play" type="button" aria-label="Воспроизвести презентационный ролик">▶</button>
+              <div class="hero-video-caption">
+                <strong>О центре и нашей работе</strong>
+                <span>сюда подключим презентационный видеоролик</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1266,7 +1703,6 @@
 
         <div class="direction-grid">
           <article class="direction">
-            <div class="direction-number">01</div>
             <p class="direction-label">Понимает речь, но собственная речь формируется с трудом</p>
             <h3>Моторная алалия</h3>
             <p>
@@ -1277,7 +1713,6 @@
           </article>
 
           <article class="direction">
-            <div class="direction-number">02</div>
             <p class="direction-label">Слышит, но смысл речи понимает неполно или нестабильно</p>
             <h3>Сенсорная алалия</h3>
             <p>
@@ -1288,7 +1723,6 @@
           </article>
 
           <article class="direction">
-            <div class="direction-number">03</div>
             <p class="direction-label">Есть признаки, которые связывают с расстройствами аутистического спектра</p>
             <h3>Не всегда аутизм</h3>
             <p>
@@ -1328,14 +1762,14 @@
           </p>
         </div>
 
-        <div class="result-list">
+        <div class="content-wide result-list">
           <article class="result-case">
             <div class="case-top">
               <div>
                 <p class="case-tag">Пример №1 · временная заглушка</p>
-                <h3>Ребенок, 4 года</h3>
+                <h3>Миша, 4 года</h3>
               </div>
-              <span class="case-stage">3 этапа</span>
+              <span class="case-stage">2 видео</span>
             </div>
 
             <p>
@@ -1345,17 +1779,12 @@
             <div class="video-grid">
               <div class="video-placeholder">
                 <span class="play">▶</span>
-                <strong>Начало</strong>
+                <strong>Начало работы</strong>
                 <small>реальное видео</small>
               </div>
               <div class="video-placeholder">
                 <span class="play">▶</span>
-                <strong>Динамика</strong>
-                <small>реальное видео</small>
-              </div>
-              <div class="video-placeholder">
-                <span class="play">▶</span>
-                <strong>Результат</strong>
+                <strong>Итог</strong>
                 <small>реальное видео</small>
               </div>
             </div>
@@ -1365,9 +1794,9 @@
             <div class="case-top">
               <div>
                 <p class="case-tag">Пример №2 · временная заглушка</p>
-                <h3>Ребенок, 5 лет</h3>
+                <h3>София, 5 лет</h3>
               </div>
-              <span class="case-stage">3 этапа</span>
+              <span class="case-stage">2 видео</span>
             </div>
 
             <p>
@@ -1377,17 +1806,12 @@
             <div class="video-grid">
               <div class="video-placeholder">
                 <span class="play">▶</span>
-                <strong>Начало</strong>
+                <strong>Начало работы</strong>
                 <small>реальное видео</small>
               </div>
               <div class="video-placeholder">
                 <span class="play">▶</span>
-                <strong>Динамика</strong>
-                <small>реальное видео</small>
-              </div>
-              <div class="video-placeholder">
-                <span class="play">▶</span>
-                <strong>Результат</strong>
+                <strong>Итог</strong>
                 <small>реальное видео</small>
               </div>
             </div>
@@ -1458,7 +1882,7 @@
           </p>
         </div>
 
-        <div class="story-list">
+        <div class="content-wide story-list">
           <article class="story">
             <div class="story-media">ИСТОРИЯ 01</div>
             <div class="story-copy">
@@ -1501,37 +1925,37 @@
 
         <div class="social-grid">
           <a class="social-card primary" href="#">
-            <strong>YouTube</strong>
+            <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="3" y="7" width="26" height="18" rx="6"/><path d="M13 11.5 22 16l-9 4.5Z" class="icon-cut"/></svg></span><strong>YouTube</strong>
             <span>результаты, лекции, упражнения</span>
           </a>
 
           <a class="social-card" href="#">
-            <strong>RuTube</strong>
+            <span class="social-icon social-icon-letter" aria-hidden="true">R</span><strong>RuTube</strong>
             <span>видео и архив материалов</span>
           </a>
 
           <a class="social-card" href="#">
-            <strong>ВКонтакте</strong>
+            <span class="social-icon social-icon-letter social-icon-vk" aria-hidden="true">VK</span><strong>ВКонтакте</strong>
             <span>публикации и новости</span>
           </a>
 
           <a class="social-card" href="#">
-            <strong>Telegram</strong>
+            <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M27.3 5.2 4.8 13.9c-1.5.6-1.5 1.4-.3 1.8l5.8 1.8 2.2 6.7c.3.9.2 1.3 1.1 1.3.7 0 1-.3 1.4-.7l2.8-2.7 5.9 4.4c1.1.6 1.9.3 2.2-1l3.8-18c.4-1.6-.6-2.4-2.4-1.7Z"/></svg></span><strong>Telegram</strong>
             <span>материалы для родителей</span>
           </a>
 
           <a class="social-card" href="#">
-            <strong>Дзен</strong>
+            <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="12"/><path d="M16 4c0 7-5 12-12 12M28 16c-7 0-12-5-12-12M16 28c0-7 5-12 12-12M4 16c7 0 12 5 12 12" class="icon-cut-stroke"/></svg></span><strong>Дзен</strong>
             <span>статьи и разборы</span>
           </a>
 
           <a class="social-card" href="#">
-            <strong>Instagram</strong>
+            <span class="social-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="6" y="6" width="20" height="20" rx="6"/><circle cx="16" cy="16" r="5" class="icon-cut"/><circle cx="22.2" cy="9.8" r="1.5" class="icon-cut"/></svg></span><strong>Instagram</strong>
             <span>короткие материалы</span>
           </a>
 
           <a class="social-card" href="#">
-            <strong>Facebook</strong>
+            <span class="social-icon social-icon-letter social-icon-facebook" aria-hidden="true">f</span><strong>Facebook</strong>
             <span>публикации центра</span>
           </a>
         </div>
@@ -1563,7 +1987,7 @@
 
             <label>
               <span>Коротко о ситуации</span>
-              <textarea name="message" rows="4" placeholder="Возраст ребенка и что вас беспокоит"></textarea>
+              <textarea name="message" rows="3" placeholder="Возраст ребенка и что вас беспокоит"></textarea>
             </label>
 
             <button class="btn" type="submit">Записаться</button>
