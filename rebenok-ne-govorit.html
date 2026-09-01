@@ -1631,6 +1631,31 @@
       min-height: 46px;
     }
 
+
+    .live-random-video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      min-height: 220px;
+      overflow: hidden;
+      border-radius: 14px;
+      background: #303a2e;
+    }
+    .live-random-video iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .live-video-label {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: .73rem;
+      line-height: 1.3;
+    }
+
   </style>
 </head>
 
@@ -1898,11 +1923,14 @@
                   На первой записи будет видно исходное состояние: объём активной речи,
                   длина фразы, попытки повторения и то, как ребёнок общается без слов.
                 </p>
-                <div class="video-placeholder">
-                  <span class="play">▶</span>
-                  <strong>Начало работы</strong>
-                  <small>здесь будет реальное видео</small>
+                <div class="live-random-video inner-story-video">
+                  <iframe src="https://www.youtube-nocookie.com/embed/7FvZi2aTFrg?rel=0"
+                    title="Изучение второго языка при сенсорной и моторной алалии"
+                    loading="lazy"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
                 </div>
+                <span class="live-video-label">Начало работы · временный ролик с канала</span>
               </div>
 
               <div class="video-column">
@@ -1910,11 +1938,14 @@
                   На второй записи покажем результат на сопоставимых речевых задачах,
                   чтобы изменения можно было увидеть напрямую, а не только прочитать о них.
                 </p>
-                <div class="video-placeholder">
-                  <span class="play">▶</span>
-                  <strong>Итог</strong>
-                  <small>здесь будет реальное видео</small>
+                <div class="live-random-video inner-story-video">
+                  <iframe src="https://www.youtube-nocookie.com/embed/DvUeB6ALW8g?rel=0"
+                    title="Логопедическая группа и алалия"
+                    loading="lazy"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
                 </div>
+                <span class="live-video-label">Итог · временный ролик с канала</span>
               </div>
             </div>
           </article>
@@ -1941,11 +1972,14 @@
                   В исходном видео будет показано, как ребёнок понимает вопросы и инструкции,
                   отвечает ли по смыслу и насколько самостоятельно использует речь.
                 </p>
-                <div class="video-placeholder">
-                  <span class="play">▶</span>
-                  <strong>Начало работы</strong>
-                  <small>здесь будет реальное видео</small>
+                <div class="live-random-video inner-story-video">
+                  <iframe src="https://www.youtube-nocookie.com/embed/9X7bKBQUA00?rel=0"
+                    title="Дневник мамы ребёнка с алалией"
+                    loading="lazy"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
                 </div>
+                <span class="live-video-label">Начало работы · временный ролик с канала</span>
               </div>
 
               <div class="video-column">
@@ -1953,11 +1987,14 @@
                   Итоговая запись даст возможность сравнить понимание речи,
                   самостоятельность ответов и качество общения после проведённой работы.
                 </p>
-                <div class="video-placeholder">
-                  <span class="play">▶</span>
-                  <strong>Итог</strong>
-                  <small>здесь будет реальное видео</small>
+                <div class="live-random-video inner-story-video">
+                  <iframe src="https://www.youtube-nocookie.com/embed/Qu3hkOyIfKE?rel=0"
+                    title="Заикание и запинки при алалии"
+                    loading="lazy"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
                 </div>
+                <span class="live-video-label">Итог · временный ролик с канала</span>
               </div>
             </div>
           </article>
@@ -2049,7 +2086,7 @@
               <article class="video-material-card random-youtube-card">
                 <div class="youtube-material-preview">
                   <iframe class="random-youtube-frame" title="Видео с YouTube-канала Русская речь"
-                    src="" loading="lazy"
+                    src="https://www.youtube-nocookie.com/embed/9X7bKBQUA00?rel=0" loading="lazy"
                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
                 </div>
@@ -2059,7 +2096,7 @@
               <article class="video-material-card random-youtube-card">
                 <div class="youtube-material-preview">
                   <iframe class="random-youtube-frame" title="Видео с YouTube-канала Русская речь"
-                    src="" loading="lazy"
+                    src="https://www.youtube-nocookie.com/embed/Qu3hkOyIfKE?rel=0" loading="lazy"
                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
                 </div>
@@ -2069,7 +2106,7 @@
               <article class="video-material-card random-youtube-card">
                 <div class="youtube-material-preview">
                   <iframe class="random-youtube-frame" title="Видео с YouTube-канала Русская речь"
-                    src="" loading="lazy"
+                    src="https://www.youtube-nocookie.com/embed/ziNFGXaL2Xc?rel=0" loading="lazy"
                     allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
                 </div>
@@ -2832,6 +2869,20 @@ document.querySelectorAll('a[href="#speech-test"]').forEach(link => {
 
     frame.src = 'https://www.youtube-nocookie.com/embed/' + video.id + '?rel=0';
     title.textContent = video.title;
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  const videos=[{"id": "7FvZi2aTFrg", "title": "Изучение второго языка при сенсорной и моторной алалии"}, {"id": "DvUeB6ALW8g", "title": "Логопедическая группа и алалия"}, {"id": "9X7bKBQUA00", "title": "Дневник мамы ребёнка с алалией"}, {"id": "Qu3hkOyIfKE", "title": "Заикание и запинки при алалии"}, {"id": "ziNFGXaL2Xc", "title": "Звукопроизношение при моторной алалии"}];
+  const slots=document.querySelectorAll('.inner-story-video iframe');
+  const pool=[...videos].sort(()=>Math.random()-.5);
+  slots.forEach((frame,i)=>{
+    const v=pool[i%pool.length];
+    frame.src='https://www.youtube-nocookie.com/embed/'+v.id+'?rel=0';
+    frame.title=v.title;
   });
 })();
 </script>
