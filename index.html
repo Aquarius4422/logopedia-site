@@ -347,7 +347,8 @@
       border-left: 1px solid var(--line);
     }
     .direction-kicker {
-      margin-bottom: 4px;
+      min-height: 40px;
+      margin-bottom: 2px;
       color: var(--green);
       font-size: .78rem;
       font-weight: 800;
@@ -356,6 +357,7 @@
       letter-spacing: .045em;
     }
     .direction h3 {
+      margin-top: 0;
       margin-bottom: 12px;
       min-height: 0;
     }
@@ -901,7 +903,14 @@
         flex-direction: column;
       }
     }
-  </style>
+  
+    .specialists-lead {
+      max-width: 980px !important;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+</style>
 </head>
 <body>
 
@@ -1372,36 +1381,17 @@
       </div>
     </section>
 
-    <section class="section social-section">
-      <div class="container">
-        <div class="text-container section-intro">
-          <p class="eyebrow">Мы в сети</p>
-          <h2>СОЦИАЛЬНЫЕ СЕТИ</h2>
-          <p>
-            Там публикуем новые видео, разборы, материалы для родителей, лекции и новости команды.
-          </p>
-        </div>
-
-        <div class="social-grid">
-          <a class="social-card" href="#"><span class="social-icon">YT</span><strong>YouTube</strong><span>лекции и результаты</span></a>
-          <a class="social-card" href="#"><span class="social-icon">RT</span><strong>RuTube</strong><span>видео и архив</span></a>
-          <a class="social-card" href="#"><span class="social-icon">VK</span><strong>ВКонтакте</strong><span>публикации и новости</span></a>
-          <a class="social-card" href="#"><span class="social-icon">TG</span><strong>Telegram</strong><span>материалы родителям</span></a>
-          <a class="social-card" href="#"><span class="social-icon">DZ</span><strong>Дзен</strong><span>статьи и разборы</span></a>
-          <a class="social-card" href="#"><span class="social-icon">IG</span><strong>Instagram</strong><span>короткие материалы</span></a>
-          <a class="social-card" href="#"><span class="social-icon">FB</span><strong>Facebook</strong><span>публикации центра</span></a>
-        </div>
-      </div>
-    </section>
 
     <section class="section specialists-section" id="specialists">
       <div class="container">
         <div class="text-container section-intro">
           <p class="eyebrow">Команда</p>
           <h2>ЗАНЯТИЯ И ОБСЛЕДОВАНИЯ</h2>
-          <p>
-            На этом этапе уже можно выбрать специалиста, посмотреть его образование, опыт, направления работы
-            и перейти на персональную страницу. Родитель сразу видит, к кому именно обращается.
+          <p class="specialists-lead">
+            С ребёнком работает не абстрактный «центр», а конкретный специалист, поэтому нам важно сразу показать,
+            кто входит в команду и за что отвечает. Здесь можно познакомиться с логопедами, посмотреть их образование,
+            опыт и основные направления работы, а затем сразу перейти к записи. Специалисты работают в рамках общей
+            методики и единых планов коррекции, а результаты работы команды контролируются руководителем.
           </p>
         </div>
 
@@ -1456,6 +1446,29 @@
       </div>
     </section>
   </main>
+
+    <section class="section social-section">
+      <div class="container">
+        <div class="text-container section-intro">
+          <p class="eyebrow">Мы в сети</p>
+          <h2>СОЦИАЛЬНЫЕ СЕТИ</h2>
+          <p>
+            Там публикуем новые видео, разборы, материалы для родителей, лекции и новости команды.
+          </p>
+        </div>
+
+        <div class="social-grid">
+          <a class="social-card" href="#"><span class="social-icon">YT</span><strong>YouTube</strong><span>лекции и результаты</span></a>
+          <a class="social-card" href="#"><span class="social-icon">RT</span><strong>RuTube</strong><span>видео и архив</span></a>
+          <a class="social-card" href="#"><span class="social-icon">VK</span><strong>ВКонтакте</strong><span>публикации и новости</span></a>
+          <a class="social-card" href="#"><span class="social-icon">TG</span><strong>Telegram</strong><span>материалы родителям</span></a>
+          <a class="social-card" href="#"><span class="social-icon">DZ</span><strong>Дзен</strong><span>статьи и разборы</span></a>
+          <a class="social-card" href="#"><span class="social-icon">IG</span><strong>Instagram</strong><span>короткие материалы</span></a>
+          <a class="social-card" href="#"><span class="social-icon">FB</span><strong>Facebook</strong><span>публикации центра</span></a>
+        </div>
+      </div>
+    </section>
+
 
   <footer class="site-footer">
     <div class="container footer-grid">
