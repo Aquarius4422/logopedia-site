@@ -17,7 +17,11 @@
       --green-hover: #6e9318;
       --green-dark: #5a7711;
       --topbar: #769c22;
-      --footer: #2d352d;
+      --accent: #5e5aa8;
+      --accent-soft: #f3f1ff;
+      --accent-soft-2: #faf9ff;
+      --accent-line: #d9d4f2;
+      --footer: #f4f2ee;
       --container: 1240px;
       --text-container: 940px;
       --content-wide: 1120px;
@@ -910,6 +914,402 @@
       line-height: 1.5;
     }
 
+
+    /* === SECONDARY BLUE-VIOLET SYSTEM (WITHOUT LAYOUT CHANGE) === */
+    .menu-row {
+      background: var(--accent-soft-2);
+      border-top: 1px solid rgba(94, 90, 168, .08);
+    }
+
+    .nav-link:hover,
+    .nav-link:focus-visible,
+    .nav-link.is-active {
+      color: var(--accent);
+      background: rgba(94, 90, 168, .08);
+    }
+
+    .dropdown-menu {
+      border-color: var(--accent-line);
+    }
+
+    .dropdown-menu a:hover,
+    .dropdown-menu a:focus-visible {
+      color: var(--accent);
+      background: rgba(94, 90, 168, .08);
+    }
+
+    .eyebrow,
+    .case-tag {
+      color: var(--accent);
+    }
+
+    .hero h1,
+    .section-intro h2,
+    .principles-title h2,
+    .method-copy > h2,
+    .test-route h2 {
+      color: var(--accent);
+    }
+
+    .direction-kicker {
+      color: var(--green);
+    }
+
+    .text-link {
+      color: var(--accent);
+    }
+
+    .text-link:hover,
+    .text-link:focus-visible {
+      color: #4f4a96;
+    }
+
+    .results-stories {
+      background: var(--accent-soft-2);
+    }
+
+    .case {
+      border-color: var(--accent-line);
+      box-shadow: 0 1px 0 rgba(94, 90, 168, .03);
+    }
+
+    .case-status {
+      background: rgba(94, 90, 168, .10);
+      color: var(--accent);
+    }
+
+    .family-story {
+      border-left-color: var(--accent);
+    }
+
+    .materials-group,
+    .material-list,
+    .material,
+    .materials-video,
+    .social-card,
+    .specialist-card {
+      border-color: var(--accent-line);
+    }
+
+    .test-route {
+      background: var(--accent-soft);
+      color: var(--text);
+    }
+
+    .test-route .eyebrow {
+      color: var(--accent);
+    }
+
+    .test-route p {
+      color: var(--muted);
+    }
+
+    .test-route .btn {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+
+    .test-route .btn:hover,
+    .test-route .btn:focus-visible {
+      background: var(--green-hover);
+      border-color: var(--green-hover);
+    }
+
+    .social-section {
+      background: var(--accent-soft-2);
+    }
+
+    .social-card:hover {
+      border-color: #c7c1e7;
+    }
+
+    .site-footer {
+      background: var(--footer);
+      color: var(--text);
+      border-top: 1px solid #e2ddd5;
+    }
+
+    .footer-brand p,
+    .footer-column a,
+    .footer-bottom {
+      color: #5f615b;
+    }
+
+    .footer-column a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #ded8cf;
+    }
+
+
+    /* === FINAL BLUE-VIOLET + CONTAINED TEST CARD + REFERENCE FOOTER === */
+    .eyebrow,
+    .direction-kicker,
+    .specialist-role,
+    .case-tag {
+      color: var(--accent);
+    }
+
+    .test-route {
+      background: #fff;
+      color: var(--text);
+      padding: 28px 0 74px;
+    }
+
+    .test-route-grid {
+      width: min(100%, var(--content-wide));
+      margin-inline: auto;
+      padding: 40px 46px;
+      border: 1px solid var(--accent-line);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 92% 12%, rgba(94,90,168,.10), transparent 28%),
+        linear-gradient(135deg, var(--accent-soft) 0%, #fbfaff 100%);
+      box-shadow: 0 12px 34px rgba(72, 68, 132, .06);
+    }
+
+    .test-route-copy {
+      min-height: 0;
+    }
+
+    .test-route .eyebrow,
+    .test-route h2 {
+      color: var(--accent);
+    }
+
+    .test-route p {
+      color: var(--muted);
+    }
+
+    .test-route-actions .btn:first-child {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+
+    .test-route-actions .btn:last-child {
+      background: #fff;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .test-route-actions .btn:last-child:hover,
+    .test-route-actions .btn:last-child:focus-visible {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    .site-footer {
+      padding: 58px 0 0;
+      background: #f5f3ef;
+      color: var(--text);
+      border-top: 1px solid #e1ddd6;
+    }
+
+    .footer-main-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .92fr .92fr 1fr;
+      gap: 52px;
+      align-items: start;
+    }
+
+    .footer-about h3,
+    .footer-column h3 {
+      margin: 0 0 20px;
+      color: var(--text);
+      font-size: .9rem;
+      line-height: 1.25;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .footer-about h3 {
+      font-size: 1.02rem;
+      letter-spacing: -.01em;
+      text-transform: none;
+    }
+
+    .footer-about p {
+      max-width: 330px;
+      margin: 0;
+      color: #656963;
+      font-size: .94rem;
+      line-height: 1.52;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .footer-column a {
+      color: #252925;
+      font-size: .92rem;
+      line-height: 1.34;
+    }
+
+    .footer-column a:hover,
+    .footer-column a:focus-visible {
+      color: var(--accent);
+    }
+
+    .footer-note {
+      margin: 18px 0 0;
+      color: #696d67;
+      font-size: .88rem;
+      line-height: 1.5;
+    }
+
+    .footer-legal {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 40px;
+      margin-top: 54px;
+      padding: 24px 0 28px;
+      border-top: 1px solid #ded9d1;
+    }
+
+    .footer-legal > p {
+      max-width: 650px;
+      margin: 0;
+      color: #676b65;
+      font-size: .82rem;
+      line-height: 1.5;
+    }
+
+    .footer-legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 24px;
+    }
+
+    .footer-legal-links a {
+      color: #303430;
+      font-size: .82rem;
+      white-space: nowrap;
+    }
+
+    .footer-legal-links a:hover,
+    .footer-legal-links a:focus-visible {
+      color: var(--accent);
+    }
+
+    @media (max-width: 1080px) {
+      .footer-main-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 38px 46px;
+      }
+
+      .footer-legal {
+        flex-direction: column;
+      }
+
+      .footer-legal-links {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .test-route {
+        padding: 20px 0 58px;
+      }
+
+      .test-route-grid {
+        padding: 28px 22px;
+        border-radius: 18px;
+      }
+
+      .footer-main-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .footer-legal-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+
+    /* === UNIFIED COLOR LOGIC ===
+       Violet-blue: section hierarchy / small section labels
+       Black: concrete card/entity titles
+       Green: actions and active controls
+    */
+    .eyebrow,
+    .direction-kicker,
+    .specialist-role,
+    .case-tag {
+      color: var(--accent) !important;
+    }
+
+    .hero h1,
+    .section-intro h2,
+    .method-copy > h2,
+    .principles-title h2,
+    .test-route h2 {
+      color: var(--accent) !important;
+    }
+
+    .direction h3,
+    .case h3,
+    .specialist-body h3,
+    .materials-group > h3,
+    .materials-video h4,
+    .material strong {
+      color: var(--text) !important;
+    }
+
+    .btn,
+    .test-route-actions .btn:first-child {
+      background: var(--green);
+      border-color: var(--green);
+      color: #fff;
+    }
+
+    .btn:hover,
+    .btn:focus-visible,
+    .test-route-actions .btn:first-child:hover,
+    .test-route-actions .btn:first-child:focus-visible {
+      background: var(--green-hover);
+      border-color: var(--green-hover);
+      color: #fff;
+    }
+
+    /* Footer social icons */
+    .footer-socials-list a {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      width: fit-content;
+    }
+
+    .footer-social-icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+
+    .footer-social-icon svg {
+      width: 17px;
+      height: 17px;
+      display: block;
+      fill: currentColor;
+      stroke: currentColor;
+    }
+
 </style>
 </head>
 <body>
@@ -1471,40 +1871,64 @@
 
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
+    <div class="container footer-main-grid">
+      <div class="footer-about">
+        <h3>Денисова Ирина Петровна и команда</h3>
         <p>
-          Команда специалистов по моторной, сенсорной и сенсомоторной алалии у детей.
+          Команда специалистов по тяжёлым нарушениям речи у детей. Основные направления работы —
+          моторная, сенсорная и сенсомоторная алалия, а также дифференциальный разбор случаев,
+          когда речевые нарушения могут быть похожи на другие особенности развития.
         </p>
       </div>
 
       <div class="footer-column">
-        <h3>Нарушения</h3>
+        <h3>Речевые нарушения</h3>
         <a href="rebenok-ne-govorit.html">Ребёнок не говорит</a>
         <a href="motornaya-alaliya.html">Моторная алалия</a>
         <a href="sensornaya-alaliya.html">Сенсорная алалия</a>
+        <a href="#">Сенсомоторная алалия</a>
         <a href="autizm-kotoryi-ne-autizm.html">Аутизм, который не аутизм</a>
+        <a href="#">Другие нарушения и сравнения</a>
       </div>
 
       <div class="footer-column">
-        <h3>Сайт</h3>
-        <a href="#results">Результаты</a>
-        <a href="rebenok-ne-govorit.html#speech-test">Онлайн-тест</a>
-        <a href="#specialists">Специалисты</a>
-        <a href="#">Материалы</a>
+        <h3>Разделы</h3>
+        <a href="#">Статьи</a>
+        <a href="#">Логопедические упражнения</a>
+        <a href="#results">Результаты работы</a>
+        <a href="#specialists">Записаться</a>
+        <a href="#specialists">О логопедах</a>
+        <a href="#">Документация логопеда</a>
+        <a href="#">Страны, где мы работаем</a>
+        <a href="#">Контакты</a>
+        <a href="#">Карта сайта</a>
       </div>
 
-      <div class="footer-column">
-        <h3>Документы</h3>
-        <a href="#">Конфиденциальность</a>
-        <a href="#">Обработка данных</a>
-        <a href="#">Правовая информация</a>
+      <div class="footer-column footer-socials-list">
+        <h3>Мы в соцсетях</h3>
+        <a href="#"><span class="footer-social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.7 4.3 3.7 10.9c-1.2.5-1.2 1.2-.2 1.5l4.4 1.4 1.7 5.1c.2.6.1.8.8.8.5 0 .7-.2.9-.5l2.5-2.4 5.2 3.8c1 .6 1.7.3 1.9-.9l2.9-13.7c.3-1.4-.5-2-1.5-1.7Zm-11.9 9.1 8.6-5.4c.4-.2.7-.1.4.2l-7.1 6.4-.3 3.2-1.6-4.4Z"/></svg></span><span>Telegram</span></a>
+        <a href="#"><span class="footer-social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21.8 8.1a2.9 2.9 0 0 0-2-2c-1.8-.5-7.8-.5-7.8-.5s-6 0-7.8.5a2.9 2.9 0 0 0-2 2A30.6 30.6 0 0 0 1.7 12c0 1.3.1 2.6.5 3.9a2.9 2.9 0 0 0 2 2c1.8.5 7.8.5 7.8.5s6 0 7.8-.5a2.9 2.9 0 0 0 2-2c.4-1.3.5-2.6.5-3.9a30.6 30.6 0 0 0-.5-3.9ZM10 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg></span><span>YouTube</span></a>
+        <a href="#"><span class="footer-social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h8.5c2.9 0 4.8 1.7 4.8 4.3 0 1.7-.8 3-2.2 3.7L19 19h-4.2l-3.1-5.1H8V19H4V5Zm4 3v3h4c.9 0 1.5-.6 1.5-1.5S12.9 8 12 8H8Z"/></svg></span><span>RuTube</span></a>
+        <a href="#"><span class="footer-social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4.7 7.5h2.2c.1 0 .3.1.3.2l1.1 3.1c.4 1 1.1 1.8 1.9 2.4V7.8c0-.2.1-.3.3-.3h2c.2 0 .3.1.3.3v3.1c0 .7.5 1.4 1.2 1.8l2.1-4.9c.1-.2.2-.3.4-.3h2.2c.2 0 .4.2.3.4l-2.3 4.7c-.2.4-.4.7-.7 1 .4.2.7.5 1 .9l2.2 3.1c.1.2 0 .4-.2.4h-2.4c-.2 0-.3-.1-.4-.2l-1.9-2.5c-.4-.6-1.1-.9-1.8-.9v3.3c0 .2-.1.3-.3.3h-2.1c-3.4 0-6.1-2.9-7.6-9.9 0-.2.1-.4.3-.4Z"/></svg></span><span>ВКонтакте</span></a>
+        <a href="#"><span class="footer-social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c4.7 0 9 1.4 9 4.5S16.7 12 12 12 3 10.6 3 7.5 7.3 3 12 3Zm0 9c4.7 0 9 1.4 9 4.5S16.7 21 12 21 3 19.6 3 16.5 7.3 12 12 12Zm-4.3-7c0 2.2 1.8 4 4 4-2.2 0-4 1.8-4 4 0-2.2-1.8-4-4-4 2.2 0 4-1.8 4-4Zm8.6 6c0 2.2 1.8 4 4 4-2.2 0-4 1.8-4 4 0-2.2-1.8-4-4-4 2.2 0 4-1.8 4-4Z"/></svg></span><span>Дзен</span></a>
+        <a href="#"><span class="footer-social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.5A2.5 2.5 0 0 0 4.5 7v10A2.5 2.5 0 0 0 7 19.5h10a2.5 2.5 0 0 0 2.5-2.5V7A2.5 2.5 0 0 0 17 4.5H7Zm10.8 1.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z"/></svg></span><span>Instagram</span></a>
+        <a href="#"><span class="footer-social-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13.4 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.3Z"/></svg></span><span>Facebook</span></a>
+        <p class="footer-note">
+          Занятия и запись — через контакты специалистов, указанные на их персональных страницах.
+        </p>
       </div>
     </div>
 
-    <div class="container footer-bottom">
-      <span>© <span id="current-year"></span></span>
-      <a href="#">Наверх ↑</a>
+    <div class="container footer-legal">
+      <p>
+        © 2010–<span id="current-year"></span>. Материалы сайта носят информационный характер,
+        не являются медицинским заключением и не заменяют очной консультации специалиста.
+      </p>
+      <div class="footer-legal-links">
+        <a href="#">Политика конфиденциальности</a>
+        <a href="#">Работа для логопеда</a>
+        <a href="#">Карта сайта</a>
+      </div>
     </div>
   </footer>
 
