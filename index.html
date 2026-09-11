@@ -1320,6 +1320,908 @@
 .principles .principle p{
   max-width:760px;
 }
+
+
+/* =========================================================
+   FINAL MOBILE ADAPTATION — HOME PAGE
+   Desktop layout remains unchanged.
+   ========================================================= */
+
+@media (max-width: 900px) {
+  /* Tablet / narrow header: keep the brand, remove crowded social controls */
+  .topbar-right {
+    display: none !important;
+  }
+
+  .topbar-inner {
+    justify-content: flex-start;
+  }
+
+  .hero-grid {
+    gap: 34px;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .hero-video {
+    width: min(100%, 720px);
+    margin-inline: auto;
+  }
+
+  .section-intro,
+  .method-copy {
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    scroll-padding-top: 108px;
+  }
+
+  body {
+    font-size: 16px;
+    line-height: 1.4;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: min(calc(100% - 32px), var(--container)) !important;
+  }
+
+  .text-container,
+  .content-wide,
+  .case-list,
+  .materials-grid,
+  .specialist-grid,
+  .social-grid {
+    width: 100% !important;
+  }
+
+  .section {
+    padding: 52px 0 !important;
+  }
+
+  p {
+    line-height: 1.52;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10vw, 2.65rem) !important;
+    line-height: 1;
+    margin-bottom: 18px;
+  }
+
+  h2 {
+    font-size: clamp(1.72rem, 8.2vw, 2.25rem) !important;
+    line-height: 1.03;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-size: clamp(1.18rem, 5.8vw, 1.45rem);
+    line-height: 1.08;
+  }
+
+  .eyebrow {
+    margin-bottom: 8px;
+    font-size: .7rem;
+    line-height: 1.25;
+    letter-spacing: .08em;
+  }
+
+  .btn {
+    min-height: 50px;
+    padding: 0 19px;
+    font-size: .94rem;
+  }
+
+  /* -------- Mobile header -------- */
+  .site-header {
+    backdrop-filter: none;
+  }
+
+  .topbar-inner {
+    min-height: 52px !important;
+    gap: 10px;
+  }
+
+  .topbar-left {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .topbar-avatars img {
+    width: 28px !important;
+    height: 28px !important;
+    margin-left: -5px;
+    border-width: 1.5px;
+  }
+
+  .topbar-copy {
+    min-width: 0;
+    font-size: .78rem !important;
+    line-height: 1.15;
+  }
+
+  .topbar-copy strong {
+    display: block;
+    white-space: normal;
+  }
+
+  .topbar-right,
+  .topbar-socials,
+  .topbar-link {
+    display: none !important;
+  }
+
+  .header-inner {
+    min-height: 52px !important;
+    gap: 10px;
+  }
+
+  .header-inner::before {
+    content: "Меню";
+    color: var(--accent);
+    font-size: .84rem;
+    font-weight: 760;
+    letter-spacing: .02em;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: relative;
+    z-index: 1003;
+    width: 42px;
+    height: 42px;
+    margin-left: auto;
+    padding: 9px;
+    background: rgba(94,90,168,.08);
+  }
+
+  .menu-toggle > span {
+    transition: transform .18s ease, opacity .18s ease;
+  }
+
+  .menu-toggle[aria-expanded="true"] > span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] > span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle[aria-expanded="true"] > span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .main-nav {
+    z-index: 1002;
+    inset: 0 !important;
+    padding: 78px 18px 28px !important;
+    gap: 4px;
+    background: #fff;
+    box-shadow: none;
+  }
+
+  .main-nav::before {
+    content: "Навигация";
+    display: block;
+    margin: 2px 12px 14px;
+    color: var(--accent);
+    font-size: .72rem;
+    font-weight: 820;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+  }
+
+  .nav-link {
+    min-height: 48px;
+    padding: 0 12px !important;
+    border-bottom: 1px solid #efedf7;
+    border-radius: 0;
+    font-size: 1rem;
+  }
+
+  .nav-link:hover,
+  .nav-link:focus-visible,
+  .nav-link.is-active {
+    background: transparent;
+  }
+
+  .dropdown-menu {
+    padding: 4px 0 10px 12px !important;
+  }
+
+  .dropdown-menu a {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    font-size: .92rem;
+  }
+
+  /* -------- Hero -------- */
+  .hero {
+    padding: 38px 0 48px !important;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .hero-copy p {
+    margin-bottom: 13px;
+    font-size: .96rem !important;
+    line-height: 1.52 !important;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 9px;
+    margin-top: 22px;
+  }
+
+  .hero-actions .btn {
+    width: 100% !important;
+  }
+
+  .hero-video {
+    border-radius: 15px;
+  }
+
+  .hero-video .youtube-frame {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* -------- Directions -------- */
+  .section-intro {
+    margin-bottom: 20px;
+  }
+
+  .section-intro p:last-child {
+    font-size: .96rem;
+  }
+
+  .direction-grid {
+    display: block !important;
+    border-bottom: 0;
+  }
+
+  .direction {
+    padding: 22px 0 26px !important;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .direction + .direction {
+    padding-left: 0 !important;
+    border-left: 0 !important;
+    border-top: 0 !important;
+  }
+
+  .direction-kicker {
+    min-height: 0 !important;
+    margin-bottom: 6px !important;
+    font-size: .7rem;
+  }
+
+  .direction h3 {
+    margin-bottom: 10px;
+  }
+
+  .direction p:not(.direction-kicker) {
+    margin-bottom: 17px;
+    font-size: .94rem;
+    line-height: 1.52;
+  }
+
+  .direction .btn {
+    width: 100%;
+  }
+
+  /* -------- Test CTA -------- */
+  .test-route {
+    padding: 14px 0 52px !important;
+  }
+
+  .test-route-grid {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+    padding: 25px 20px !important;
+    border-radius: 17px !important;
+    box-shadow: 0 8px 22px rgba(72,68,132,.05);
+  }
+
+  .test-route h2 {
+    font-size: clamp(1.52rem, 7.4vw, 2rem) !important;
+    line-height: 1.04;
+  }
+
+  .test-route-copy p {
+    font-size: .94rem;
+    line-height: 1.5;
+  }
+
+  .test-route-actions {
+    gap: 9px;
+  }
+
+  .test-route-actions .btn {
+    width: 100%;
+  }
+
+  /* -------- Method / principles -------- */
+  .method-copy {
+    max-width: none;
+  }
+
+  .method-copy > p {
+    margin-bottom: 15px;
+    font-size: .96rem;
+    line-height: 1.55;
+  }
+
+  .principles-title {
+    margin-top: 36px;
+    margin-bottom: 14px;
+  }
+
+  .principle {
+    display: block !important;
+    padding: 22px 0 !important;
+  }
+
+  .principle h3 {
+    margin-bottom: 10px !important;
+    font-size: 1.12rem;
+    line-height: 1.18;
+  }
+
+  .principle p {
+    max-width: none !important;
+    font-size: .94rem;
+    line-height: 1.55;
+  }
+
+  /* -------- Results -------- */
+  .case-list {
+    gap: 16px;
+  }
+
+  .case {
+    padding: 19px 17px !important;
+    border-radius: 15px;
+  }
+
+  .case-head {
+    flex-direction: column !important;
+    gap: 7px;
+    margin-bottom: 13px;
+  }
+
+  .case-status {
+    align-self: flex-start;
+    white-space: normal;
+  }
+
+  .case > p {
+    font-size: .94rem;
+  }
+
+  .case-layout {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  .case-video-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .case-video .youtube-frame {
+    border-radius: 11px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .case-video-label {
+    margin-top: 7px;
+  }
+
+  .family-story {
+    padding: 15px 0 0 15px;
+    border-left-width: 2px;
+    border-top: 0;
+  }
+
+  .family-story p {
+    font-size: .93rem;
+    line-height: 1.5;
+  }
+
+  /* -------- Materials -------- */
+  .materials-grid {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+    margin-top: 22px;
+  }
+
+  .materials-group {
+    padding-top: 18px;
+  }
+
+  .material {
+    padding: 16px 0;
+  }
+
+  .material p {
+    font-size: .91rem;
+    line-height: 1.48;
+  }
+
+  .materials-video {
+    grid-template-columns: 1fr !important;
+    gap: 11px !important;
+    padding: 16px 0;
+  }
+
+  .materials-video .youtube-frame {
+    width: 100%;
+    border-radius: 11px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .materials-video h4 {
+    margin-top: 2px;
+    font-size: 1.02rem;
+  }
+
+  /* -------- Specialists -------- */
+  .specialists-lead {
+    font-size: .96rem !important;
+    line-height: 1.52 !important;
+  }
+
+  .specialist-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    margin-top: 22px;
+  }
+
+  .specialist-card {
+    border-radius: 15px;
+  }
+
+  .specialist-photo {
+    aspect-ratio: 16 / 10;
+  }
+
+  .specialist-photo img {
+    object-position: center 22%;
+  }
+
+  .specialist-body {
+    padding: 17px;
+  }
+
+  .specialist-role {
+    margin-bottom: 6px;
+    font-size: .69rem;
+  }
+
+  .specialist-body h3 {
+    margin-bottom: 8px;
+    font-size: 1.16rem;
+  }
+
+  .specialist-body p {
+    margin-bottom: 15px;
+    font-size: .91rem;
+    line-height: 1.48;
+  }
+
+  /* -------- Socials: compact two-column utility grid -------- */
+  .social-section {
+    padding: 48px 0 !important;
+  }
+
+  .social-grid {
+    grid-template-columns: repeat(2, minmax(0,1fr)) !important;
+    gap: 9px !important;
+    margin-top: 20px;
+  }
+
+  .social-card {
+    min-height: 92px;
+    padding: 13px;
+    border-radius: 11px;
+  }
+
+  .social-card strong {
+    font-size: .92rem;
+  }
+
+  .social-card span:last-child {
+    font-size: .72rem;
+    line-height: 1.25;
+  }
+
+  /* -------- Footer -------- */
+  .site-footer {
+    padding-top: 44px !important;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+
+  .footer-about p {
+    max-width: none;
+    font-size: .91rem;
+  }
+
+  .footer-about h3,
+  .footer-column h3 {
+    margin-bottom: 13px;
+  }
+
+  .footer-column {
+    gap: 9px;
+  }
+
+  .footer-column a {
+    font-size: .9rem;
+    line-height: 1.4;
+  }
+
+  .footer-socials-list a {
+    min-height: 32px;
+  }
+
+  .footer-note {
+    margin-top: 12px;
+  }
+
+  .footer-legal {
+    gap: 18px !important;
+    margin-top: 36px !important;
+    padding: 20px 0 24px !important;
+  }
+
+  .footer-legal > p {
+    font-size: .78rem;
+    line-height: 1.5;
+  }
+
+  .footer-legal-links {
+    gap: 8px !important;
+  }
+
+  .footer-legal-links a {
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    width: min(calc(100% - 24px), var(--container)) !important;
+  }
+
+  .topbar-avatars img:nth-child(3) {
+    display: none;
+  }
+
+  .topbar-copy {
+    font-size: .74rem !important;
+  }
+
+  .hero {
+    padding-top: 32px !important;
+  }
+
+  .hero-copy p {
+    font-size: .94rem !important;
+  }
+
+  .test-route-grid {
+    padding: 23px 17px !important;
+  }
+
+  .case {
+    padding: 17px 14px !important;
+  }
+
+  .social-grid {
+    gap: 8px !important;
+  }
+
+  .social-card {
+    min-height: 88px;
+    padding: 12px;
+  }
+}
+
+
+/* =========================================================
+   HOME MOBILE HEADER FIX + RESTORED SOCIAL ICONS
+   ========================================================= */
+
+/* Large social cards — real visual icons on every viewport */
+.social-icon{
+  width:36px;
+  height:36px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--accent) !important;
+  font-size:0 !important;
+}
+
+.social-icon svg{
+  width:30px;
+  height:30px;
+  display:block;
+  fill:currentColor;
+  stroke:currentColor;
+}
+
+.social-card{
+  position:relative;
+}
+
+@media (max-width:1080px){
+  /* The green mobile/tablet strip contains ONLY team identity. */
+  .topbar-right,
+  .topbar-socials,
+  .topbar-link{
+    display:none !important;
+  }
+
+  .topbar-inner{
+    min-height:58px !important;
+    justify-content:flex-start !important;
+    gap:0 !important;
+  }
+
+  .topbar-left{
+    width:100% !important;
+    min-width:0;
+    gap:12px !important;
+  }
+
+  .topbar-copy{
+    flex:1 1 auto;
+    min-width:0;
+    font-size:.88rem !important;
+    line-height:1.18 !important;
+  }
+
+  .topbar-copy strong{
+    display:block;
+    max-width:100%;
+  }
+
+  .topbar-avatars{
+    flex:0 0 auto;
+  }
+
+  .topbar-avatars img{
+    width:32px !important;
+    height:32px !important;
+    margin-left:-6px !important;
+  }
+
+  .topbar-avatars img:first-child{
+    margin-left:0 !important;
+  }
+
+  /* Compact white navigation strip */
+  .menu-row{
+    position:relative;
+    background:#fff;
+  }
+
+  .header-inner{
+    min-height:54px !important;
+    gap:10px !important;
+  }
+
+  .header-inner::before{
+    content:"Меню";
+    display:block;
+    color:var(--accent);
+    font-size:.86rem;
+    font-weight:760;
+  }
+
+  .menu-toggle{
+    display:block !important;
+    width:42px !important;
+    height:42px !important;
+    margin-left:auto !important;
+    padding:9px !important;
+    border-radius:10px !important;
+    background:var(--accent-soft) !important;
+  }
+
+  .menu-toggle > span{
+    background:var(--text) !important;
+  }
+
+  /*
+    Drawer opens DIRECTLY below the menu row.
+    This replaces the old full-screen white panel with huge top padding.
+  */
+  .main-nav{
+    position:absolute !important;
+    top:100% !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:auto !important;
+    inset:auto 0 auto 0 !important;
+    width:100% !important;
+    max-height:calc(100vh - 112px);
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:flex-start;
+    gap:0 !important;
+    padding:8px 16px 18px !important;
+    overflow-y:auto;
+    background:#fff !important;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 18px 36px rgba(34,38,34,.12) !important;
+    z-index:1005 !important;
+  }
+
+  .main-nav.is-open{
+    display:flex !important;
+  }
+
+  .main-nav::before{
+    display:none !important;
+    content:none !important;
+  }
+
+  .main-nav > .nav-link,
+  .main-nav > .nav-dropdown > .nav-link{
+    width:100%;
+    min-height:49px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 4px !important;
+    border:0 !important;
+    border-bottom:1px solid #eceaf3 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    color:var(--text) !important;
+    font-size:.98rem;
+    font-weight:690;
+  }
+
+  .main-nav > .nav-link.is-active{
+    color:var(--accent) !important;
+    font-weight:800;
+  }
+
+  .nav-dropdown{
+    width:100%;
+  }
+
+  .dropdown-menu{
+    position:static !important;
+    display:none;
+    width:100%;
+    min-width:0 !important;
+    margin:0 !important;
+    padding:5px 0 9px 12px !important;
+    border:0 !important;
+    border-bottom:1px solid #eceaf3 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+    background:#fff !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+  }
+
+  .nav-dropdown:hover > .dropdown-menu{
+    display:none;
+  }
+
+  .nav-dropdown.is-open > .dropdown-menu{
+    display:block !important;
+  }
+
+  .dropdown-menu a{
+    min-height:41px;
+    display:flex;
+    align-items:center;
+    padding:7px 6px !important;
+    color:#565a56;
+    font-size:.91rem;
+    line-height:1.3;
+  }
+
+  .header-action{
+    display:none !important;
+  }
+}
+
+@media (max-width:720px){
+  .topbar-inner{
+    min-height:56px !important;
+  }
+
+  .topbar-left{
+    gap:10px !important;
+  }
+
+  .topbar-copy{
+    font-size:.81rem !important;
+    line-height:1.15 !important;
+  }
+
+  .topbar-avatars img{
+    width:30px !important;
+    height:30px !important;
+  }
+
+  .header-inner{
+    min-height:52px !important;
+  }
+
+  .main-nav{
+    max-height:calc(100vh - 108px);
+    padding:7px 16px 16px !important;
+  }
+
+  /* Cards keep the icons visible but don't become oversized */
+  .social-icon{
+    width:32px;
+    height:32px;
+  }
+
+  .social-icon svg{
+    width:27px;
+    height:27px;
+  }
+}
+
+@media (max-width:420px){
+  .topbar-copy{
+    font-size:.76rem !important;
+  }
+
+  .topbar-avatars img{
+    width:29px !important;
+    height:29px !important;
+  }
+
+  /* Keep all 3 portraits now that the social buttons are gone. */
+  .topbar-avatars img:nth-child(3){
+    display:block !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -1515,26 +2417,7 @@
 <div class="method-copy">
 <p class="eyebrow">Методика</p>
 <h2>КАК МЫ РАБОТАЕМ</h2>
-
-
-
-
-<p>
-        Наш подход сформирован на основе многолетней практики, изучения российской и зарубежной логопедии и большого
-        количества детей с моторной, сенсорной и сенсомоторной алалией. Результаты этой работы мы не прячем за словами,
-        на сайте можно посмотреть реальные видео детей на разных этапах коррекции.
-      </p><p>
-        Поэтому каждый ребенок движется по понятному плану от своего исходного уровня к следующему этапу развития.
-        И специалист, и родители знают, <strong>что мы формируем сейчас, что уже получилось и что будем делать дальше</strong>.
-      </p><p>
-        Мы не собираем занятия из случайных упражнений и не ставим задачу просто получить первые слова.
-        При алалии этого недостаточно. Нужно последовательно сформировать всю языковую систему ребенка:
-        понимание обращенной речи, словарь, фразу, грамматику, связную речь, а параллельно развивать мышление
-        и другие функции, без которых нормальная речь тоже не формируется.
-      </p><p>
-        Наша методика построена на <strong>языковой концепции коррекции алалии</strong> и более чем
-        20-летнем опыте работы Ирины Петровны Денисовой с детьми с тяжелыми речевыми нарушениями.
-      </p><div class="principles-title">
+<p>Наша методика построена на <strong>языковой концепции коррекции алалии</strong> и более чем 20-летнем опыте работы Ирины Петровны Денисовой с детьми с тяжелыми речевыми нарушениями.</p><p>Мы не собираем занятия из случайных упражнений и не ставим задачу просто получить первые слова. При алалии этого недостаточно. Нужно последовательно сформировать всю языковую систему ребенка: понимание обращенной речи, словарь, фразу, грамматику, связную речь, а параллельно развивать мышление и другие функции, без которых нормальная речь тоже не формируется.</p><p>Поэтому каждый ребенок движется по понятному плану от своего исходного уровня к следующему этапу развития. И специалист, и родители знают, <strong>что мы формируем сейчас, что уже получилось и что будем делать дальше</strong>.</p><p>Наш подход сформирован на основе многолетней практики, изучения российской и зарубежной логопедии и большого количества детей с моторной, сенсорной и сенсомоторной алалией. Результаты этой работы мы не прячем за словами, на сайте можно посмотреть реальные видео детей на разных этапах коррекции.</p><div class="principles-title">
 <p class="eyebrow">Основы работы</p>
 <h2>НАШИ ПРИНЦИПЫ</h2>
 </div>
@@ -1761,13 +2644,13 @@
           </p>
 </div>
 <div class="social-grid">
-<a class="social-card" href="#"><span class="social-icon">YT</span><strong>YouTube</strong><span>лекции и результаты</span></a>
-<a class="social-card" href="#"><span class="social-icon">RT</span><strong>RuTube</strong><span>видео и архив</span></a>
-<a class="social-card" href="#"><span class="social-icon">VK</span><strong>ВКонтакте</strong><span>публикации и новости</span></a>
-<a class="social-card" href="#"><span class="social-icon">TG</span><strong>Telegram</strong><span>материалы родителям</span></a>
-<a class="social-card" href="#"><span class="social-icon">DZ</span><strong>Дзен</strong><span>статьи и разборы</span></a>
-<a class="social-card" href="#"><span class="social-icon">IG</span><strong>Instagram</strong><span>короткие материалы</span></a>
-<a class="social-card" href="#"><span class="social-icon">FB</span><strong>Facebook</strong><span>публикации центра</span></a>
+<a class="social-card" href="#"><span class="social-icon"><svg viewbox="0 0 24 24"><path d="M21.8 8.1a2.9 2.9 0 0 0-2-2c-1.8-.5-7.8-.5-7.8-.5s-6 0-7.8.5a2.9 2.9 0 0 0-2 2A30.6 30.6 0 0 0 1.7 12c0 1.3.1 2.6.5 3.9a2.9 2.9 0 0 0 2 2c1.8.5 7.8.5 7.8.5s6 0 7.8-.5a2.9 2.9 0 0 0 2-2c.4-1.3.5-2.6.5-3.9a30.6 30.6 0 0 0-.5-3.9ZM10 15.6V8.4l6.2 3.6-6.2 3.6Z"></path></svg></span><strong>YouTube</strong><span>лекции и результаты</span></a>
+<a class="social-card" href="#"><span class="social-icon"><svg viewbox="0 0 24 24"><path d="M4 5h8.5c2.9 0 4.8 1.7 4.8 4.3 0 1.7-.8 3-2.2 3.7L19 19h-4.2l-3.1-5.1H8V19H4V5Zm4 3v3h4c.9 0 1.5-.6 1.5-1.5S12.9 8 12 8H8Z"></path></svg></span><strong>RuTube</strong><span>видео и архив</span></a>
+<a class="social-card" href="#"><span class="social-icon"><svg viewbox="0 0 24 24"><path d="M4.7 7.5h2.2c.1 0 .3.1.3.2l1.1 3.1c.4 1 1.1 1.8 1.9 2.4V7.8c0-.2.1-.3.3-.3h2c.2 0 .3.1.3.3v3.1c0 .7.5 1.4 1.2 1.8l2.1-4.9c.1-.2.2-.3.4-.3h2.2c.2 0 .4.2.3.4l-2.3 4.7c-.2.4-.4.7-.7 1 .4.2.7.5 1 .9l2.2 3.1c.1.2 0 .4-.2.4h-2.4c-.2 0-.3-.1-.4-.2l-1.9-2.5c-.4-.6-1.1-.9-1.8-.9v3.3c0 .2-.1.3-.3.3h-2.1c-3.4 0-6.1-2.9-7.6-9.9 0-.2.1-.4.3-.4Z"></path></svg></span><strong>ВКонтакте</strong><span>публикации и новости</span></a>
+<a class="social-card" href="#"><span class="social-icon"><svg viewbox="0 0 24 24"><path d="M20.7 4.3 3.7 10.9c-1.2.5-1.2 1.2-.2 1.5l4.4 1.4 1.7 5.1c.2.6.1.8.8.8.5 0 .7-.2.9-.5l2.5-2.4 5.2 3.8c1 .6 1.7.3 1.9-.9l2.9-13.7c.3-1.4-.5-2-1.5-1.7Zm-11.9 9.1 8.6-5.4c.4-.2.7-.1.4.2l-7.1 6.4-.3 3.2-1.6-4.4Z"></path></svg></span><strong>Telegram</strong><span>материалы родителям</span></a>
+<a class="social-card" href="#"><span class="social-icon"><svg viewbox="0 0 24 24"><path d="M12 3c4.7 0 9 1.4 9 4.5S16.7 12 12 12 3 10.6 3 7.5 7.3 3 12 3Zm0 9c4.7 0 9 1.4 9 4.5S16.7 21 12 21 3 19.6 3 16.5 7.3 12 12 12Zm-4.3-7c0 2.2 1.8 4 4 4-2.2 0-4 1.8-4 4 0-2.2-1.8-4-4-4 2.2 0 4-1.8 4-4Zm8.6 6c0 2.2 1.8 4 4 4-2.2 0-4 1.8-4 4 0-2.2-1.8-4-4-4 2.2 0 4-1.8 4-4Z"></path></svg></span><strong>Дзен</strong><span>статьи и разборы</span></a>
+<a class="social-card" href="#"><span class="social-icon"><svg viewbox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.5A2.5 2.5 0 0 0 4.5 7v10A2.5 2.5 0 0 0 7 19.5h10a2.5 2.5 0 0 0 2.5-2.5V7A2.5 2.5 0 0 0 17 4.5H7Zm10.8 1.2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z"></path></svg></span><strong>Instagram</strong><span>короткие материалы</span></a>
+<a class="social-card" href="#"><span class="social-icon"><svg viewbox="0 0 24 24"><path d="M13.4 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.3Z"></path></svg></span><strong>Facebook</strong><span>публикации центра</span></a>
 </div>
 </div>
 </section>
