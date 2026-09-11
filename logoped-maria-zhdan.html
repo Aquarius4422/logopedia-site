@@ -2886,6 +2886,216 @@
     padding:16px !important;
   }
 }
+
+
+/* =========================================================
+   FINAL MOBILE FIXES: canonical menu + overflow + grid lines
+   ========================================================= */
+
+@media (max-width:1080px){
+  /* Prevent the WHOLE PAGE from being draggable sideways.
+     Dedicated sliders/schedule keep their own horizontal scrolling. */
+  html,
+  body{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:clip !important;
+    overscroll-behavior-x:none;
+  }
+
+  body,
+  main,
+  header,
+  footer,
+  section{
+    max-width:100% !important;
+  }
+
+  .container,
+  .content-wide,
+  .text-container,
+  .result-list,
+  .result-case,
+  .video-grid,
+  .video-column,
+  .materials-split,
+  .materials-group,
+  .specialist-grid,
+  .specialist-card,
+  .case-list,
+  .case,
+  .page-hero-grid,
+  .hero-grid,
+  .specialist-hero-grid{
+    min-width:0 !important;
+    max-width:100% !important;
+  }
+
+  img,
+  video,
+  iframe{
+    max-width:100% !important;
+  }
+
+  .main-nav{
+    box-sizing:border-box !important;
+    max-width:100% !important;
+  }
+
+  /* Only these components are intentionally horizontally scrollable. */
+  .schedule-scroll,
+  .credentials-track,
+  .docs-track{
+    max-width:100% !important;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+
+@media (max-width:720px){
+  /* Remove leftover desktop table/grid borders on mobile.
+     These were the vertical lines glued to the article titles. */
+  .diff-grid,
+  .confusion-grid,
+  .factor-grid,
+  .info-grid{
+    border-left:0 !important;
+    border-right:0 !important;
+  }
+
+  .diff-grid{
+    border-top:1px solid var(--line) !important;
+  }
+
+  .diff-card{
+    width:100% !important;
+    padding:20px 0 !important;
+    border-left:0 !important;
+    border-right:0 !important;
+    border-bottom:1px solid var(--line) !important;
+    background:transparent !important;
+  }
+
+  .diff-card:last-child{
+    border-bottom:0 !important;
+  }
+
+  /* No hidden width can leak from video/result cards. */
+  .result-list,
+  .result-case,
+  .video-grid,
+  .video-column,
+  .youtube-launch,
+  .live-random-video,
+  .random-youtube-frame,
+  .result-video-card,
+  .video-frame{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+  }
+
+  .youtube-launch,
+  .result-case,
+  .result-video-card{
+    box-sizing:border-box !important;
+  }
+
+  .video-frame iframe,
+  .video-column iframe{
+    display:block;
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  /* Mobile menu is the SAME DOM as desktop; only presentation changes. */
+  .main-nav > *{
+    order:initial !important;
+  }
+}
+
+
+/* =========================================================
+   DOCUMENT LIGHTBOX — Maria specialist page
+   ========================================================= */
+.credential-lightbox[hidden]{
+  display:none !important;
+}
+
+.credential-lightbox{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:54px 22px 22px;
+  background:rgba(20,22,20,.88);
+  backdrop-filter:blur(4px);
+}
+
+.credential-lightbox-inner{
+  position:relative;
+  width:min(100%,980px);
+  height:min(86vh,900px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.credential-lightbox img{
+  display:block;
+  max-width:100%;
+  max-height:100%;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:10px;
+  background:#fff;
+  box-shadow:0 22px 70px rgba(0,0,0,.38);
+}
+
+.credential-lightbox-close{
+  position:fixed;
+  top:14px;
+  right:14px;
+  z-index:100000;
+  width:46px;
+  height:46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:50%;
+  background:#fff;
+  color:#1e211e;
+  font-size:30px;
+  line-height:1;
+  cursor:pointer;
+  box-shadow:0 5px 22px rgba(0,0,0,.22);
+}
+
+body.credential-lightbox-open{
+  overflow:hidden !important;
+}
+
+@media(max-width:720px){
+  .credential-lightbox{
+    padding:70px 12px 18px;
+  }
+
+  .credential-lightbox-inner{
+    width:100%;
+    height:calc(100vh - 90px);
+  }
+
+  .credential-lightbox-close{
+    top:12px;
+    right:12px;
+    width:44px;
+    height:44px;
+  }
+}
 </style></head><body><header class="site-header">
 <div class="topbar">
 <div class="container topbar-inner">
@@ -2923,7 +3133,7 @@
 <svg viewbox="0 0 24 24"><path d="M13.4 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.3Z"></path></svg>
 </a>
 </div>
-<a class="topbar-link" href="index.html#specialists">О логопедах →</a>
+<a class="topbar-link" href="#schedule">О логопедах →</a>
 </div>
 </div>
 </div>
@@ -3242,5 +3452,131 @@
   });
 
   mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+})();
+</script><script>
+(function(){
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  if (!menuToggle || !mainNav) return;
+
+  function setOpen(open){
+    mainNav.classList.toggle('is-open', open);
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.classList.toggle('menu-open', open);
+    if (!open){
+      document.querySelectorAll('.nav-dropdown.is-open').forEach(drop => {
+        drop.classList.remove('is-open');
+        const btn = drop.querySelector('.dropdown-toggle');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  }
+
+  /* Guarantee burger toggles even if an older page script is absent. */
+  if (!menuToggle.dataset.finalMenuBound){
+    menuToggle.dataset.finalMenuBound = '1';
+    menuToggle.addEventListener('click', function(event){
+      event.stopPropagation();
+      setOpen(!mainNav.classList.contains('is-open'));
+    });
+  }
+
+  document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+    if (btn.dataset.finalDropdownBound) return;
+    btn.dataset.finalDropdownBound = '1';
+    btn.addEventListener('click', function(event){
+      if (window.innerWidth > 1080) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const drop = btn.closest('.nav-dropdown');
+      const next = !drop.classList.contains('is-open');
+      document.querySelectorAll('.nav-dropdown.is-open').forEach(other => {
+        if (other !== drop){
+          other.classList.remove('is-open');
+          const ob = other.querySelector('.dropdown-toggle');
+          if (ob) ob.setAttribute('aria-expanded','false');
+        }
+      });
+      drop.classList.toggle('is-open', next);
+      btn.setAttribute('aria-expanded', next ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', function(event){
+    if (!mainNav.classList.contains('is-open')) return;
+    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)){
+      setOpen(false);
+    }
+  });
+
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && mainNav.classList.contains('is-open')){
+      setOpen(false);
+      menuToggle.focus();
+    }
+  });
+
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+})();
+</script><script>
+(function(){
+  const links = [...document.querySelectorAll('.credential')];
+  if (!links.length) return;
+
+  let box = document.getElementById('credential-lightbox');
+  if (!box){
+    box = document.createElement('div');
+    box.id = 'credential-lightbox';
+    box.className = 'credential-lightbox';
+    box.hidden = true;
+    box.setAttribute('role','dialog');
+    box.setAttribute('aria-modal','true');
+    box.setAttribute('aria-label','Просмотр документа');
+    box.innerHTML = `
+      <button class="credential-lightbox-close" type="button" aria-label="Закрыть">×</button>
+      <div class="credential-lightbox-inner">
+        <img alt="">
+      </div>`;
+    document.body.appendChild(box);
+  }
+
+  const image = box.querySelector('img');
+  const closeBtn = box.querySelector('.credential-lightbox-close');
+
+  function closeLightbox(){
+    box.hidden = true;
+    image.removeAttribute('src');
+    image.alt = '';
+    document.body.classList.remove('credential-lightbox-open');
+  }
+
+  function openLightbox(link){
+    const thumb = link.querySelector('img');
+    image.src = link.getAttribute('href') || (thumb ? thumb.src : '');
+    image.alt = thumb ? thumb.alt : 'Документ';
+    box.hidden = false;
+    document.body.classList.add('credential-lightbox-open');
+    closeBtn.focus();
+  }
+
+  links.forEach(link => {
+    link.removeAttribute('target');
+    link.addEventListener('click', function(event){
+      event.preventDefault();
+      openLightbox(link);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  box.addEventListener('click', function(event){
+    if (event.target === box) closeLightbox();
+  });
+
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && !box.hidden) closeLightbox();
+  });
 })();
 </script></body></html>

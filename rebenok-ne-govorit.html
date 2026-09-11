@@ -3169,6 +3169,133 @@ h3,
     grid-template-columns:1fr !important;
   }
 }
+
+
+/* =========================================================
+   FINAL MOBILE FIXES: canonical menu + overflow + grid lines
+   ========================================================= */
+
+@media (max-width:1080px){
+  /* Prevent the WHOLE PAGE from being draggable sideways.
+     Dedicated sliders/schedule keep their own horizontal scrolling. */
+  html,
+  body{
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:clip !important;
+    overscroll-behavior-x:none;
+  }
+
+  body,
+  main,
+  header,
+  footer,
+  section{
+    max-width:100% !important;
+  }
+
+  .container,
+  .content-wide,
+  .text-container,
+  .result-list,
+  .result-case,
+  .video-grid,
+  .video-column,
+  .materials-split,
+  .materials-group,
+  .specialist-grid,
+  .specialist-card,
+  .case-list,
+  .case,
+  .page-hero-grid,
+  .hero-grid,
+  .specialist-hero-grid{
+    min-width:0 !important;
+    max-width:100% !important;
+  }
+
+  img,
+  video,
+  iframe{
+    max-width:100% !important;
+  }
+
+  .main-nav{
+    box-sizing:border-box !important;
+    max-width:100% !important;
+  }
+
+  /* Only these components are intentionally horizontally scrollable. */
+  .schedule-scroll,
+  .credentials-track,
+  .docs-track{
+    max-width:100% !important;
+    overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+}
+
+@media (max-width:720px){
+  /* Remove leftover desktop table/grid borders on mobile.
+     These were the vertical lines glued to the article titles. */
+  .diff-grid,
+  .confusion-grid,
+  .factor-grid,
+  .info-grid{
+    border-left:0 !important;
+    border-right:0 !important;
+  }
+
+  .diff-grid{
+    border-top:1px solid var(--line) !important;
+  }
+
+  .diff-card{
+    width:100% !important;
+    padding:20px 0 !important;
+    border-left:0 !important;
+    border-right:0 !important;
+    border-bottom:1px solid var(--line) !important;
+    background:transparent !important;
+  }
+
+  .diff-card:last-child{
+    border-bottom:0 !important;
+  }
+
+  /* No hidden width can leak from video/result cards. */
+  .result-list,
+  .result-case,
+  .video-grid,
+  .video-column,
+  .youtube-launch,
+  .live-random-video,
+  .random-youtube-frame,
+  .result-video-card,
+  .video-frame{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+  }
+
+  .youtube-launch,
+  .result-case,
+  .result-video-card{
+    box-sizing:border-box !important;
+  }
+
+  .video-frame iframe,
+  .video-column iframe{
+    display:block;
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  /* Mobile menu is the SAME DOM as desktop; only presentation changes. */
+  .main-nav > *{
+    order:initial !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -3243,7 +3370,7 @@ h3,
 <a href="#">Видеоматериалы</a>
 </div>
 </div>
-<a class="nav-link" href="#results">Результаты</a>
+<a class="nav-link" href="index.html#results">Результаты</a>
 <a class="nav-link" href="#specialists">Записаться</a>
 </nav>
 <a class="btn header-action" href="#specialists">Записаться</a>
@@ -4381,6 +4508,73 @@ document.querySelectorAll('a[href="#speech-test"]').forEach(link => {
   });
 
   mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+})();
+</script><script>
+(function(){
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  if (!menuToggle || !mainNav) return;
+
+  function setOpen(open){
+    mainNav.classList.toggle('is-open', open);
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    document.body.classList.toggle('menu-open', open);
+    if (!open){
+      document.querySelectorAll('.nav-dropdown.is-open').forEach(drop => {
+        drop.classList.remove('is-open');
+        const btn = drop.querySelector('.dropdown-toggle');
+        if (btn) btn.setAttribute('aria-expanded','false');
+      });
+    }
+  }
+
+  /* Guarantee burger toggles even if an older page script is absent. */
+  if (!menuToggle.dataset.finalMenuBound){
+    menuToggle.dataset.finalMenuBound = '1';
+    menuToggle.addEventListener('click', function(event){
+      event.stopPropagation();
+      setOpen(!mainNav.classList.contains('is-open'));
+    });
+  }
+
+  document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+    if (btn.dataset.finalDropdownBound) return;
+    btn.dataset.finalDropdownBound = '1';
+    btn.addEventListener('click', function(event){
+      if (window.innerWidth > 1080) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const drop = btn.closest('.nav-dropdown');
+      const next = !drop.classList.contains('is-open');
+      document.querySelectorAll('.nav-dropdown.is-open').forEach(other => {
+        if (other !== drop){
+          other.classList.remove('is-open');
+          const ob = other.querySelector('.dropdown-toggle');
+          if (ob) ob.setAttribute('aria-expanded','false');
+        }
+      });
+      drop.classList.toggle('is-open', next);
+      btn.setAttribute('aria-expanded', next ? 'true' : 'false');
+    });
+  });
+
+  document.addEventListener('click', function(event){
+    if (!mainNav.classList.contains('is-open')) return;
+    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)){
+      setOpen(false);
+    }
+  });
+
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && mainNav.classList.contains('is-open')){
+      setOpen(false);
+      menuToggle.focus();
+    }
+  });
+
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => setOpen(false));
+  });
 })();
 </script></body>
 </html>
