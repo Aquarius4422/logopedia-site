@@ -2349,6 +2349,283 @@
     order:initial !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE MENU — FINAL TEST VERSION
+   Same HTML/menu as desktop, different presentation only.
+   ========================================================= */
+
+@media (max-width:1080px){
+
+  body.menu-open{
+    overflow:hidden !important;
+  }
+
+  .menu-row{
+    position:relative !important;
+  }
+
+  .main-nav{
+    position:fixed !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:auto !important;
+    width:100% !important;
+    max-width:100% !important;
+    max-height:calc(100dvh - 108px) !important;
+    display:none !important;
+    flex-direction:column !important;
+    align-items:stretch !important;
+    justify-content:flex-start !important;
+    gap:0 !important;
+    margin:0 !important;
+    padding:8px 20px 18px !important;
+    overflow-x:hidden !important;
+    overflow-y:auto !important;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    background:#fff !important;
+    border-top:1px solid var(--line) !important;
+    border-bottom:1px solid var(--line) !important;
+    box-shadow:0 16px 36px rgba(35,38,35,.14) !important;
+    z-index:10050 !important;
+    scroll-behavior:auto !important;
+  }
+
+  .main-nav.is-open{
+    display:flex !important;
+  }
+
+  .main-nav::before{
+    display:none !important;
+    content:none !important;
+  }
+
+  .main-nav > .nav-link,
+  .main-nav > .nav-dropdown > .nav-link{
+    width:100% !important;
+    min-height:52px !important;
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    flex:0 0 auto !important;
+    margin:0 !important;
+    padding:0 8px !important;
+    border:0 !important;
+    border-bottom:1px solid #eceaf3 !important;
+    border-radius:0 !important;
+    background:#fff !important;
+    color:var(--text) !important;
+    font-size:1rem !important;
+    font-weight:710 !important;
+    line-height:1.2 !important;
+    text-align:left !important;
+    white-space:normal !important;
+  }
+
+  .main-nav > .nav-link.is-active,
+  .main-nav > .nav-dropdown > .nav-link.is-active{
+    color:var(--accent) !important;
+    background:var(--accent-soft-2) !important;
+  }
+
+  .nav-dropdown{
+    position:static !important;
+    width:100% !important;
+    flex:0 0 auto !important;
+  }
+
+  /* Completely collapse submenus by default. */
+  .nav-dropdown > .dropdown-menu{
+    position:static !important;
+    top:auto !important;
+    left:auto !important;
+    width:100% !important;
+    min-width:0 !important;
+    max-width:none !important;
+    display:none !important;
+    margin:0 !important;
+    padding:4px 0 10px 18px !important;
+    border:0 !important;
+    border-bottom:1px solid #eceaf3 !important;
+    border-radius:0 !important;
+    background:#fff !important;
+    box-shadow:none !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+  }
+
+  /* Desktop hover must never open a mobile submenu. */
+  .nav-dropdown:hover > .dropdown-menu{
+    display:none !important;
+  }
+
+  /* Only the explicitly opened accordion section is visible. */
+  .nav-dropdown.is-open > .dropdown-menu,
+  .nav-dropdown.is-open:hover > .dropdown-menu{
+    display:block !important;
+  }
+
+  .dropdown-menu a{
+    width:100% !important;
+    min-height:46px !important;
+    display:flex !important;
+    align-items:center !important;
+    margin:0 !important;
+    padding:8px 8px !important;
+    border:0 !important;
+    color:#5a5e5a !important;
+    font-size:.94rem !important;
+    font-weight:500 !important;
+    line-height:1.3 !important;
+    white-space:normal !important;
+  }
+
+  .dropdown-menu a + a{
+    border-top:1px solid #f2f1f6 !important;
+  }
+}
+
+@media (max-width:720px){
+  .main-nav{
+    padding-left:16px !important;
+    padding-right:16px !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE MENU — DEDICATED BODY-LEVEL DRAWER
+   This is intentionally separate from desktop .main-nav.
+   ========================================================= */
+
+.mobile-menu-drawer{
+  display:none;
+}
+
+@media(max-width:1080px){
+  /* Desktop nav remains desktop only. */
+  .main-nav{
+    display:none !important;
+  }
+
+  body.mobile-drawer-open{
+    overflow:hidden !important;
+  }
+
+  .mobile-menu-drawer{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:20000;
+    display:none;
+    background:#fff;
+    border-top:1px solid var(--line);
+    box-shadow:0 18px 45px rgba(35,38,35,.18);
+    overflow:hidden;
+  }
+
+  .mobile-menu-drawer.is-open{
+    display:block;
+  }
+
+  .mobile-menu-inner{
+    height:100%;
+    max-height:100%;
+    overflow-y:auto;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    padding:8px 20px 20px;
+    background:#fff;
+  }
+
+  .mobile-menu-link,
+  .mobile-accordion-toggle{
+    width:100%;
+    min-height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:0;
+    padding:0 8px;
+    border:0;
+    border-bottom:1px solid #eceaf3;
+    border-radius:0;
+    background:#fff;
+    color:var(--text);
+    font:inherit;
+    font-size:1rem;
+    font-weight:720;
+    line-height:1.2;
+    text-align:left;
+    text-decoration:none;
+    cursor:pointer;
+  }
+
+  .mobile-menu-link.is-active{
+    color:var(--accent);
+    background:var(--accent-soft-2);
+  }
+
+  .mobile-accordion{
+    width:100%;
+  }
+
+  .mobile-chevron{
+    color:var(--accent);
+    font-size:1.05rem;
+    transition:transform .16s ease;
+  }
+
+  .mobile-accordion.is-open .mobile-chevron{
+    transform:rotate(180deg);
+  }
+
+  .mobile-accordion-panel{
+    display:none;
+    padding:0 0 8px 18px;
+    border-bottom:1px solid #eceaf3;
+    background:#fff;
+  }
+
+  .mobile-accordion.is-open .mobile-accordion-panel{
+    display:block;
+  }
+
+  .mobile-accordion-panel a{
+    width:100%;
+    min-height:47px;
+    display:flex;
+    align-items:center;
+    padding:8px 8px;
+    border-bottom:1px solid #f2f1f6;
+    color:#5a5e5a;
+    font-size:.94rem;
+    font-weight:500;
+    line-height:1.3;
+    text-decoration:none;
+  }
+
+  .mobile-accordion-panel a:last-child{
+    border-bottom:0;
+  }
+}
+
+@media(max-width:720px){
+  .mobile-menu-inner{
+    padding-left:16px;
+    padding-right:16px;
+  }
+}
+
+@media(min-width:1081px){
+  .mobile-menu-drawer{
+    display:none !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -2395,7 +2672,7 @@
 </div>
 <div class="menu-row">
 <div class="container header-inner">
-<button aria-controls="main-nav" aria-expanded="false" class="menu-toggle" type="button">
+<button aria-controls="mobile-menu-drawer" aria-expanded="false" class="menu-toggle" type="button">
 <span></span><span></span><span></span>
 </button>
 <nav class="main-nav" id="main-nav">
@@ -2838,178 +3115,154 @@
 </div>
 </div>
 </footer>
-<script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    const dropdowns = document.querySelectorAll('.nav-dropdown');
-    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+<div aria-hidden="true" class="mobile-menu-drawer" id="mobile-menu-drawer">
+<div class="mobile-menu-inner">
+<a class="mobile-menu-link is-active" href="index.html">Главная</a>
+<div class="mobile-accordion">
+<button aria-expanded="false" class="mobile-accordion-toggle" type="button">
+<span>Речевые нарушения</span><span class="mobile-chevron">⌄</span>
+</button>
+<div class="mobile-accordion-panel">
+<a href="rebenok-ne-govorit.html">Ребёнок не говорит</a>
+<a href="motornaya-alaliya.html">Моторная алалия</a>
+<a href="sensornaya-alaliya.html">Сенсорная алалия</a>
+<a href="#">Сенсомоторная алалия</a>
+<a href="autizm-kotoryi-ne-autizm.html">Аутизм, который не аутизм</a>
+<a href="#">Другие речевые нарушения</a>
+</div>
+</div>
+<div class="mobile-accordion">
+<button aria-expanded="false" class="mobile-accordion-toggle" type="button">
+<span>Статьи</span><span class="mobile-chevron">⌄</span>
+</button>
+<div class="mobile-accordion-panel">
+<a href="#">Моторная алалия</a>
+<a href="#">Сенсорная алалия</a>
+<a href="#">Аутизм и ошибки диагностики</a>
+<a href="#">Развитие речи</a>
+<a href="#">Диагностика</a>
+<a href="#">Помощь родителям</a>
+<a href="#">Видеоматериалы</a>
+</div>
+</div>
+<a class="mobile-menu-link" href="#results">Результаты</a>
+<a class="mobile-menu-link" href="#specialists">Записаться</a>
+</div>
+</div><script id="mobile-drawer-controller">
+(function(){
+  const header = document.querySelector('.site-header');
+  const burger = document.querySelector('.menu-toggle');
+  const drawer = document.getElementById('mobile-menu-drawer');
+  if (!header || !burger || !drawer) return;
 
-    function closeDropdowns(except = null) {
-      dropdowns.forEach(dropdown => {
-        if (dropdown !== except) {
-          dropdown.classList.remove('is-open');
-          const button = dropdown.querySelector('.dropdown-toggle');
-          if (button) button.setAttribute('aria-expanded', 'false');
-        }
-      });
-    }
+  const accordions = [...drawer.querySelectorAll('.mobile-accordion')];
 
-    menuToggle?.addEventListener('click', () => {
-      const open = mainNav.classList.toggle('is-open');
-      menuToggle.setAttribute('aria-expanded', String(open));
-      document.body.classList.toggle('menu-open', open);
-      if (!open) closeDropdowns();
+  function positionDrawer(){
+    const bottom = Math.max(0, Math.round(header.getBoundingClientRect().bottom));
+    drawer.style.top = bottom + 'px';
+  }
+
+  function closeAccordions(){
+    accordions.forEach(acc => {
+      acc.classList.remove('is-open');
+      const btn = acc.querySelector('.mobile-accordion-toggle');
+      if (btn) btn.setAttribute('aria-expanded','false');
     });
+  }
 
-    dropdownToggles.forEach(button => {
-      button.addEventListener('click', event => {
-        event.preventDefault();
-        const parent = button.closest('.nav-dropdown');
-        const open = !parent.classList.contains('is-open');
-        closeDropdowns(parent);
-        parent.classList.toggle('is-open', open);
-        button.setAttribute('aria-expanded', String(open));
-      });
-    });
+  function openDrawer(){
+    positionDrawer();
+    closeAccordions();
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden','false');
+    burger.setAttribute('aria-expanded','true');
+    document.body.classList.add('mobile-drawer-open');
 
-    document.addEventListener('click', event => {
-      if (!event.target.closest('.nav-dropdown') && !event.target.closest('.menu-toggle')) {
-        closeDropdowns();
+    const inner = drawer.querySelector('.mobile-menu-inner');
+    if (inner) inner.scrollTop = 0;
+  }
+
+  function closeDrawer(){
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden','true');
+    burger.setAttribute('aria-expanded','false');
+    document.body.classList.remove('mobile-drawer-open');
+    closeAccordions();
+
+    const inner = drawer.querySelector('.mobile-menu-inner');
+    if (inner) inner.scrollTop = 0;
+  }
+
+  burger.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
+  });
+
+  accordions.forEach(acc => {
+    const btn = acc.querySelector('.mobile-accordion-toggle');
+    const panel = acc.querySelector('.mobile-accordion-panel');
+    if (!btn || !panel) return;
+
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      const shouldOpen = !acc.classList.contains('is-open');
+
+      closeAccordions();
+
+      if (shouldOpen){
+        acc.classList.add('is-open');
+        btn.setAttribute('aria-expanded','true');
+      }
+
+      /*
+        Keep the accordion heading and its FIRST child visible.
+        We scroll the DRAWER itself, not the page.
+      */
+      const inner = drawer.querySelector('.mobile-menu-inner');
+      if (inner){
+        const targetTop = acc.offsetTop - 6;
+        inner.scrollTo({top: targetTop, behavior:'auto'});
       }
     });
+  });
 
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape') {
-        closeDropdowns();
-        mainNav?.classList.remove('is-open');
-        menuToggle?.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('menu-open');
-      }
-    });
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeDrawer);
+  });
 
-    mainNav?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 1080) {
-          mainNav.classList.remove('is-open');
-          menuToggle?.setAttribute('aria-expanded', 'false');
-          document.body.classList.remove('menu-open');
-          closeDropdowns();
-        }
-      });
-    });
-
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-  </script>
-<script>
-(function(){
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
-
-  if (!menuToggle || !mainNav) return;
-
-  function closeMenu() {
-    mainNav.classList.remove('is-open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('menu-open');
-
-    document.querySelectorAll('.nav-dropdown.is-open').forEach(drop => {
-      drop.classList.remove('is-open');
-      const btn = drop.querySelector('.dropdown-toggle');
-      if (btn) btn.setAttribute('aria-expanded', 'false');
-    });
-  }
-
-  // Click anywhere outside the open menu and outside the burger button.
-  document.addEventListener('click', function(event) {
-    if (!mainNav.classList.contains('is-open')) return;
-
-    const clickedInsideMenu = mainNav.contains(event.target);
-    const clickedBurger = menuToggle.contains(event.target);
-
-    if (!clickedInsideMenu && !clickedBurger) {
-      closeMenu();
+  document.addEventListener('click', function(e){
+    if (!drawer.classList.contains('is-open')) return;
+    if (!drawer.contains(e.target) && !burger.contains(e.target)){
+      closeDrawer();
     }
   });
 
-  // Escape closes the menu as well.
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && mainNav.classList.contains('is-open')) {
-      closeMenu();
-      menuToggle.focus();
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')){
+      closeDrawer();
+      burger.focus();
     }
   });
 
-  // Selecting a normal navigation link closes the drawer.
-  mainNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-})();
-</script><script>
-(function(){
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
-  if (!menuToggle || !mainNav) return;
-
-  function setOpen(open){
-    mainNav.classList.toggle('is-open', open);
-    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    document.body.classList.toggle('menu-open', open);
-    if (!open){
-      document.querySelectorAll('.nav-dropdown.is-open').forEach(drop => {
-        drop.classList.remove('is-open');
-        const btn = drop.querySelector('.dropdown-toggle');
-        if (btn) btn.setAttribute('aria-expanded','false');
-      });
-    }
-  }
-
-  /* Guarantee burger toggles even if an older page script is absent. */
-  if (!menuToggle.dataset.finalMenuBound){
-    menuToggle.dataset.finalMenuBound = '1';
-    menuToggle.addEventListener('click', function(event){
-      event.stopPropagation();
-      setOpen(!mainNav.classList.contains('is-open'));
-    });
-  }
-
-  document.querySelectorAll('.dropdown-toggle').forEach(btn => {
-    if (btn.dataset.finalDropdownBound) return;
-    btn.dataset.finalDropdownBound = '1';
-    btn.addEventListener('click', function(event){
-      if (window.innerWidth > 1080) return;
-      event.preventDefault();
-      event.stopPropagation();
-      const drop = btn.closest('.nav-dropdown');
-      const next = !drop.classList.contains('is-open');
-      document.querySelectorAll('.nav-dropdown.is-open').forEach(other => {
-        if (other !== drop){
-          other.classList.remove('is-open');
-          const ob = other.querySelector('.dropdown-toggle');
-          if (ob) ob.setAttribute('aria-expanded','false');
-        }
-      });
-      drop.classList.toggle('is-open', next);
-      btn.setAttribute('aria-expanded', next ? 'true' : 'false');
-    });
-  });
-
-  document.addEventListener('click', function(event){
-    if (!mainNav.classList.contains('is-open')) return;
-    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)){
-      setOpen(false);
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 1080){
+      closeDrawer();
+    } else if (drawer.classList.contains('is-open')){
+      positionDrawer();
     }
   });
 
-  document.addEventListener('keydown', function(event){
-    if (event.key === 'Escape' && mainNav.classList.contains('is-open')){
-      setOpen(false);
-      menuToggle.focus();
+  window.addEventListener('orientationchange', function(){
+    if (drawer.classList.contains('is-open')){
+      setTimeout(positionDrawer, 80);
     }
   });
 
-  mainNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => setOpen(false));
-  });
+  const year = document.getElementById('current-year');
+  if (year) year.textContent = new Date().getFullYear();
 })();
 </script></body>
 </html>
