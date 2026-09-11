@@ -3296,6 +3296,138 @@ h3,
     order:initial !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE MENU — FINAL BODY-LEVEL DRAWER
+   ========================================================= */
+
+.mobile-menu-drawer{
+  display:none;
+}
+
+@media(max-width:1080px){
+  .main-nav{
+    display:none !important;
+  }
+
+  body.mobile-drawer-open{
+    overflow:hidden !important;
+  }
+
+  .mobile-menu-drawer{
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:20000;
+    display:none;
+    background:#fff;
+    border-top:1px solid var(--line);
+    box-shadow:0 18px 45px rgba(35,38,35,.18);
+    overflow:hidden;
+  }
+
+  .mobile-menu-drawer.is-open{
+    display:block;
+  }
+
+  .mobile-menu-inner{
+    height:100%;
+    max-height:100%;
+    overflow-y:auto;
+    overflow-x:hidden;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+    padding:8px 20px 20px;
+    background:#fff;
+  }
+
+  .mobile-menu-link,
+  .mobile-accordion-toggle{
+    width:100%;
+    min-height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin:0;
+    padding:0 8px;
+    border:0;
+    border-bottom:1px solid #eceaf3;
+    border-radius:0;
+    background:#fff;
+    color:var(--text);
+    font:inherit;
+    font-size:1rem;
+    font-weight:720;
+    line-height:1.2;
+    text-align:left;
+    text-decoration:none;
+    cursor:pointer;
+  }
+
+  .mobile-menu-link.is-active,
+  .mobile-accordion-toggle.is-active{
+    color:var(--accent);
+    background:var(--accent-soft-2);
+  }
+
+  .mobile-accordion{
+    width:100%;
+  }
+
+  .mobile-chevron{
+    color:var(--accent);
+    font-size:1.05rem;
+    transition:transform .16s ease;
+  }
+
+  .mobile-accordion.is-open .mobile-chevron{
+    transform:rotate(180deg);
+  }
+
+  .mobile-accordion-panel{
+    display:none;
+    padding:0 0 8px 18px;
+    border-bottom:1px solid #eceaf3;
+    background:#fff;
+  }
+
+  .mobile-accordion.is-open .mobile-accordion-panel{
+    display:block;
+  }
+
+  .mobile-accordion-panel a{
+    width:100%;
+    min-height:47px;
+    display:flex;
+    align-items:center;
+    padding:8px 8px;
+    border-bottom:1px solid #f2f1f6;
+    color:#5a5e5a;
+    font-size:.94rem;
+    font-weight:500;
+    line-height:1.3;
+    text-decoration:none;
+  }
+
+  .mobile-accordion-panel a:last-child{
+    border-bottom:0;
+  }
+}
+
+@media(max-width:720px){
+  .mobile-menu-inner{
+    padding-left:16px;
+    padding-right:16px;
+  }
+}
+
+@media(min-width:1081px){
+  .mobile-menu-drawer{
+    display:none !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -3342,7 +3474,7 @@ h3,
 </div>
 <div class="menu-row">
 <div class="container header-inner">
-<button aria-controls="main-nav" aria-expanded="false" class="menu-toggle" type="button">
+<button aria-controls="mobile-menu-drawer" aria-expanded="false" class="menu-toggle" type="button">
 <span></span><span></span><span></span>
 </button>
 <nav class="main-nav" id="main-nav">
@@ -3977,467 +4109,7 @@ function buildEngine(SYMPTOMS, LINKS, RESULTS) {
 
 
   </script>
-<script>
 
-const { compute, SYM_BY_ID, RES_BY_MARKER } = buildEngine(SYMPTOMS, LINKS, RESULTS);
-
-const GROUPS = [
-  'Собственная речь',
-  'Понимание речи',
-  'Слух, голос и произношение',
-  'Поведение'
-];
-
-const state = {
-  screen: 'intro',
-  years: '',
-  months: '',
-  selected: new Set()
-};
-
-const app = document.getElementById('test-app');
-
-function groupSymptoms(group){
-  return SYMPTOMS.filter(s => s.screen === group).sort((a,b) => a.order - b.order);
-}
-
-function isNoneItem(s){
-  return /^Ничего из/.test(s.text);
-}
-
-function ageMonths(){
-  const y = parseInt(state.years, 10) || 0;
-  const m = parseInt(state.months, 10) || 0;
-  return y * 12 + m;
-}
-
-function toggleSymptom(id, group){
-  const list = groupSymptoms(group);
-  const item = list.find(s => s.id === id);
-
-  if (isNoneItem(item)){
-    if (state.selected.has(id)) {
-      state.selected.delete(id);
-    } else {
-      list.forEach(s => state.selected.delete(s.id));
-      state.selected.add(id);
-    }
-  } else {
-    const noneItem = list.find(isNoneItem);
-    if (noneItem) state.selected.delete(noneItem.id);
-    if (state.selected.has(id)) state.selected.delete(id);
-    else state.selected.add(id);
-  }
-
-  render();
-}
-
-function scrollToTest(){
-  const shell = document.getElementById('speech-test');
-  if (!shell) return;
-  const y = shell.getBoundingClientRect().top + window.scrollY - 92;
-  window.scrollTo({ top: y, behavior: 'smooth' });
-}
-
-function renderSteps(activeGroupIndex){
-  let html = '<div class="test-progress" aria-label="Прогресс теста">';
-  GROUPS.forEach((group, i) => {
-    let cls = 'test-progress-seg';
-    if (i < activeGroupIndex) cls += ' done';
-    if (i === activeGroupIndex) cls += ' active';
-    html += `<span class="${cls}"></span>`;
-  });
-  html += '</div>';
-  return html;
-}
-
-function renderIntro(){
-  app.innerHTML = `
-    <div class="test-card test-start-card">
-      <p class="test-overline">Предварительный ориентир</p>
-      <h3>Понять речь ребёнка</h3>
-      <p class="test-lead">
-        Отметьте то, что вы действительно наблюдаете у ребёнка. Тест состоит из четырёх тематических частей:
-        собственная речь, понимание речи, слух и произношение, особенности поведения.
-        В конце вы получите не диагноз, а предварительный маршрут — на что стоит обратить внимание дальше.
-      </p>
-
-      <div class="test-disclaimer">
-        Результат носит предварительный характер и не заменяет диагностику или очную оценку специалиста.
-        Если ситуация вызывает серьёзное беспокойство, лучше обсудить её со специалистом независимо от результата теста.
-      </div>
-
-      <div class="age-title">Возраст ребёнка</div>
-      <div class="age-row">
-        <label>
-          <span>Лет</span>
-          <input type="number" min="0" id="age-years" inputmode="numeric" placeholder="3" value="${state.years}">
-        </label>
-        <label>
-          <span>Месяцев</span>
-          <input type="number" min="0" max="11" id="age-months" inputmode="numeric" placeholder="6" value="${state.months}">
-        </label>
-      </div>
-      <p class="test-small-note">Возраст помогает корректнее интерпретировать часть ответов.</p>
-
-      <div class="test-nav-row test-nav-end">
-        <button class="test-btn test-btn-primary" id="start-btn" type="button">Начать тест</button>
-      </div>
-    </div>
-  `;
-
-  document.getElementById('age-years').addEventListener('input', e => state.years = e.target.value);
-  document.getElementById('age-months').addEventListener('input', e => state.months = e.target.value);
-  document.getElementById('start-btn').addEventListener('click', () => {
-    state.screen = GROUPS[0];
-    render();
-  });
-}
-
-function renderSymptomScreen(group){
-  const idx = GROUPS.indexOf(group);
-  const items = groupSymptoms(group);
-  const normal = items.filter(s => !isNoneItem(s));
-  const noneItem = items.find(isNoneItem);
-
-  const rowsHtml = normal.map(s => {
-    const checked = state.selected.has(s.id);
-    return `
-      <li class="symptom-row${checked ? ' checked' : ''}" data-id="${s.id}" data-group="${group}">
-        <span class="fake-check" aria-hidden="true">${checked ? '✓' : ''}</span>
-        <span class="symptom-text">${s.text}</span>
-      </li>
-    `;
-  }).join('');
-
-  let noneHtml = '';
-
-  if (noneItem){
-    const checked = state.selected.has(noneItem.id);
-    noneHtml = `
-      <li class="symptom-row none-row${checked ? ' checked' : ''}" data-id="${noneItem.id}" data-group="${group}">
-        <span class="fake-check" aria-hidden="true">${checked ? '✓' : ''}</span>
-        <span class="symptom-text">${noneItem.text}</span>
-      </li>
-    `;
-  } else {
-    const softId = '__none_' + idx;
-    const checked = state.selected.has(softId);
-    noneHtml = `
-      <li class="symptom-row none-row${checked ? ' checked' : ''}" data-id="${softId}" data-group="${group}" data-soft-none="1">
-        <span class="fake-check" aria-hidden="true">${checked ? '✓' : ''}</span>
-        <span class="symptom-text">Ничего из перечисленного не подходит</span>
-      </li>
-    `;
-  }
-
-  app.innerHTML = `
-    <div class="test-stage-head">
-      <div>
-        <p class="test-overline">Часть ${idx + 1} из 4</p>
-        <h3>${group}</h3>
-      </div>
-      <span>${idx + 1}/4</span>
-    </div>
-
-    ${renderSteps(idx)}
-
-    <div class="test-card">
-      <p class="test-lead compact">
-        Отметьте всё, что действительно подходит вашему ребёнку. Можно выбрать несколько вариантов.
-      </p>
-
-      <ul class="symptom-list">
-        ${rowsHtml}
-        ${noneHtml}
-      </ul>
-
-      <div class="test-nav-row">
-        <button class="test-btn test-btn-ghost" id="back-btn" type="button">Назад</button>
-        <button class="test-btn test-btn-primary" id="next-btn" type="button">
-          ${idx === GROUPS.length - 1 ? 'Показать результат' : 'Далее'}
-        </button>
-      </div>
-    </div>
-  `;
-
-  app.querySelectorAll('.symptom-row').forEach(row => {
-    row.addEventListener('click', () => {
-      const id = row.getAttribute('data-id');
-      const isSoft = row.getAttribute('data-soft-none') === '1';
-
-      if (isSoft){
-        if (state.selected.has(id)) {
-          state.selected.delete(id);
-        } else {
-          normal.forEach(s => state.selected.delete(s.id));
-          state.selected.add(id);
-        }
-        render();
-      } else {
-        toggleSymptom(id, group);
-      }
-    });
-  });
-
-  document.getElementById('back-btn').addEventListener('click', () => {
-    state.screen = idx === 0 ? 'intro' : GROUPS[idx - 1];
-    render();
-  });
-
-  document.getElementById('next-btn').addEventListener('click', () => {
-    state.screen = idx === GROUPS.length - 1 ? 'results' : GROUPS[idx + 1];
-    render();
-  });
-}
-
-function contribTexts(res, cardMarker){
-  let ids;
-
-  if (cardMarker === 'МА? до 24') {
-    ids = res.contrib['Моторная алалия'] || [];
-  } else if (cardMarker === 'СМА') {
-    ids = [...new Set([
-      ...(res.contrib['Моторная алалия'] || []),
-      ...(res.contrib['Сенсорная алалия'] || [])
-    ])];
-  } else if (cardMarker === 'ЗРР' && !(res.contrib['ЗРР'] || []).length) {
-    ids = res.contrib['Моторная алалия'] || [];
-  } else {
-    ids = res.contrib[cardMarker] || [];
-  }
-
-  return [...new Set(ids.map(id => SYM_BY_ID[id].text))].slice(0, 4);
-}
-
-function chips(list){
-  if (!list.length) return '';
-  return `
-    <div class="symptom-chips">
-      ${list.map(t => `<span>${t}</span>`).join('')}
-    </div>
-  `;
-}
-
-function specialistLine(marker){
-  const r = RES_BY_MARKER[marker];
-  const spec = (r.specialist || '').trim();
-
-  if (spec) {
-    return `<div class="result-next"><b>Следующий шаг:</b> ${spec}</div>`;
-  }
-
-  return `
-    <div class="result-next">
-      <b>Следующий шаг:</b> результат стоит обсудить со специалистом, чтобы понять подходящее направление помощи.
-    </div>
-  `;
-}
-
-function renderLeadingCard(res, entry){
-  const marker = entry.card;
-  const r = RES_BY_MARKER[marker];
-  const isQuestionable = marker === 'МА? до 24';
-
-  return `
-    <article class="result-card${isQuestionable ? ' questionable' : ''}">
-      ${isQuestionable ? '<span class="result-badge">Предположение, не окончательный вывод</span>' : ''}
-      <h4>${r.title}</h4>
-      <p>${r.short_text}</p>
-      <div class="result-reason-title">Почему показан этот результат</div>
-      ${chips(contribTexts(res, marker))}
-      ${specialistLine(marker)}
-    </article>
-  `;
-}
-
-function renderSimpleCard(res, marker){
-  const r = RES_BY_MARKER[marker];
-
-  return `
-    <article class="result-card">
-      <h4>${r.title}</h4>
-      <p>${r.short_text}</p>
-      <div class="result-reason-title">Какие ответы повлияли на результат</div>
-      ${chips(contribTexts(res, marker))}
-      ${specialistLine(marker)}
-    </article>
-  `;
-}
-
-function renderResults(){
-  const age = ageMonths();
-  const res = compute(age, state.selected);
-  const ageLabel = `${state.years || 0} г. ${state.months || 0} мес.`;
-
-  let html = `
-    ${renderSteps(GROUPS.length)}
-    <div class="test-card result-shell">
-      <p class="test-overline">Предварительный результат</p>
-      <h3>Что показывают ответы</h3>
-
-      <div class="test-disclaimer">
-        Это не медицинский диагноз и не замена очной оценки специалистом.
-        Возраст ребёнка: ${ageLabel}. Признаки разных нарушений могут сочетаться.
-      </div>
-  `;
-
-  if (res.urgent.length){
-    html += res.urgent.map(marker => {
-      const r = RES_BY_MARKER[marker];
-      return `
-        <div class="urgent-banner">
-          <strong>${marker === 'Афония' ? 'Не откладывайте проверку голоса' : 'Не откладывайте очную оценку'}</strong>
-          <p>${r.short_text}</p>
-          ${chips(contribTexts(res, marker))}
-          ${specialistLine(marker)}
-        </div>
-      `;
-    }).join('');
-  }
-
-  html += `<div class="result-section-title">На что стоит обратить внимание в первую очередь</div>`;
-
-  if (res.leading.length){
-    html += `<div class="result-stack">${res.leading.map(entry => renderLeadingCard(res, entry)).join('')}</div>`;
-  } else {
-    html += `
-      <div class="result-empty">
-        Отмеченных данных недостаточно для ведущего направления: выбранные признаки слишком общие сами по себе.
-        Это не означает, что трудностей нет — их лучше обсудить со специалистом.
-      </div>
-    `;
-  }
-
-  if (res.logoAdditional.length){
-    html += `
-      <div class="result-section-title">Дополнительные логопедические направления</div>
-      <div class="result-stack">
-        ${res.logoAdditional.map(marker => renderSimpleCard(res, marker)).join('')}
-      </div>
-    `;
-  }
-
-  if (res.otherAdditional.length){
-    html += `
-      <div class="result-section-title">Что стоит проверить дополнительно</div>
-      <div class="result-stack">
-        ${res.otherAdditional.map(marker => renderSimpleCard(res, marker)).join('')}
-      </div>
-    `;
-  }
-
-  html += `
-      <div class="result-cta">
-        <div>
-          <strong>Обсудите результат со специалистом</strong>
-          <span>Первичная консультация бесплатна.</span>
-        </div>
-        <a class="test-btn test-btn-primary result-consult-link" href="#specialists">Записаться</a>
-      </div>
-
-      <div class="test-nav-row">
-        <button class="test-btn test-btn-ghost" id="restart-btn" type="button">Пройти заново</button>
-      </div>
-    </div>
-  `;
-
-  app.innerHTML = html;
-
-  document.getElementById('restart-btn').addEventListener('click', () => {
-    state.screen = 'intro';
-    state.selected = new Set();
-    state.years = '';
-    state.months = '';
-    render();
-  });
-}
-
-let lastRenderedScreen = null;
-
-function render(){
-  const screenChanged = state.screen !== lastRenderedScreen;
-  lastRenderedScreen = state.screen;
-
-  if (state.screen === 'intro') renderIntro();
-  else if (GROUPS.includes(state.screen)) renderSymptomScreen(state.screen);
-  else if (state.screen === 'results') renderResults();
-
-  if (screenChanged && state.screen !== 'intro') {
-    requestAnimationFrame(scrollToTest);
-  }
-}
-
-render();
-
-const menuToggle = document.querySelector('.menu-toggle');
-const mainNav = document.querySelector('.main-nav');
-const dropdowns = document.querySelectorAll('.nav-dropdown');
-const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-function closeDropdowns(except = null){
-  dropdowns.forEach(dropdown => {
-    if (dropdown !== except){
-      dropdown.classList.remove('is-open');
-      const button = dropdown.querySelector('.dropdown-toggle');
-      if (button) button.setAttribute('aria-expanded', 'false');
-    }
-  });
-}
-
-menuToggle?.addEventListener('click', () => {
-  const open = mainNav.classList.toggle('is-open');
-  menuToggle.setAttribute('aria-expanded', String(open));
-  document.body.classList.toggle('menu-open', open);
-  if (!open) closeDropdowns();
-});
-
-dropdownToggles.forEach(button => {
-  button.addEventListener('click', event => {
-    event.preventDefault();
-    const parent = button.closest('.nav-dropdown');
-    const open = !parent.classList.contains('is-open');
-    closeDropdowns(parent);
-    parent.classList.toggle('is-open', open);
-    button.setAttribute('aria-expanded', String(open));
-  });
-});
-
-document.addEventListener('click', event => {
-  if (!event.target.closest('.nav-dropdown') && !event.target.closest('.menu-toggle')) {
-    closeDropdowns();
-  }
-});
-
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape'){
-    closeDropdowns();
-    mainNav?.classList.remove('is-open');
-    menuToggle?.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('menu-open');
-  }
-});
-
-mainNav?.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 1040){
-      mainNav.classList.remove('is-open');
-      menuToggle?.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('menu-open');
-      closeDropdowns();
-    }
-  });
-});
-
-document.getElementById('current-year').textContent = new Date().getFullYear();
-
-document.querySelectorAll('a[href="#speech-test"]').forEach(link => {
-  link.addEventListener('click', () => {
-    setTimeout(scrollToTest, 30);
-  });
-});
-
-  </script>
 <script>
 (function() {
   const videos = [{"id": "7FvZi2aTFrg", "title": "Изучение второго языка при сенсорной и моторной алалии. Билингвизм и двуязычие у детей."}, {"id": "DvUeB6ALW8g", "title": "Логопедическая группа и алалия. Польза или вред?"}, {"id": "9X7bKBQUA00", "title": "Дневник мамы ребёнка с алалией. Успехи и трудности на занятиях."}, {"id": "Qu3hkOyIfKE", "title": "Заикание и запинки в речи у детей с моторной и сенсорной алалией."}, {"id": "ziNFGXaL2Xc", "title": "Как исправить звукопроизношение у ребёнка с моторной алалией?"}];
@@ -4478,103 +4150,151 @@ document.querySelectorAll('a[href="#speech-test"]').forEach(link => {
   });
 })();
 </script>
-<script>
-(function(){
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
-  if (!menuToggle || !mainNav) return;
 
-  function closeMenu(){
-    mainNav.classList.remove('is-open');
-    menuToggle.setAttribute('aria-expanded','false');
-    document.body.classList.remove('menu-open');
-    document.querySelectorAll('.nav-dropdown.is-open').forEach(drop => {
-      drop.classList.remove('is-open');
-      const btn = drop.querySelector('.dropdown-toggle');
+
+<div aria-hidden="true" class="mobile-menu-drawer" id="mobile-menu-drawer">
+<div class="mobile-menu-inner">
+<a class="mobile-menu-link" href="index.html">Главная</a>
+<div class="mobile-accordion">
+<button aria-expanded="false" class="mobile-accordion-toggle is-active" type="button">
+<span>Речевые нарушения</span><span class="mobile-chevron">⌄</span>
+</button>
+<div class="mobile-accordion-panel">
+<a href="rebenok-ne-govorit.html">Ребёнок не говорит</a>
+<a href="motornaya-alaliya.html">Моторная алалия</a>
+<a href="sensornaya-alaliya.html">Сенсорная алалия</a>
+<a href="#">Сенсомоторная алалия</a>
+<a href="autizm-kotoryi-ne-autizm.html">Аутизм, который не аутизм</a>
+<a href="#">Другие речевые нарушения</a>
+</div>
+</div>
+<div class="mobile-accordion">
+<button aria-expanded="false" class="mobile-accordion-toggle" type="button">
+<span>Статьи</span><span class="mobile-chevron">⌄</span>
+</button>
+<div class="mobile-accordion-panel">
+<a href="#">Моторная алалия</a>
+<a href="#">Сенсорная алалия</a>
+<a href="#">Аутизм и ошибки диагностики</a>
+<a href="#">Развитие речи</a>
+<a href="#">Диагностика</a>
+<a href="#">Помощь родителям</a>
+<a href="#">Видеоматериалы</a>
+</div>
+</div>
+<a class="mobile-menu-link" href="index.html#results">Результаты</a>
+<a class="mobile-menu-link" href="#specialists">Записаться</a>
+</div>
+</div><script id="mobile-drawer-controller">
+(function(){
+  const header = document.querySelector('.site-header');
+  const burger = document.querySelector('.menu-toggle');
+  const drawer = document.getElementById('mobile-menu-drawer');
+  if (!header || !burger || !drawer) return;
+
+  const accordions = [...drawer.querySelectorAll('.mobile-accordion')];
+
+  function positionDrawer(){
+    const bottom = Math.max(0, Math.round(header.getBoundingClientRect().bottom));
+    drawer.style.top = bottom + 'px';
+  }
+
+  function closeAccordions(){
+    accordions.forEach(acc => {
+      acc.classList.remove('is-open');
+      const btn = acc.querySelector('.mobile-accordion-toggle');
       if (btn) btn.setAttribute('aria-expanded','false');
     });
   }
 
-  document.addEventListener('click', function(event){
-    if (!mainNav.classList.contains('is-open')) return;
-    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
-  });
+  function openDrawer(){
+    positionDrawer();
+    closeAccordions();
+    drawer.classList.add('is-open');
+    drawer.setAttribute('aria-hidden','false');
+    burger.setAttribute('aria-expanded','true');
+    document.body.classList.add('mobile-drawer-open');
 
-  document.addEventListener('keydown', function(event){
-    if (event.key === 'Escape' && mainNav.classList.contains('is-open')){
-      closeMenu();
-      menuToggle.focus();
-    }
-  });
-
-  mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-})();
-</script><script>
-(function(){
-  const menuToggle = document.querySelector('.menu-toggle');
-  const mainNav = document.querySelector('.main-nav');
-  if (!menuToggle || !mainNav) return;
-
-  function setOpen(open){
-    mainNav.classList.toggle('is-open', open);
-    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    document.body.classList.toggle('menu-open', open);
-    if (!open){
-      document.querySelectorAll('.nav-dropdown.is-open').forEach(drop => {
-        drop.classList.remove('is-open');
-        const btn = drop.querySelector('.dropdown-toggle');
-        if (btn) btn.setAttribute('aria-expanded','false');
-      });
-    }
+    const inner = drawer.querySelector('.mobile-menu-inner');
+    if (inner) inner.scrollTop = 0;
   }
 
-  /* Guarantee burger toggles even if an older page script is absent. */
-  if (!menuToggle.dataset.finalMenuBound){
-    menuToggle.dataset.finalMenuBound = '1';
-    menuToggle.addEventListener('click', function(event){
-      event.stopPropagation();
-      setOpen(!mainNav.classList.contains('is-open'));
-    });
+  function closeDrawer(){
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden','true');
+    burger.setAttribute('aria-expanded','false');
+    document.body.classList.remove('mobile-drawer-open');
+    closeAccordions();
+
+    const inner = drawer.querySelector('.mobile-menu-inner');
+    if (inner) inner.scrollTop = 0;
   }
 
-  document.querySelectorAll('.dropdown-toggle').forEach(btn => {
-    if (btn.dataset.finalDropdownBound) return;
-    btn.dataset.finalDropdownBound = '1';
-    btn.addEventListener('click', function(event){
-      if (window.innerWidth > 1080) return;
-      event.preventDefault();
-      event.stopPropagation();
-      const drop = btn.closest('.nav-dropdown');
-      const next = !drop.classList.contains('is-open');
-      document.querySelectorAll('.nav-dropdown.is-open').forEach(other => {
-        if (other !== drop){
-          other.classList.remove('is-open');
-          const ob = other.querySelector('.dropdown-toggle');
-          if (ob) ob.setAttribute('aria-expanded','false');
-        }
-      });
-      drop.classList.toggle('is-open', next);
-      btn.setAttribute('aria-expanded', next ? 'true' : 'false');
+  burger.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
+  });
+
+  accordions.forEach(acc => {
+    const btn = acc.querySelector('.mobile-accordion-toggle');
+    if (!btn) return;
+
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      const shouldOpen = !acc.classList.contains('is-open');
+
+      closeAccordions();
+
+      if (shouldOpen){
+        acc.classList.add('is-open');
+        btn.setAttribute('aria-expanded','true');
+      }
+
+      const inner = drawer.querySelector('.mobile-menu-inner');
+      if (inner){
+        const targetTop = acc.offsetTop - 6;
+        inner.scrollTo({top: targetTop, behavior:'auto'});
+      }
     });
   });
 
-  document.addEventListener('click', function(event){
-    if (!mainNav.classList.contains('is-open')) return;
-    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)){
-      setOpen(false);
+  drawer.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', closeDrawer);
+  });
+
+  document.addEventListener('click', function(e){
+    if (!drawer.classList.contains('is-open')) return;
+    if (!drawer.contains(e.target) && !burger.contains(e.target)){
+      closeDrawer();
     }
   });
 
-  document.addEventListener('keydown', function(event){
-    if (event.key === 'Escape' && mainNav.classList.contains('is-open')){
-      setOpen(false);
-      menuToggle.focus();
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && drawer.classList.contains('is-open')){
+      closeDrawer();
+      burger.focus();
     }
   });
 
-  mainNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => setOpen(false));
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 1080){
+      closeDrawer();
+    } else if (drawer.classList.contains('is-open')){
+      positionDrawer();
+    }
   });
+
+  window.addEventListener('orientationchange', function(){
+    if (drawer.classList.contains('is-open')){
+      setTimeout(positionDrawer, 80);
+    }
+  });
+
+  const year = document.getElementById('current-year');
+  if (year) year.textContent = new Date().getFullYear();
 })();
 </script></body>
 </html>
