@@ -2773,5 +2773,49 @@
 
     document.getElementById('current-year').textContent = new Date().getFullYear();
   </script>
-</body>
+<script>
+(function(){
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (!menuToggle || !mainNav) return;
+
+  function closeMenu() {
+    mainNav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+
+    document.querySelectorAll('.nav-dropdown.is-open').forEach(drop => {
+      drop.classList.remove('is-open');
+      const btn = drop.querySelector('.dropdown-toggle');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  // Click anywhere outside the open menu and outside the burger button.
+  document.addEventListener('click', function(event) {
+    if (!mainNav.classList.contains('is-open')) return;
+
+    const clickedInsideMenu = mainNav.contains(event.target);
+    const clickedBurger = menuToggle.contains(event.target);
+
+    if (!clickedInsideMenu && !clickedBurger) {
+      closeMenu();
+    }
+  });
+
+  // Escape closes the menu as well.
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape' && mainNav.classList.contains('is-open')) {
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+
+  // Selecting a normal navigation link closes the drawer.
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+})();
+</script></body>
 </html>
