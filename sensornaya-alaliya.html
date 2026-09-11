@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Сенсорная алалия у детей: понятное объяснение, отличия от других нарушений, подход к работе и реальные результаты.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Сенсорная алалия у детей: понятное объяснение, отличия от других нарушений, подход к работе и реальные результаты." name="description"/>
 <title>Сенсорная алалия у детей</title>
 <style>
 :root{
@@ -1503,10 +1504,630 @@ h3,
   }
 }
 
+
+
+/* =========================================================
+   FINAL SHARED MOBILE SYSTEM — INTERNAL PAGES
+   ========================================================= */
+
+@media (max-width:1080px){
+  .topbar-right,
+  .topbar-socials,
+  .topbar-link{
+    display:none !important;
+  }
+
+  .topbar-inner{
+    min-height:58px !important;
+    justify-content:flex-start !important;
+    gap:0 !important;
+  }
+
+  .topbar-left{
+    width:100% !important;
+    min-width:0;
+    gap:12px !important;
+  }
+
+  .topbar-copy{
+    flex:1 1 auto;
+    min-width:0;
+    font-size:.88rem !important;
+    line-height:1.18 !important;
+  }
+
+  .topbar-copy strong{
+    display:block;
+    max-width:100%;
+    white-space:normal !important;
+  }
+
+  .topbar-avatars{
+    flex:0 0 auto;
+  }
+
+  .topbar-avatars img{
+    width:32px !important;
+    height:32px !important;
+    margin-left:-6px !important;
+  }
+
+  .topbar-avatars img:first-child{
+    margin-left:0 !important;
+  }
+
+  .menu-row{
+    position:relative;
+    background:#fff;
+  }
+
+  .header-inner{
+    min-height:54px !important;
+    gap:10px !important;
+  }
+
+  .header-inner::before{
+    content:"Меню";
+    display:block;
+    color:var(--accent);
+    font-size:.86rem;
+    font-weight:760;
+  }
+
+  .menu-toggle{
+    display:block !important;
+    width:42px !important;
+    height:42px !important;
+    margin-left:auto !important;
+    padding:9px !important;
+    border-radius:10px !important;
+    background:var(--accent-soft) !important;
+  }
+
+  .menu-toggle > span{
+    background:var(--text) !important;
+  }
+
+  .main-nav{
+    position:absolute !important;
+    top:100% !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:auto !important;
+    inset:auto 0 auto 0 !important;
+    width:100% !important;
+    max-height:calc(100vh - 112px);
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:flex-start;
+    gap:0 !important;
+    padding:8px 16px 18px !important;
+    overflow-y:auto;
+    background:#fff !important;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 18px 36px rgba(34,38,34,.12) !important;
+    z-index:1005 !important;
+  }
+
+  .main-nav.is-open{
+    display:flex !important;
+  }
+
+  .main-nav::before{
+    display:none !important;
+    content:none !important;
+  }
+
+  .main-nav > .nav-link,
+  .main-nav > .nav-dropdown > .nav-link{
+    width:100%;
+    min-height:49px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 4px !important;
+    border:0 !important;
+    border-bottom:1px solid #eceaf3 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    color:var(--text) !important;
+    font-size:.98rem;
+    font-weight:690;
+  }
+
+  .main-nav > .nav-link.is-active,
+  .main-nav > .nav-dropdown > .nav-link.is-active{
+    color:var(--accent) !important;
+    font-weight:800;
+  }
+
+  .nav-dropdown{
+    width:100%;
+  }
+
+  .dropdown-menu{
+    position:static !important;
+    display:none;
+    width:100%;
+    min-width:0 !important;
+    margin:0 !important;
+    padding:5px 0 9px 12px !important;
+    border:0 !important;
+    border-bottom:1px solid #eceaf3 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+    background:#fff !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+  }
+
+  .nav-dropdown:hover > .dropdown-menu{
+    display:none;
+  }
+
+  .nav-dropdown.is-open > .dropdown-menu{
+    display:block !important;
+  }
+
+  .dropdown-menu a{
+    min-height:41px;
+    display:flex;
+    align-items:center;
+    padding:7px 6px !important;
+    color:#565a56;
+    font-size:.91rem;
+    line-height:1.3;
+  }
+
+  .header-action{
+    display:none !important;
+  }
+}
+
+@media (max-width:720px){
+  html{
+    scroll-padding-top:108px;
+  }
+
+  body{
+    font-size:16px;
+    line-height:1.42;
+    overflow-x:hidden;
+  }
+
+  .container{
+    width:min(calc(100% - 32px), var(--container)) !important;
+  }
+
+  .content-wide,
+  .text-container,
+  .section-intro,
+  .test-shell{
+    width:100% !important;
+    max-width:none !important;
+  }
+
+  .section,
+  .editorial-section{
+    padding:52px 0 !important;
+  }
+
+  p{
+    line-height:1.52;
+  }
+
+  h1,h2,h3{
+    text-wrap:balance;
+    overflow-wrap:break-word;
+  }
+
+  h1{
+    font-size:clamp(2rem,10vw,2.7rem) !important;
+    line-height:1 !important;
+    margin-bottom:18px !important;
+  }
+
+  h2{
+    font-size:clamp(1.68rem,8vw,2.2rem) !important;
+    line-height:1.04 !important;
+  }
+
+  h3{
+    font-size:clamp(1.13rem,5.6vw,1.42rem);
+    line-height:1.12;
+  }
+
+  .eyebrow{
+    margin-bottom:8px !important;
+    font-size:.7rem !important;
+    line-height:1.25;
+    letter-spacing:.08em !important;
+  }
+
+  .btn{
+    min-height:50px;
+    padding:0 18px !important;
+    font-size:.94rem !important;
+  }
+
+  /* Header */
+  .topbar-inner{
+    min-height:56px !important;
+  }
+
+  .topbar-left{
+    gap:10px !important;
+  }
+
+  .topbar-copy{
+    font-size:.81rem !important;
+    line-height:1.15 !important;
+  }
+
+  .topbar-avatars img{
+    width:30px !important;
+    height:30px !important;
+  }
+
+  .header-inner{
+    min-height:52px !important;
+  }
+
+  .main-nav{
+    max-height:calc(100vh - 108px);
+    padding:7px 16px 16px !important;
+  }
+
+  /* Hero layouts */
+  .page-hero,
+  .specialist-page-hero{
+    padding:40px 0 50px !important;
+  }
+
+  .page-hero-grid,
+  .hero-grid,
+  .specialist-hero-grid,
+  .sensory-layout,
+  .autism-grid{
+    grid-template-columns:1fr !important;
+    gap:26px !important;
+  }
+
+  .page-hero-copy,
+  .hero-copy,
+  .autism-hero-copy{
+    max-width:none !important;
+  }
+
+  .page-hero-copy p,
+  .hero-copy p,
+  .autism-hero-copy p{
+    font-size:.96rem !important;
+    line-height:1.53 !important;
+  }
+
+  .hero-actions,
+  .specialist-hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:9px !important;
+    margin-top:22px !important;
+  }
+
+  .hero-actions .btn,
+  .specialist-hero-actions .btn{
+    width:100% !important;
+  }
+
+  .orientation-panel,
+  .hero-side{
+    padding:20px !important;
+    border-radius:16px !important;
+  }
+
+  .orientation-row,
+  .hero-side-row{
+    grid-template-columns:105px 1fr !important;
+    gap:12px !important;
+    padding:13px 0 !important;
+  }
+
+  /* Grids become readable vertical flows */
+  .factor-grid,
+  .info-grid,
+  .diff-top-grid,
+  .diff-grid,
+  .confusion-grid,
+  .workflow-grid,
+  .process-grid,
+  .onr-grid,
+  .norm-layout,
+  .materials-split,
+  .video-material-grid,
+  .specialist-grid,
+  .results-grid{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+
+  .factor-card,
+  .info-block,
+  .diff-card,
+  .confusion-card,
+  .workflow-item,
+  .process-item,
+  .onr-card{
+    min-height:0 !important;
+    padding:18px 0 !important;
+    border-left:0 !important;
+    border-right:0 !important;
+    border-radius:0 !important;
+  }
+
+  .factor-card + .factor-card,
+  .info-block + .info-block,
+  .diff-card + .diff-card,
+  .confusion-card + .confusion-card{
+    border-top:1px solid var(--line);
+  }
+
+  /* Test */
+  .test-section{
+    padding:52px 0 !important;
+  }
+
+  .test-intro{
+    margin-bottom:20px !important;
+  }
+
+  .test-card,
+  .test-start-card{
+    padding:18px !important;
+    border-radius:15px !important;
+  }
+
+  .test-stage-head{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:6px !important;
+  }
+
+  .age-row{
+    grid-template-columns:1fr 1fr !important;
+    max-width:none !important;
+  }
+
+  .symptom-row{
+    grid-template-columns:24px 1fr !important;
+    gap:9px !important;
+    padding:10px !important;
+  }
+
+  .test-nav-row{
+    gap:8px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .test-nav-row .test-btn{
+    min-height:46px !important;
+  }
+
+  /* Differentiation / CTA */
+  .combined-inline,
+  .sensory-autism-callout,
+  .diagnosis-cta-card{
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+    padding:22px 18px !important;
+    border-radius:16px !important;
+  }
+
+  .combined-inline .btn,
+  .sensory-autism-btn,
+  .diagnosis-cta-card .btn{
+    width:100% !important;
+  }
+
+  /* Results / videos */
+  .result-list{
+    gap:15px !important;
+  }
+
+  .result-case{
+    padding:18px 16px !important;
+    border-radius:15px !important;
+  }
+
+  .case-top{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:7px !important;
+  }
+
+  .video-grid{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+
+  .video-column iframe,
+  .youtube-launch,
+  .live-random-video,
+  .random-youtube-frame{
+    width:100% !important;
+  }
+
+  /* Comparison table on autism page becomes cards */
+  .compare-table{
+    border:0 !important;
+    background:transparent !important;
+  }
+
+  .compare-head{
+    display:none !important;
+  }
+
+  .compare-row{
+    display:block !important;
+    margin-bottom:14px !important;
+    overflow:hidden;
+    border:1px solid var(--accent-line) !important;
+    border-radius:14px !important;
+    background:#fff;
+  }
+
+  .compare-row > div{
+    display:block !important;
+    min-height:0 !important;
+    padding:14px 15px !important;
+    border:0 !important;
+    border-bottom:1px solid var(--accent-line) !important;
+  }
+
+  .compare-row > div:last-child{
+    border-bottom:0 !important;
+  }
+
+  .compare-row > div:first-child{
+    background:var(--accent-soft);
+    color:var(--text);
+    font-weight:780;
+  }
+
+  .compare-row > div:nth-child(2)::before{
+    content:"При оценке аутизма";
+    display:block;
+    margin-bottom:6px;
+    color:var(--accent);
+    font-size:.7rem;
+    font-weight:800;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+
+  .compare-row > div:nth-child(3)::before{
+    content:"При сенсорной алалии";
+    display:block;
+    margin-bottom:6px;
+    color:var(--accent);
+    font-size:.7rem;
+    font-weight:800;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+
+  /* Materials */
+  .materials-group{
+    padding-top:10px !important;
+  }
+
+  .material-row{
+    padding:15px 0 !important;
+  }
+
+  .material-row h3{
+    font-size:1.05rem !important;
+  }
+
+  .material-row p{
+    font-size:.91rem !important;
+  }
+
+  /* Specialists */
+  .specialists-section{
+    padding:52px 0 !important;
+  }
+
+  .specialist-grid{
+    margin-top:20px !important;
+  }
+
+  .specialist-card{
+    border-radius:15px !important;
+  }
+
+  .specialist-photo{
+    aspect-ratio:16/10 !important;
+  }
+
+  .specialist-photo img{
+    object-position:center 22% !important;
+  }
+
+  .specialist-body{
+    padding:17px !important;
+  }
+
+  .specialist-body p{
+    font-size:.91rem !important;
+    line-height:1.48 !important;
+  }
+
+  /* Footer */
+  .site-footer{
+    padding-top:44px !important;
+  }
+
+  .footer-main-grid{
+    grid-template-columns:1fr !important;
+    gap:30px !important;
+  }
+
+  .footer-about p{
+    max-width:none !important;
+    font-size:.91rem !important;
+  }
+
+  .footer-column a{
+    font-size:.9rem !important;
+    line-height:1.4 !important;
+  }
+
+  .footer-socials-list a{
+    min-height:32px;
+  }
+
+  .footer-legal{
+    gap:18px !important;
+    margin-top:36px !important;
+    padding:20px 0 24px !important;
+  }
+
+  .footer-legal > p{
+    font-size:.78rem !important;
+    line-height:1.5 !important;
+  }
+}
+
+@media (max-width:420px){
+  .container{
+    width:min(calc(100% - 24px), var(--container)) !important;
+  }
+
+  .topbar-copy{
+    font-size:.76rem !important;
+  }
+
+  .topbar-avatars img{
+    width:29px !important;
+    height:29px !important;
+  }
+
+  .orientation-row,
+  .hero-side-row{
+    grid-template-columns:1fr !important;
+    gap:5px !important;
+  }
+
+  .age-row{
+    grid-template-columns:1fr !important;
+  }
+}
 </style>
 </head>
 <body>
-
 <header class="site-header">
 <div class="topbar">
 <div class="container topbar-inner">
@@ -1585,365 +2206,311 @@ h3,
 </div>
 </div>
 </header>
-
 <main>
-
 <section class="page-hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">Когда ребёнок слышит, но не всегда понимает речь</p>
-      <h1>Сенсорная алалия у детей</h1>
-      <p class="lead">При сенсорной алалии основная трудность связана с пониманием обращённой речи. Ребёнок слышит звуки и голос, но значение слов, вопросов и инструкций может восприниматься неполно или нестабильно, поэтому собственная речь и поведение тоже развиваются необычно.</p>
-      <p>Описание на странице помогает родителям сориентироваться, но не заменяет полноценную диагностику: похожие внешне признаки могут иметь разные причины и сочетаться между собой.</p>
-      <div class="hero-actions">
-        <a class="btn" href="#specialists">Консультация у специалиста</a>
-      </div>
-    </div>
-    <aside class="hero-side">
-      <p class="eyebrow">Коротко</p>
-      <h2>Что важно заметить</h2>
-      <div class="hero-side-list"><div class="hero-side-row"><strong>Понимание</strong><span>Ребёнок лучше ориентируется в привычной ситуации, чем в новой словесной инструкции.</span></div>
+<div class="container hero-grid">
+<div class="hero-copy">
+<p class="eyebrow">Когда ребёнок слышит, но не всегда понимает речь</p>
+<h1>Сенсорная алалия у детей</h1>
+<p class="lead">При сенсорной алалии основная трудность связана с пониманием обращённой речи. Ребёнок слышит звуки и голос, но значение слов, вопросов и инструкций может восприниматься неполно или нестабильно, поэтому собственная речь и поведение тоже развиваются необычно.</p>
+<p>Описание на странице помогает родителям сориентироваться, но не заменяет полноценную диагностику: похожие внешне признаки могут иметь разные причины и сочетаться между собой.</p>
+<div class="hero-actions">
+<a class="btn" href="#specialists">Консультация у специалиста</a>
+</div>
+</div>
+<aside class="hero-side">
+<p class="eyebrow">Коротко</p>
+<h2>Что важно заметить</h2>
+<div class="hero-side-list"><div class="hero-side-row"><strong>Понимание</strong><span>Ребёнок лучше ориентируется в привычной ситуации, чем в новой словесной инструкции.</span></div>
 <div class="hero-side-row"><strong>Речь</strong><span>Собственная речь может быть активной, но не всегда точной по смыслу и ситуации.</span></div>
 <div class="hero-side-row"><strong>Повторения</strong><span>Могут встречаться эхолалии, заученные фразы или повторение вопроса вместо ответа.</span></div>
 <div class="hero-side-row"><strong>Поведение</strong><span>Непонимание речи иногда выглядит как невнимательность, упрямство или необычное социальное поведение.</span></div></div>
-    </aside>
-  </div>
+</aside>
+</div>
 </section>
-
 <section class="section section-soft">
-  <div class="container">
-    <div class="text-container">
-      <p class="eyebrow">Понятное объяснение</p>
-      <h2>Что это значит</h2>
-      <p>Сенсорная алалия связана прежде всего с нарушением понимания речи. Ребёнок может реагировать на бытовые звуки, музыку или интонацию взрослого, но при этом неполно понимать сами слова. Знакомые просьбы нередко выполняются благодаря привычной ситуации, жестам и повторяющемуся распорядку, поэтому родителям бывает сложно сразу заметить, что речевое понимание сформировано недостаточно.</p>
-      <p>У разных детей выраженность признаков неодинакова, поэтому отдельный симптом сам по себе не определяет диагноз. Важно смотреть, как сочетаются понимание речи, собственная речь, произношение, общение и общее развитие ребёнка.</p>
-    </div>
-    <div class="content-wide info-grid"><article class="info-block"><strong>Понимание слов</strong><p>Ребёнок может узнавать знакомые слова, но не всегда переносить их на новые предметы или формы слова. Иногда смысл понятен только в привычной ситуации, а та же просьба в другом месте или другой формулировке вызывает растерянность.</p></article>
+<div class="container">
+<div class="text-container">
+<p class="eyebrow">Понятное объяснение</p>
+<h2>Что это значит</h2>
+<p>Сенсорная алалия связана прежде всего с нарушением понимания речи. Ребёнок может реагировать на бытовые звуки, музыку или интонацию взрослого, но при этом неполно понимать сами слова. Знакомые просьбы нередко выполняются благодаря привычной ситуации, жестам и повторяющемуся распорядку, поэтому родителям бывает сложно сразу заметить, что речевое понимание сформировано недостаточно.</p>
+<p>У разных детей выраженность признаков неодинакова, поэтому отдельный симптом сам по себе не определяет диагноз. Важно смотреть, как сочетаются понимание речи, собственная речь, произношение, общение и общее развитие ребёнка.</p>
+</div>
+<div class="content-wide info-grid"><article class="info-block"><strong>Понимание слов</strong><p>Ребёнок может узнавать знакомые слова, но не всегда переносить их на новые предметы или формы слова. Иногда смысл понятен только в привычной ситуации, а та же просьба в другом месте или другой формулировке вызывает растерянность.</p></article>
 <article class="info-block"><strong>Понимание фразы</strong><p>Чем длиннее и новее инструкция, тем сложнее её обработать. Простая бытовая просьба может выполняться, но несколько действий подряд, вопросы или незнакомые формулировки оказываются значительно труднее.</p></article>
 <article class="info-block"><strong>Собственная речь</strong><p>Речь может быть бедной, поздней или, наоборот, довольно активной, но не всегда соответствовать ситуации. Возможны повторения услышанных фраз, ответы не по смыслу и использование заученных речевых конструкций.</p></article>
 <article class="info-block"><strong>Поведение и общение</strong><p>Если ребёнок не понимает значительную часть речи окружающих, он может теряться в группе, избегать сложных игр, выглядеть невнимательным или бурно реагировать на непонятные требования. Поэтому поведение необходимо оценивать вместе с пониманием речи.</p></article></div>
-  </div>
+</div>
 </section>
-
-
 <section class="section test-section" id="speech-test">
-  <div class="container">
-    <div class="text-container test-intro">
-      <p class="eyebrow">Онлайн-тест</p>
-      <h2>Проверить признаки</h2>
-      <p>
+<div class="container">
+<div class="text-container test-intro">
+<p class="eyebrow">Онлайн-тест</p>
+<h2>Проверить признаки</h2>
+<p>
         Если после чтения страницы вы узнаёте часть признаков, но не уверены, что они складываются именно в это нарушение,
         можно пройти наш предварительный тест. Он последовательно оценивает собственную речь, понимание речи,
         слух и произношение, а также особенности поведения. В результате вы получите не диагноз, а ориентир:
         какие направления стоит обсудить со специалистом подробнее.
       </p>
-    </div>
-    <div class="test-shell">
-      <div id="test-app"></div>
-    </div>
-  </div>
+</div>
+<div class="test-shell">
+<div id="test-app"></div>
+</div>
+</div>
 </section>
-
-
-
-
-
-
 <section class="section">
-  <div class="container">
-    <div class="content-wide diff-top-grid">
-      <div class="diff-main-copy">
-        <p class="eyebrow">Дифференциация</p>
-        <h2>С чем можно спутать сенсорную алалию</h2>
-        <p>
+<div class="container">
+<div class="content-wide diff-top-grid">
+<div class="diff-main-copy">
+<p class="eyebrow">Дифференциация</p>
+<h2>С чем можно спутать сенсорную алалию</h2>
+<p>
           Похожие внешне проявления могут возникать по разным причинам. Карточки ниже нужны для ориентира и перехода к более подробным сравнениям;
         они не позволяют поставить диагноз по одному признаку.
         </p>
-      </div>
-
-      <aside class="combined-inline">
-        <p class="eyebrow">Сочетанные диагнозы</p>
-        <h3>Не всегда один диагноз</h3>
-        <p>
+</div>
+<aside class="combined-inline">
+<p class="eyebrow">Сочетанные диагнозы</p>
+<h3>Не всегда один диагноз</h3>
+<p>
           Сенсорная алалия может быть самостоятельным нарушением, но иногда сочетается с другими особенностями развития. Поэтому выраженные трудности понимания речи не исключают существования других состояний и, наоборот, не каждое необычное поведение объясняется только сенсорной алалией. Комплексная оценка нужна именно для того, чтобы увидеть сочетание факторов, а не выбирать один диагноз вместо другого.
         </p>
-        <a class="btn combined-more" href="#">Подробнее о сочетанных диагнозах</a>
-      </aside>
-    </div>
-
-    <div class="content-wide sensory-autism-callout">
-      <div class="sensory-autism-copy">
-        <p class="eyebrow">Важное отличие</p>
-        <h3>Почему сенсорную алалию могут принять за аутизм</h3>
-        <p>
+<a class="btn combined-more" href="#">Подробнее о сочетанных диагнозах</a>
+</aside>
+</div>
+<div class="content-wide sensory-autism-callout">
+<div class="sensory-autism-copy">
+<p class="eyebrow">Важное отличие</p>
+<h3>Почему сенсорную алалию могут принять за аутизм</h3>
+<p>
           Если ребёнок плохо понимает обращённую речь, он может не реагировать на обращение,
           не выполнять новые инструкции, повторять услышанные фразы или необычно вести себя в общении.
           Внешне такие проявления действительно могут напоминать РАС. Но одинаковое поведение может иметь
           разную природу, поэтому важно отдельно оценивать понимание речи и общую картину развития ребёнка,
           а не делать вывод только по одному признаку.
         </p>
-      </div>
-      <a class="btn sensory-autism-btn" href="autizm-kotoryi-ne-autizm.html">
+</div>
+<a class="btn sensory-autism-btn" href="autizm-kotoryi-ne-autizm.html">
         Сенсорная алалия или РАС?
       </a>
-    </div>
-
-
-    <div class="content-wide diff-grid"><article class="diff-card">
-          <h3>Нарушение слуха</h3><p>Ребёнок может реагировать на звуки, но неполно воспринимать речевой сигнал, поэтому слух необходимо проверять отдельно.</p><a class="text-link" href="#">Подробнее →</a>
-        </article>
+</div>
+<div class="content-wide diff-grid"><article class="diff-card">
+<h3>Нарушение слуха</h3><p>Ребёнок может реагировать на звуки, но неполно воспринимать речевой сигнал, поэтому слух необходимо проверять отдельно.</p><a class="text-link" href="#">Подробнее →</a>
+</article>
 <article class="diff-card">
-          <h3>Моторная алалия</h3><p>При моторной форме понимание речи обычно заметно сильнее собственной речи; при сенсорной именно понимание становится центральной трудностью.</p><a class="text-link" href="#">Подробнее →</a>
-        </article>
+<h3>Моторная алалия</h3><p>При моторной форме понимание речи обычно заметно сильнее собственной речи; при сенсорной именно понимание становится центральной трудностью.</p><a class="text-link" href="#">Подробнее →</a>
+</article>
 <article class="diff-card">
-          <h3>Сенсомоторная алалия</h3><p>При смешанной картине выраженные проблемы понимания сочетаются с самостоятельными трудностями формирования собственной речи.</p><a class="text-link" href="#">Подробнее →</a>
-        </article>
+<h3>Сенсомоторная алалия</h3><p>При смешанной картине выраженные проблемы понимания сочетаются с самостоятельными трудностями формирования собственной речи.</p><a class="text-link" href="#">Подробнее →</a>
+</article>
 <article class="diff-card">
-          <h3>Аутизм</h3><p>Непонимание речи может влиять на реакцию на имя, игру и общение, поэтому похожее внешне поведение требует дифференциации.</p><a class="text-link" href="#">Подробнее →</a>
-        </article>
+<h3>Аутизм</h3><p>Непонимание речи может влиять на реакцию на имя, игру и общение, поэтому похожее внешне поведение требует дифференциации.</p><a class="text-link" href="#">Подробнее →</a>
+</article>
 <article class="diff-card">
-          <h3>Задержка речевого развития</h3><p>При простой темповой задержке понимание речи и структура коммуникации могут быть сохраннее.</p><a class="text-link" href="#">Подробнее →</a>
-        </article>
+<h3>Задержка речевого развития</h3><p>При простой темповой задержке понимание речи и структура коммуникации могут быть сохраннее.</p><a class="text-link" href="#">Подробнее →</a>
+</article>
 <article class="diff-card">
-          <h3>ЗПР</h3><p>Если трудности распространяются далеко за пределы речи, требуется комплексная оценка других сторон развития.</p><a class="text-link" href="#">Подробнее →</a>
-        </article>
+<h3>ЗПР</h3><p>Если трудности распространяются далеко за пределы речи, требуется комплексная оценка других сторон развития.</p><a class="text-link" href="#">Подробнее →</a>
+</article>
 <article class="diff-card">
-          <h3>Эхолалии при других состояниях</h3><p>Сам факт повторения вопроса или фразы не определяет диагноз: важно понимать, почему ребёнок использует повторение.</p><a class="text-link" href="#">Подробнее →</a>
-        </article>
+<h3>Эхолалии при других состояниях</h3><p>Сам факт повторения вопроса или фразы не определяет диагноз: важно понимать, почему ребёнок использует повторение.</p><a class="text-link" href="#">Подробнее →</a>
+</article>
 <article class="diff-card">
-          <h3>Трудности внимания</h3><p>Ребёнок может выглядеть невнимательным, хотя реальная проблема заключается в том, что он не успевает обработать словесную инструкцию.</p><a class="text-link" href="#">Подробнее →</a>
-        </article></div>
-  </div>
+<h3>Трудности внимания</h3><p>Ребёнок может выглядеть невнимательным, хотя реальная проблема заключается в том, что он не успевает обработать словесную инструкцию.</p><a class="text-link" href="#">Подробнее →</a>
+</article></div>
+</div>
 </section>
-
-
-
 <section class="section diagnosis-cta-section">
-  <div class="container">
-    <div class="content-wide diagnosis-cta-card">
-      <div class="diagnosis-cta-copy">
-        <p class="eyebrow">Консультация у специалиста</p>
-        <h2>Разобраться в диагнозе</h2>
-        <p>
+<div class="container">
+<div class="content-wide diagnosis-cta-card">
+<div class="diagnosis-cta-copy">
+<p class="eyebrow">Консультация у специалиста</p>
+<h2>Разобраться в диагнозе</h2>
+<p>
           Если заключение уже есть, но остаются вопросы, или признаки подходят сразу под несколько направлений,
           специалист поможет уточнить исходную картину и понять, с чего начинать.
         </p>
-      </div>
-      <a class="btn" href="#specialists">Записаться</a>
-    </div>
-  </div>
+</div>
+<a class="btn" href="#specialists">Записаться</a>
+</div>
+</div>
 </section>
-
-
-
 <section class="section section-soft">
-  <div class="container">
-    <div class="text-container">
-      <p class="eyebrow">Подход</p>
-      <h2>Как проходит работа</h2>
-      <p>
+<div class="container">
+<div class="text-container">
+<p class="eyebrow">Подход</p>
+<h2>Как проходит работа</h2>
+<p>
         Работа строится последовательно: от определения исходного уровня к понятным ближайшим задачам и затем к более сложным речевым навыкам.
         Родители должны понимать, что именно оценивается, почему выбран текущий этап и по каким признакам фиксируется прогресс.
       </p>
-    </div>
-    <div class="content-wide workflow-grid"><article class="workflow-item"><div><h3>Исходный уровень</h3><p>Специалист определяет, какие слова и инструкции ребёнок понимает без подсказки ситуацией, как воспринимает новые просьбы, вопросы и речевые конструкции, а также как использует собственную речь.</p></div></article>
+</div>
+<div class="content-wide workflow-grid"><article class="workflow-item"><div><h3>Исходный уровень</h3><p>Специалист определяет, какие слова и инструкции ребёнок понимает без подсказки ситуацией, как воспринимает новые просьбы, вопросы и речевые конструкции, а также как использует собственную речь.</p></div></article>
 <article class="workflow-item"><div><h3>Программа</h3><p>Работа начинается с того уровня понимания, который уже доступен ребёнку. Новые слова и конструкции вводятся последовательно, чтобы их значение становилось устойчивым, а не зависело только от конкретной ситуации.</p></div></article>
 <article class="workflow-item"><div><h3>Этапы</h3><p>По мере укрепления понимания усложняются инструкции, вопросы, смысловые связи и диалог. Одновременно развивается собственная речь, чтобы ребёнок учился не только понимать, но и самостоятельно пользоваться новым речевым материалом.</p></div></article>
 <article class="workflow-item"><div><h3>Оценка результата</h3><p>Прогресс фиксируется на сопоставимых речевых задачах: насколько ребёнок понимает новые формулировки, отвечает по смыслу, выполняет инструкции без жеста и использует речь более самостоятельно.</p></div></article></div>
-  </div>
+</div>
 </section>
-
 <section class="section" id="results">
-  <div class="container">
-    <div class="text-container">
-      <p class="eyebrow">Доказательства работы</p>
-      <h2>Реальные результаты</h2>
-      <p>
+<div class="container">
+<div class="text-container">
+<p class="eyebrow">Доказательства работы</p>
+<h2>Реальные результаты</h2>
+<p>
         Этот блок будет одним из центральных на странице. Здесь мы показываем не разрозненные отзывы, а истории конкретных детей:
         исходный уровень, видео на разных этапах, достигнутый речевой уровень, комментарий специалиста и отзыв родителей.
         Пока вместо реальных кейсов стоят рабочие примеры, а видеокнопки временно открывают ролики с YouTube-канала центра.
       </p>
-    </div>
-    <div class="result-list">
-        <article class="result-case">
-          <div class="case-top">
-            <div><p class="case-tag">История ребёнка · временный пример</p><h3>Саша, 4 года</h3></div>
-            <span class="case-stage">2 видео</span>
-          </div>
-          <p>Место для реальной истории ребёнка, у которого основной трудностью было понимание обращённой речи. В финальной версии здесь будут исходный уровень, этапы работы и комментарий родителей.</p>
-          <div class="video-grid">
-            <div class="video-column">
-              <p class="video-note">Здесь будет реальное исходное видео конкретного ребёнка с коротким пояснением специалиста.</p>
-              
-<button class="youtube-launch" type="button" data-video-id="7FvZi2aTFrg" data-video-title="Изучение второго языка при сенсорной и моторной алалии">
-  <span class="play">▶</span>
-  <strong>Начало работы</strong>
-  <small>Изучение второго языка при сенсорной и моторной алалии</small>
+</div>
+<div class="result-list">
+<article class="result-case">
+<div class="case-top">
+<div><p class="case-tag">История ребёнка · временный пример</p><h3>Саша, 4 года</h3></div>
+<span class="case-stage">2 видео</span>
+</div>
+<p>Место для реальной истории ребёнка, у которого основной трудностью было понимание обращённой речи. В финальной версии здесь будут исходный уровень, этапы работы и комментарий родителей.</p>
+<div class="video-grid">
+<div class="video-column">
+<p class="video-note">Здесь будет реальное исходное видео конкретного ребёнка с коротким пояснением специалиста.</p>
+<button class="youtube-launch" data-video-id="7FvZi2aTFrg" data-video-title="Изучение второго языка при сенсорной и моторной алалии" type="button">
+<span class="play">▶</span>
+<strong>Начало работы</strong>
+<small>Изучение второго языка при сенсорной и моторной алалии</small>
 </button>
-
-            </div>
-            <div class="video-column">
-              <p class="video-note">Здесь будет итоговое видео на сопоставимых речевых задачах, чтобы динамику можно было увидеть напрямую.</p>
-              
-<button class="youtube-launch" type="button" data-video-id="DvUeB6ALW8g" data-video-title="Логопедическая группа и алалия">
-  <span class="play">▶</span>
-  <strong>Результат</strong>
-  <small>Логопедическая группа и алалия</small>
+</div>
+<div class="video-column">
+<p class="video-note">Здесь будет итоговое видео на сопоставимых речевых задачах, чтобы динамику можно было увидеть напрямую.</p>
+<button class="youtube-launch" data-video-id="DvUeB6ALW8g" data-video-title="Логопедическая группа и алалия" type="button">
+<span class="play">▶</span>
+<strong>Результат</strong>
+<small>Логопедическая группа и алалия</small>
 </button>
-
-            </div>
-          </div>
-        </article>
-        
-
-        <article class="result-case">
-          <div class="case-top">
-            <div><p class="case-tag">История ребёнка · временный пример</p><h3>Вера, 5 лет</h3></div>
-            <span class="case-stage">2 видео</span>
-          </div>
-          <p>Вторая история покажет другой вариант сенсорной алалии: например, активную, но не всегда осмысленную собственную речь и заметную зависимость понимания от привычной ситуации.</p>
-          <div class="video-grid">
-            <div class="video-column">
-              <p class="video-note">Здесь будет реальное исходное видео конкретного ребёнка с коротким пояснением специалиста.</p>
-              
-<button class="youtube-launch" type="button" data-video-id="9X7bKBQUA00" data-video-title="Дневник мамы ребёнка с алалией">
-  <span class="play">▶</span>
-  <strong>Начало работы</strong>
-  <small>Дневник мамы ребёнка с алалией</small>
+</div>
+</div>
+</article>
+<article class="result-case">
+<div class="case-top">
+<div><p class="case-tag">История ребёнка · временный пример</p><h3>Вера, 5 лет</h3></div>
+<span class="case-stage">2 видео</span>
+</div>
+<p>Вторая история покажет другой вариант сенсорной алалии: например, активную, но не всегда осмысленную собственную речь и заметную зависимость понимания от привычной ситуации.</p>
+<div class="video-grid">
+<div class="video-column">
+<p class="video-note">Здесь будет реальное исходное видео конкретного ребёнка с коротким пояснением специалиста.</p>
+<button class="youtube-launch" data-video-id="9X7bKBQUA00" data-video-title="Дневник мамы ребёнка с алалией" type="button">
+<span class="play">▶</span>
+<strong>Начало работы</strong>
+<small>Дневник мамы ребёнка с алалией</small>
 </button>
-
-            </div>
-            <div class="video-column">
-              <p class="video-note">Здесь будет итоговое видео на сопоставимых речевых задачах, чтобы динамику можно было увидеть напрямую.</p>
-              
-<button class="youtube-launch" type="button" data-video-id="Qu3hkOyIfKE" data-video-title="Заикание и запинки при алалии">
-  <span class="play">▶</span>
-  <strong>Результат</strong>
-  <small>Заикание и запинки при алалии</small>
+</div>
+<div class="video-column">
+<p class="video-note">Здесь будет итоговое видео на сопоставимых речевых задачах, чтобы динамику можно было увидеть напрямую.</p>
+<button class="youtube-launch" data-video-id="Qu3hkOyIfKE" data-video-title="Заикание и запинки при алалии" type="button">
+<span class="play">▶</span>
+<strong>Результат</strong>
+<small>Заикание и запинки при алалии</small>
 </button>
-
-            </div>
-          </div>
-        </article>
-        </div>
-  </div>
+</div>
+</div>
+</article>
+</div>
+</div>
 </section>
-
 <section class="section norm-section">
-  <div class="container norm-layout">
-    <div>
-      <p class="eyebrow">Как оцениваем результат</p>
-      <h2>Норма и гарантия</h2>
-      <p>
+<div class="container norm-layout">
+<div>
+<p class="eyebrow">Как оцениваем результат</p>
+<h2>Норма и гарантия</h2>
+<p>
         Результат оценивается не по отдельным словам или упражнениям, а по тому, насколько устойчиво ребёнок
         понимает обращённую речь и использует сформированные речевые навыки в обычном общении. Для оценки динамики
         мы ориентируемся на уровни ОНР и последовательно отслеживаем переход от исходного состояния к следующему этапу.
       </p>
-      
-    </div>
-    
-    <div class="onr-grid">
-      <article class="onr-card">
-        <span>Уровень</span>
-        <h3>ОНР-1</h3>
-      </article>
-      <article class="onr-card">
-        <span>Уровень</span>
-        <h3>ОНР-2</h3>
-      </article>
-      <article class="onr-card">
-        <span>Уровень</span>
-        <h3>ОНР-3</h3>
-      </article>
-      <article class="onr-card">
-        <span>Уровень</span>
-        <h3>ОНР-4</h3>
-      </article>
-    </div>
-
-  </div>
+</div>
+<div class="onr-grid">
+<article class="onr-card">
+<span>Уровень</span>
+<h3>ОНР-1</h3>
+</article>
+<article class="onr-card">
+<span>Уровень</span>
+<h3>ОНР-2</h3>
+</article>
+<article class="onr-card">
+<span>Уровень</span>
+<h3>ОНР-3</h3>
+</article>
+<article class="onr-card">
+<span>Уровень</span>
+<h3>ОНР-4</h3>
+</article>
+</div>
+</div>
 </section>
-
-
-
-
-
 <section class="section section-soft">
-  <div class="container">
-    <div class="text-container">
-      <p class="eyebrow">Большой информационный раздел</p>
-      <h2>Всё о сенсорной алалии</h2>
-      <p>
+<div class="container">
+<div class="text-container">
+<p class="eyebrow">Большой информационный раздел</p>
+<h2>Всё о сенсорной алалии</h2>
+<p>
         Здесь собираются основные материалы по теме: признаки, диагностика, отличия от других нарушений, процесс занятий,
         ответы на частые вопросы и видео специалистов. На странице показываем только ключевые материалы, а затем ведём в полный раздел.
       </p>
-    </div>
-
-    <div class="materials-split">
-      <section class="materials-group">
-        <div class="materials-head">
-          <span class="eyebrow">Статьи</span>
-          <h3>Разобраться подробнее</h3>
-          <p>Основные тексты, которые помогают родителю понять признаки, диагностику и логику дальнейшей работы.</p>
-        </div>
-        <div class="materials-list"><article class="material-row"><div><h3>Признаки сенсорной алалии</h3><p>Как родителям заметить, что ребёнок слышит речь, но понимает её недостаточно устойчиво.</p></div><a class="text-link" href="#">Читать →</a></article>
+</div>
+<div class="materials-split">
+<section class="materials-group">
+<div class="materials-head">
+<span class="eyebrow">Статьи</span>
+<h3>Разобраться подробнее</h3>
+<p>Основные тексты, которые помогают родителю понять признаки, диагностику и логику дальнейшей работы.</p>
+</div>
+<div class="materials-list"><article class="material-row"><div><h3>Признаки сенсорной алалии</h3><p>Как родителям заметить, что ребёнок слышит речь, но понимает её недостаточно устойчиво.</p></div><a class="text-link" href="#">Читать →</a></article>
 <article class="material-row"><div><h3>Сенсорная алалия и аутизм</h3><p>Какие проявления могут выглядеть похоже и почему необходима дифференциальная оценка.</p></div><a class="text-link" href="#">Читать →</a></article>
 <article class="material-row"><div><h3>Как развивается понимание речи</h3><p>Почему работа начинается не с количества произнесённых слов, а с качества речевого понимания.</p></div><a class="text-link" href="#">Читать →</a></article></div>
-      </section>
-
-      <section class="materials-group">
-        <div class="materials-head">
-          <span class="eyebrow">Видео</span>
-          <h3>Объяснения специалистов</h3>
-          <p>Видеоматериалы по теме. Плеер загружается только после нажатия, поэтому страница остаётся лёгкой.</p>
-        </div>
-        <div class="video-material-grid">
-        <article class="video-material-card">
-          
-<button class="youtube-launch" type="button" data-video-id="DvUeB6ALW8g" data-video-title="Логопедическая группа и алалия">
-  <span class="play">▶</span>
-  <strong>Видео</strong>
-  <small>Логопедическая группа и алалия</small>
-</button>
-
-          <h3>Как проверить понимание речи</h3>
-          <p>Примеры бытовых ситуаций, в которых видно настоящее понимание слов и инструкций.</p>
-          <a class="text-link" href="#">Все видео →</a>
-        </article>
-        
-
-        <article class="video-material-card">
-          
-<button class="youtube-launch" type="button" data-video-id="9X7bKBQUA00" data-video-title="Дневник мамы ребёнка с алалией">
-  <span class="play">▶</span>
-  <strong>Видео</strong>
-  <small>Дневник мамы ребёнка с алалией</small>
-</button>
-
-          <h3>Эхолалии и повторения</h3>
-          <p>Почему ребёнок повторяет вопрос или фразу и что важно оценивать вместе с этим.</p>
-          <a class="text-link" href="#">Все видео →</a>
-        </article>
-        
-
-        <article class="video-material-card">
-          
-<button class="youtube-launch" type="button" data-video-id="Qu3hkOyIfKE" data-video-title="Заикание и запинки при алалии">
-  <span class="play">▶</span>
-  <strong>Видео</strong>
-  <small>Заикание и запинки при алалии</small>
-</button>
-
-          <h3>Речь и поведение</h3>
-          <p>Как непонимание обращённой речи может влиять на внимание, игру и реакцию на требования.</p>
-          <a class="text-link" href="#">Все видео →</a>
-        </article>
-        </div>
-      </section>
-    </div>
-  </div>
 </section>
-
+<section class="materials-group">
+<div class="materials-head">
+<span class="eyebrow">Видео</span>
+<h3>Объяснения специалистов</h3>
+<p>Видеоматериалы по теме. Плеер загружается только после нажатия, поэтому страница остаётся лёгкой.</p>
+</div>
+<div class="video-material-grid">
+<article class="video-material-card">
+<button class="youtube-launch" data-video-id="DvUeB6ALW8g" data-video-title="Логопедическая группа и алалия" type="button">
+<span class="play">▶</span>
+<strong>Видео</strong>
+<small>Логопедическая группа и алалия</small>
+</button>
+<h3>Как проверить понимание речи</h3>
+<p>Примеры бытовых ситуаций, в которых видно настоящее понимание слов и инструкций.</p>
+<a class="text-link" href="#">Все видео →</a>
+</article>
+<article class="video-material-card">
+<button class="youtube-launch" data-video-id="9X7bKBQUA00" data-video-title="Дневник мамы ребёнка с алалией" type="button">
+<span class="play">▶</span>
+<strong>Видео</strong>
+<small>Дневник мамы ребёнка с алалией</small>
+</button>
+<h3>Эхолалии и повторения</h3>
+<p>Почему ребёнок повторяет вопрос или фразу и что важно оценивать вместе с этим.</p>
+<a class="text-link" href="#">Все видео →</a>
+</article>
+<article class="video-material-card">
+<button class="youtube-launch" data-video-id="Qu3hkOyIfKE" data-video-title="Заикание и запинки при алалии" type="button">
+<span class="play">▶</span>
+<strong>Видео</strong>
+<small>Заикание и запинки при алалии</small>
+</button>
+<h3>Речь и поведение</h3>
+<p>Как непонимание обращённой речи может влиять на внимание, игру и реакцию на требования.</p>
+<a class="text-link" href="#">Все видео →</a>
+</article>
+</div>
+</section>
+</div>
+</div>
+</section>
 <section class="section specialists-section" id="specialists">
 <div class="container">
 <div class="text-container section-intro">
@@ -2004,9 +2571,7 @@ h3,
 </div>
 </div>
 </section>
-
 </main>
-
 <footer class="site-footer">
 <div class="container footer-main-grid">
 <div class="footer-about">
@@ -2064,8 +2629,6 @@ h3,
 </div>
 </div>
 </footer>
-
-
 <script>
 const menuToggle=document.querySelector('.menu-toggle');
 const mainNav=document.querySelector('.main-nav');
@@ -2134,8 +2697,6 @@ document.querySelectorAll('.youtube-launch').forEach(btn=>{
   });
 });
 </script>
-
-
 <script>
 
 
@@ -2711,6 +3272,36 @@ function render(){
 
 render();
 </script>
+<script>
+(function(){
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  if (!menuToggle || !mainNav) return;
 
-</body>
+  function closeMenu(){
+    mainNav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded','false');
+    document.body.classList.remove('menu-open');
+    document.querySelectorAll('.nav-dropdown.is-open').forEach(drop => {
+      drop.classList.remove('is-open');
+      const btn = drop.querySelector('.dropdown-toggle');
+      if (btn) btn.setAttribute('aria-expanded','false');
+    });
+  }
+
+  document.addEventListener('click', function(event){
+    if (!mainNav.classList.contains('is-open')) return;
+    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+  });
+
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && mainNav.classList.contains('is-open')){
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+
+  mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+})();
+</script></body>
 </html>

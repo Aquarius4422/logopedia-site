@@ -1,12 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ребёнок не говорит: короткий тест, предварительный ориентир и материалы для родителей.">
-  <title>Ребёнок не говорит — Денисова Ирина Петровна и команда</title>
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Ребёнок не говорит: короткий тест, предварительный ориентир и материалы для родителей." name="description"/>
+<title>Ребёнок не говорит — Денисова Ирина Петровна и команда</title>
+<style>
     :root {
       --bg: #ffffff;
       --soft: #f6f8f4;
@@ -2548,12 +2548,631 @@ h3,
   color:var(--accent);
 }
 
+
+
+/* =========================================================
+   FINAL SHARED MOBILE SYSTEM — INTERNAL PAGES
+   ========================================================= */
+
+@media (max-width:1080px){
+  .topbar-right,
+  .topbar-socials,
+  .topbar-link{
+    display:none !important;
+  }
+
+  .topbar-inner{
+    min-height:58px !important;
+    justify-content:flex-start !important;
+    gap:0 !important;
+  }
+
+  .topbar-left{
+    width:100% !important;
+    min-width:0;
+    gap:12px !important;
+  }
+
+  .topbar-copy{
+    flex:1 1 auto;
+    min-width:0;
+    font-size:.88rem !important;
+    line-height:1.18 !important;
+  }
+
+  .topbar-copy strong{
+    display:block;
+    max-width:100%;
+    white-space:normal !important;
+  }
+
+  .topbar-avatars{
+    flex:0 0 auto;
+  }
+
+  .topbar-avatars img{
+    width:32px !important;
+    height:32px !important;
+    margin-left:-6px !important;
+  }
+
+  .topbar-avatars img:first-child{
+    margin-left:0 !important;
+  }
+
+  .menu-row{
+    position:relative;
+    background:#fff;
+  }
+
+  .header-inner{
+    min-height:54px !important;
+    gap:10px !important;
+  }
+
+  .header-inner::before{
+    content:"Меню";
+    display:block;
+    color:var(--accent);
+    font-size:.86rem;
+    font-weight:760;
+  }
+
+  .menu-toggle{
+    display:block !important;
+    width:42px !important;
+    height:42px !important;
+    margin-left:auto !important;
+    padding:9px !important;
+    border-radius:10px !important;
+    background:var(--accent-soft) !important;
+  }
+
+  .menu-toggle > span{
+    background:var(--text) !important;
+  }
+
+  .main-nav{
+    position:absolute !important;
+    top:100% !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:auto !important;
+    inset:auto 0 auto 0 !important;
+    width:100% !important;
+    max-height:calc(100vh - 112px);
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    justify-content:flex-start;
+    gap:0 !important;
+    padding:8px 16px 18px !important;
+    overflow-y:auto;
+    background:#fff !important;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 18px 36px rgba(34,38,34,.12) !important;
+    z-index:1005 !important;
+  }
+
+  .main-nav.is-open{
+    display:flex !important;
+  }
+
+  .main-nav::before{
+    display:none !important;
+    content:none !important;
+  }
+
+  .main-nav > .nav-link,
+  .main-nav > .nav-dropdown > .nav-link{
+    width:100%;
+    min-height:49px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 4px !important;
+    border:0 !important;
+    border-bottom:1px solid #eceaf3 !important;
+    border-radius:0 !important;
+    background:transparent !important;
+    color:var(--text) !important;
+    font-size:.98rem;
+    font-weight:690;
+  }
+
+  .main-nav > .nav-link.is-active,
+  .main-nav > .nav-dropdown > .nav-link.is-active{
+    color:var(--accent) !important;
+    font-weight:800;
+  }
+
+  .nav-dropdown{
+    width:100%;
+  }
+
+  .dropdown-menu{
+    position:static !important;
+    display:none;
+    width:100%;
+    min-width:0 !important;
+    margin:0 !important;
+    padding:5px 0 9px 12px !important;
+    border:0 !important;
+    border-bottom:1px solid #eceaf3 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+    background:#fff !important;
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none !important;
+  }
+
+  .nav-dropdown:hover > .dropdown-menu{
+    display:none;
+  }
+
+  .nav-dropdown.is-open > .dropdown-menu{
+    display:block !important;
+  }
+
+  .dropdown-menu a{
+    min-height:41px;
+    display:flex;
+    align-items:center;
+    padding:7px 6px !important;
+    color:#565a56;
+    font-size:.91rem;
+    line-height:1.3;
+  }
+
+  .header-action{
+    display:none !important;
+  }
+}
+
+@media (max-width:720px){
+  html{
+    scroll-padding-top:108px;
+  }
+
+  body{
+    font-size:16px;
+    line-height:1.42;
+    overflow-x:hidden;
+  }
+
+  .container{
+    width:min(calc(100% - 32px), var(--container)) !important;
+  }
+
+  .content-wide,
+  .text-container,
+  .section-intro,
+  .test-shell{
+    width:100% !important;
+    max-width:none !important;
+  }
+
+  .section,
+  .editorial-section{
+    padding:52px 0 !important;
+  }
+
+  p{
+    line-height:1.52;
+  }
+
+  h1,h2,h3{
+    text-wrap:balance;
+    overflow-wrap:break-word;
+  }
+
+  h1{
+    font-size:clamp(2rem,10vw,2.7rem) !important;
+    line-height:1 !important;
+    margin-bottom:18px !important;
+  }
+
+  h2{
+    font-size:clamp(1.68rem,8vw,2.2rem) !important;
+    line-height:1.04 !important;
+  }
+
+  h3{
+    font-size:clamp(1.13rem,5.6vw,1.42rem);
+    line-height:1.12;
+  }
+
+  .eyebrow{
+    margin-bottom:8px !important;
+    font-size:.7rem !important;
+    line-height:1.25;
+    letter-spacing:.08em !important;
+  }
+
+  .btn{
+    min-height:50px;
+    padding:0 18px !important;
+    font-size:.94rem !important;
+  }
+
+  /* Header */
+  .topbar-inner{
+    min-height:56px !important;
+  }
+
+  .topbar-left{
+    gap:10px !important;
+  }
+
+  .topbar-copy{
+    font-size:.81rem !important;
+    line-height:1.15 !important;
+  }
+
+  .topbar-avatars img{
+    width:30px !important;
+    height:30px !important;
+  }
+
+  .header-inner{
+    min-height:52px !important;
+  }
+
+  .main-nav{
+    max-height:calc(100vh - 108px);
+    padding:7px 16px 16px !important;
+  }
+
+  /* Hero layouts */
+  .page-hero,
+  .specialist-page-hero{
+    padding:40px 0 50px !important;
+  }
+
+  .page-hero-grid,
+  .hero-grid,
+  .specialist-hero-grid,
+  .sensory-layout,
+  .autism-grid{
+    grid-template-columns:1fr !important;
+    gap:26px !important;
+  }
+
+  .page-hero-copy,
+  .hero-copy,
+  .autism-hero-copy{
+    max-width:none !important;
+  }
+
+  .page-hero-copy p,
+  .hero-copy p,
+  .autism-hero-copy p{
+    font-size:.96rem !important;
+    line-height:1.53 !important;
+  }
+
+  .hero-actions,
+  .specialist-hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:9px !important;
+    margin-top:22px !important;
+  }
+
+  .hero-actions .btn,
+  .specialist-hero-actions .btn{
+    width:100% !important;
+  }
+
+  .orientation-panel,
+  .hero-side{
+    padding:20px !important;
+    border-radius:16px !important;
+  }
+
+  .orientation-row,
+  .hero-side-row{
+    grid-template-columns:105px 1fr !important;
+    gap:12px !important;
+    padding:13px 0 !important;
+  }
+
+  /* Grids become readable vertical flows */
+  .factor-grid,
+  .info-grid,
+  .diff-top-grid,
+  .diff-grid,
+  .confusion-grid,
+  .workflow-grid,
+  .process-grid,
+  .onr-grid,
+  .norm-layout,
+  .materials-split,
+  .video-material-grid,
+  .specialist-grid,
+  .results-grid{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+
+  .factor-card,
+  .info-block,
+  .diff-card,
+  .confusion-card,
+  .workflow-item,
+  .process-item,
+  .onr-card{
+    min-height:0 !important;
+    padding:18px 0 !important;
+    border-left:0 !important;
+    border-right:0 !important;
+    border-radius:0 !important;
+  }
+
+  .factor-card + .factor-card,
+  .info-block + .info-block,
+  .diff-card + .diff-card,
+  .confusion-card + .confusion-card{
+    border-top:1px solid var(--line);
+  }
+
+  /* Test */
+  .test-section{
+    padding:52px 0 !important;
+  }
+
+  .test-intro{
+    margin-bottom:20px !important;
+  }
+
+  .test-card,
+  .test-start-card{
+    padding:18px !important;
+    border-radius:15px !important;
+  }
+
+  .test-stage-head{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:6px !important;
+  }
+
+  .age-row{
+    grid-template-columns:1fr 1fr !important;
+    max-width:none !important;
+  }
+
+  .symptom-row{
+    grid-template-columns:24px 1fr !important;
+    gap:9px !important;
+    padding:10px !important;
+  }
+
+  .test-nav-row{
+    gap:8px !important;
+    flex-wrap:wrap !important;
+  }
+
+  .test-nav-row .test-btn{
+    min-height:46px !important;
+  }
+
+  /* Differentiation / CTA */
+  .combined-inline,
+  .sensory-autism-callout,
+  .diagnosis-cta-card{
+    grid-template-columns:1fr !important;
+    gap:18px !important;
+    padding:22px 18px !important;
+    border-radius:16px !important;
+  }
+
+  .combined-inline .btn,
+  .sensory-autism-btn,
+  .diagnosis-cta-card .btn{
+    width:100% !important;
+  }
+
+  /* Results / videos */
+  .result-list{
+    gap:15px !important;
+  }
+
+  .result-case{
+    padding:18px 16px !important;
+    border-radius:15px !important;
+  }
+
+  .case-top{
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:7px !important;
+  }
+
+  .video-grid{
+    grid-template-columns:1fr !important;
+    gap:14px !important;
+  }
+
+  .video-column iframe,
+  .youtube-launch,
+  .live-random-video,
+  .random-youtube-frame{
+    width:100% !important;
+  }
+
+  /* Comparison table on autism page becomes cards */
+  .compare-table{
+    border:0 !important;
+    background:transparent !important;
+  }
+
+  .compare-head{
+    display:none !important;
+  }
+
+  .compare-row{
+    display:block !important;
+    margin-bottom:14px !important;
+    overflow:hidden;
+    border:1px solid var(--accent-line) !important;
+    border-radius:14px !important;
+    background:#fff;
+  }
+
+  .compare-row > div{
+    display:block !important;
+    min-height:0 !important;
+    padding:14px 15px !important;
+    border:0 !important;
+    border-bottom:1px solid var(--accent-line) !important;
+  }
+
+  .compare-row > div:last-child{
+    border-bottom:0 !important;
+  }
+
+  .compare-row > div:first-child{
+    background:var(--accent-soft);
+    color:var(--text);
+    font-weight:780;
+  }
+
+  .compare-row > div:nth-child(2)::before{
+    content:"При оценке аутизма";
+    display:block;
+    margin-bottom:6px;
+    color:var(--accent);
+    font-size:.7rem;
+    font-weight:800;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+
+  .compare-row > div:nth-child(3)::before{
+    content:"При сенсорной алалии";
+    display:block;
+    margin-bottom:6px;
+    color:var(--accent);
+    font-size:.7rem;
+    font-weight:800;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+
+  /* Materials */
+  .materials-group{
+    padding-top:10px !important;
+  }
+
+  .material-row{
+    padding:15px 0 !important;
+  }
+
+  .material-row h3{
+    font-size:1.05rem !important;
+  }
+
+  .material-row p{
+    font-size:.91rem !important;
+  }
+
+  /* Specialists */
+  .specialists-section{
+    padding:52px 0 !important;
+  }
+
+  .specialist-grid{
+    margin-top:20px !important;
+  }
+
+  .specialist-card{
+    border-radius:15px !important;
+  }
+
+  .specialist-photo{
+    aspect-ratio:16/10 !important;
+  }
+
+  .specialist-photo img{
+    object-position:center 22% !important;
+  }
+
+  .specialist-body{
+    padding:17px !important;
+  }
+
+  .specialist-body p{
+    font-size:.91rem !important;
+    line-height:1.48 !important;
+  }
+
+  /* Footer */
+  .site-footer{
+    padding-top:44px !important;
+  }
+
+  .footer-main-grid{
+    grid-template-columns:1fr !important;
+    gap:30px !important;
+  }
+
+  .footer-about p{
+    max-width:none !important;
+    font-size:.91rem !important;
+  }
+
+  .footer-column a{
+    font-size:.9rem !important;
+    line-height:1.4 !important;
+  }
+
+  .footer-socials-list a{
+    min-height:32px;
+  }
+
+  .footer-legal{
+    gap:18px !important;
+    margin-top:36px !important;
+    padding:20px 0 24px !important;
+  }
+
+  .footer-legal > p{
+    font-size:.78rem !important;
+    line-height:1.5 !important;
+  }
+}
+
+@media (max-width:420px){
+  .container{
+    width:min(calc(100% - 24px), var(--container)) !important;
+  }
+
+  .topbar-copy{
+    font-size:.76rem !important;
+  }
+
+  .topbar-avatars img{
+    width:29px !important;
+    height:29px !important;
+  }
+
+  .orientation-row,
+  .hero-side-row{
+    grid-template-columns:1fr !important;
+    gap:5px !important;
+  }
+
+  .age-row{
+    grid-template-columns:1fr !important;
+  }
+}
 </style>
 </head>
-
 <body>
-
-  <header class="site-header">
+<header class="site-header">
 <div class="topbar">
 <div class="container topbar-inner">
 <div class="topbar-left">
@@ -2631,65 +3250,59 @@ h3,
 </div>
 </div>
 </header>
-
-  <main>
-
-    <section class="page-hero">
-      <div class="container page-hero-grid">
-        <div class="page-hero-copy">
-          <p class="eyebrow">Если причина пока непонятна</p>
-          <h1>Ребёнок не говорит</h1>
-          <p class="lead">
+<main>
+<section class="page-hero">
+<div class="container page-hero-grid">
+<div class="page-hero-copy">
+<p class="eyebrow">Если причина пока непонятна</p>
+<h1>Ребёнок не говорит</h1>
+<p class="lead">
             Причин, по которым речь не появляется или развивается необычно, может быть несколько.
             Эта страница поможет спокойно сориентироваться: сначала вы пройдёте короткий тест,
             затем получите предварительный ориентир и сможете обсудить его со специалистом.
           </p>
-          <p>
+<p>
             Тест не ставит диагноз и не заменяет диагностику. Его задача — сузить круг возможных направлений
             и помочь понять, на какие особенности речи, понимания, слуха или поведения стоит обратить внимание.
           </p>
-
-          <div class="hero-actions">
-            <a class="btn" href="#speech-test">Пройти короткий тест</a>
-          </div>
-        </div>
-
-        <aside class="orientation-panel">
-          <p class="eyebrow">На что смотрит тест</p>
-          <h2>Четыре стороны</h2>
-          <p>
+<div class="hero-actions">
+<a class="btn" href="#speech-test">Пройти короткий тест</a>
+</div>
+</div>
+<aside class="orientation-panel">
+<p class="eyebrow">На что смотрит тест</p>
+<h2>Четыре стороны</h2>
+<p>
             Отсутствие речи нельзя оценивать только по количеству слов.
             Важно увидеть картину целиком.
           </p>
-
-          <div class="orientation-list">
-            <div class="orientation-row">
-              <strong>Речь</strong>
-              <span>Как ребёнок произносит слова, строит фразы и пытается выразить мысль.</span>
-            </div>
-            <div class="orientation-row">
-              <strong>Понимание</strong>
-              <span>Насколько устойчиво ребёнок понимает слова, просьбы и вопросы.</span>
-            </div>
-            <div class="orientation-row">
-              <strong>Слух</strong>
-              <span>Как ребёнок реагирует на речь и звуки, есть ли особенности произношения и голоса.</span>
-            </div>
-            <div class="orientation-row">
-              <strong>Поведение</strong>
-              <span>Как ребёнок общается, играет, переключается и взаимодействует с окружающими.</span>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section section-soft">
-      <div class="container">
-        <div class="text-container">
-          <p class="eyebrow">Почему причин несколько</p>
-          <h2>Сначала разобраться</h2>
-          <p class="explanation-text">
+<div class="orientation-list">
+<div class="orientation-row">
+<strong>Речь</strong>
+<span>Как ребёнок произносит слова, строит фразы и пытается выразить мысль.</span>
+</div>
+<div class="orientation-row">
+<strong>Понимание</strong>
+<span>Насколько устойчиво ребёнок понимает слова, просьбы и вопросы.</span>
+</div>
+<div class="orientation-row">
+<strong>Слух</strong>
+<span>Как ребёнок реагирует на речь и звуки, есть ли особенности произношения и голоса.</span>
+</div>
+<div class="orientation-row">
+<strong>Поведение</strong>
+<span>Как ребёнок общается, играет, переключается и взаимодействует с окружающими.</span>
+</div>
+</div>
+</aside>
+</div>
+</section>
+<section class="section section-soft">
+<div class="container">
+<div class="text-container">
+<p class="eyebrow">Почему причин несколько</p>
+<h2>Сначала разобраться</h2>
+<p class="explanation-text">
             Фраза «ребёнок не говорит» описывает только внешний результат, но почти ничего не говорит о причине.
             Один ребёнок хорошо понимает речь и активно общается жестами, но ему трудно сформировать собственные слова.
             Другой слышит звуки, однако неустойчиво понимает обращённую речь. В третьей ситуации необходимо дополнительно
@@ -2698,307 +3311,251 @@ h3,
             невнимательным просто потому, что не может полностью разобраться в словесной инструкции. Поэтому правильнее
             сначала собрать наблюдения из нескольких областей, а уже потом выбирать дальнейший маршрут.
           </p>
-
-          <div class="factor-grid">
-            <article class="factor-card">
-              <strong>Собственная речь</strong>
-              <p>
+<div class="factor-grid">
+<article class="factor-card">
+<strong>Собственная речь</strong>
+<p>
                 Здесь важно не только количество слов. Мы смотрим, пытается ли ребёнок повторять новые слова,
                 строит ли фразы, насколько устойчиво произносит знакомые слова, может ли самостоятельно сформулировать
                 просьбу или мысль и как меняется речь в новых ситуациях. Один ребёнок знает много отдельных слов,
                 но почти не соединяет их во фразу; другой хочет говорить, но каждый раз слово получается по-разному.
               </p>
-            </article>
-
-            <article class="factor-card">
-              <strong>Понимание речи</strong>
-              <p>
+</article>
+<article class="factor-card">
+<strong>Понимание речи</strong>
+<p>
                 Ребёнок может хорошо ориентироваться в привычном распорядке и при этом не полностью понимать слова.
                 Поэтому мы обращаем внимание на новые просьбы, вопросы, инструкции из нескольких действий,
                 названия предметов и способность понимать речь без жеста или подсказки ситуацией. Это помогает отличить
                 настоящее понимание обращённой речи от привычной реакции на знакомый сценарий.
               </p>
-            </article>
-
-            <article class="factor-card">
-              <strong>Слух и произношение</strong>
-              <p>
+</article>
+<article class="factor-card">
+<strong>Слух и произношение</strong>
+<p>
                 Важно понять, одинаково ли ребёнок реагирует на бытовые звуки и человеческую речь, различает ли похожие слова,
                 нет ли особенностей голоса, темпа и произношения. Отдельно оцениваются движения губ и языка,
                 способность повторить звук или слово и то, меняется ли качество речи в зависимости от длины и сложности слова.
               </p>
-            </article>
-
-            <article class="factor-card">
-              <strong>Поведение и общение</strong>
-              <p>
+</article>
+<article class="factor-card">
+<strong>Поведение и общение</strong>
+<p>
                 Речевые трудности часто отражаются на поведении. Ребёнок может злиться, когда его не понимают,
                 избегать игр со сложными правилами, пользоваться жестами вместо слов или выглядеть невнимательным,
                 если словесная инструкция для него слишком сложна. Поэтому поведение оценивается не отдельно от речи,
                 а как часть общей картины общения, понимания и развития.
               </p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section test-section" id="speech-test">
-      <div class="container">
-        <div class="text-container test-intro">
-          <p class="eyebrow">Интерактивный тест</p>
-          <h2>Предварительный ориентир</h2>
-          <p>
+</article>
+</div>
+</div>
+</div>
+</section>
+<section class="section test-section" id="speech-test">
+<div class="container">
+<div class="text-container test-intro">
+<p class="eyebrow">Интерактивный тест</p>
+<h2>Предварительный ориентир</h2>
+<p>
             Тест последовательно проведёт вас по четырём тематическим группам. Отмечайте только то,
             что вы действительно наблюдаете. Если сомневаетесь в конкретном пункте, лучше не отмечать его
             и обсудить наблюдение со специалистом позже.
           </p>
-        </div>
-
-        <div class="test-shell">
-          <div id="test-app"></div>
-        </div>
-      </div>
-    </section>
-
-    
-
-    <section class="section evidence-section" id="evidence">
-      <div class="container">
-        <div class="text-container evidence-intro">
-          <p class="eyebrow">Доказательства работы</p>
-          <h2>Истории детей</h2>
-          <p>
+</div>
+<div class="test-shell">
+<div id="test-app"></div>
+</div>
+</div>
+</section>
+<section class="section evidence-section" id="evidence">
+<div class="container">
+<div class="text-container evidence-intro">
+<p class="eyebrow">Доказательства работы</p>
+<h2>Истории детей</h2>
+<p>
             После предварительного результата важно увидеть, как речевые трудности выглядят в реальной работе
             и как меняется ребёнок со временем. Здесь мы будем собирать истории конкретных детей: с какой ситуацией
             обратились родители, какие задачи были определены в начале, сколько продолжалась работа и какие изменения
             удалось зафиксировать. Главный материал в этом разделе — реальные видео, а текст помогает понять,
             что именно изменилось между этапами.
           </p>
-        </div>
-
-        <div class="result-list">
-          <article class="result-case">
-            <div class="case-top">
-              <div>
-                <p class="case-tag">История ребёнка · условный пример</p>
-                <h3>Миша, 4 года</h3>
-              </div>
-              <span class="case-stage">2 видео</span>
-            </div>
-
-            <p>
+</div>
+<div class="result-list">
+<article class="result-case">
+<div class="case-top">
+<div>
+<p class="case-tag">История ребёнка · условный пример</p>
+<h3>Миша, 4 года</h3>
+</div>
+<span class="case-stage">2 видео</span>
+</div>
+<p>
               Родители обратились из-за очень ограниченной собственной речи: Миша использовал отдельные слова,
               часто объяснял желания жестами и быстро расстраивался, если взрослые его не понимали.
               В реальной версии здесь будет описано, что именно оценивал специалист в начале,
               какие задачи были поставлены и сколько времени заняла работа до заметного результата.
             </p>
-
-            <div class="video-grid">
-              <div class="video-column">
-                <p class="video-note">
+<div class="video-grid">
+<div class="video-column">
+<p class="video-note">
                   На первой записи будет видно исходное состояние: объём активной речи,
                   длина фразы, попытки повторения и то, как ребёнок общается без слов.
                 </p>
-                <div class="live-random-video inner-story-video">
-                  <iframe src="https://www.youtube-nocookie.com/embed/7FvZi2aTFrg?rel=0"
-                    title="Изучение второго языка при сенсорной и моторной алалии"
-                    loading="lazy"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                </div>
-                <span class="live-video-label">Начало работы · временный ролик с канала</span>
-              </div>
-
-              <div class="video-column">
-                <p class="video-note">
+<div class="live-random-video inner-story-video">
+<iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" src="https://www.youtube-nocookie.com/embed/7FvZi2aTFrg?rel=0" title="Изучение второго языка при сенсорной и моторной алалии"></iframe>
+</div>
+<span class="live-video-label">Начало работы · временный ролик с канала</span>
+</div>
+<div class="video-column">
+<p class="video-note">
                   На второй записи покажем результат на сопоставимых речевых задачах,
                   чтобы изменения можно было увидеть напрямую, а не только прочитать о них.
                 </p>
-                <div class="live-random-video inner-story-video">
-                  <iframe src="https://www.youtube-nocookie.com/embed/DvUeB6ALW8g?rel=0"
-                    title="Логопедическая группа и алалия"
-                    loading="lazy"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                </div>
-                <span class="live-video-label">Итог · временный ролик с канала</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="result-case">
-            <div class="case-top">
-              <div>
-                <p class="case-tag">История ребёнка · условный пример</p>
-                <h3>София, 5 лет</h3>
-              </div>
-              <span class="case-stage">2 видео</span>
-            </div>
-
-            <p>
+<div class="live-random-video inner-story-video">
+<iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" src="https://www.youtube-nocookie.com/embed/DvUeB6ALW8g?rel=0" title="Логопедическая группа и алалия"></iframe>
+</div>
+<span class="live-video-label">Итог · временный ролик с канала</span>
+</div>
+</div>
+</article>
+<article class="result-case">
+<div class="case-top">
+<div>
+<p class="case-tag">История ребёнка · условный пример</p>
+<h3>София, 5 лет</h3>
+</div>
+<span class="case-stage">2 видео</span>
+</div>
+<p>
               В этом кейсе родители замечали не только задержку собственной речи,
               но и трудности с пониманием новых просьб и вопросов. Описание реальной истории позволит показать,
               почему одинаковая жалоба «ребёнок не говорит» может скрывать совершенно разные причины
               и почему программа работы строится только после оценки понимания речи и общения в целом.
             </p>
-
-            <div class="video-grid">
-              <div class="video-column">
-                <p class="video-note">
+<div class="video-grid">
+<div class="video-column">
+<p class="video-note">
                   В исходном видео будет показано, как ребёнок понимает вопросы и инструкции,
                   отвечает ли по смыслу и насколько самостоятельно использует речь.
                 </p>
-                <div class="live-random-video inner-story-video">
-                  <iframe src="https://www.youtube-nocookie.com/embed/9X7bKBQUA00?rel=0"
-                    title="Дневник мамы ребёнка с алалией"
-                    loading="lazy"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                </div>
-                <span class="live-video-label">Начало работы · временный ролик с канала</span>
-              </div>
-
-              <div class="video-column">
-                <p class="video-note">
+<div class="live-random-video inner-story-video">
+<iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" src="https://www.youtube-nocookie.com/embed/9X7bKBQUA00?rel=0" title="Дневник мамы ребёнка с алалией"></iframe>
+</div>
+<span class="live-video-label">Начало работы · временный ролик с канала</span>
+</div>
+<div class="video-column">
+<p class="video-note">
                   Итоговая запись даст возможность сравнить понимание речи,
                   самостоятельность ответов и качество общения после проведённой работы.
                 </p>
-                <div class="live-random-video inner-story-video">
-                  <iframe src="https://www.youtube-nocookie.com/embed/Qu3hkOyIfKE?rel=0"
-                    title="Заикание и запинки при алалии"
-                    loading="lazy"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                </div>
-                <span class="live-video-label">Итог · временный ролик с канала</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    
+<div class="live-random-video inner-story-video">
+<iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" src="https://www.youtube-nocookie.com/embed/Qu3hkOyIfKE?rel=0" title="Заикание и запинки при алалии"></iframe>
+</div>
+<span class="live-video-label">Итог · временный ролик с канала</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
 <section class="section diagnosis-cta-section">
-  <div class="container">
-    <div class="content-wide diagnosis-cta-card">
-      <div class="diagnosis-cta-copy">
-        <p class="eyebrow">Консультация у специалиста</p>
-        <h2>Разобраться в диагнозе</h2>
-        <p>
+<div class="container">
+<div class="content-wide diagnosis-cta-card">
+<div class="diagnosis-cta-copy">
+<p class="eyebrow">Консультация у специалиста</p>
+<h2>Разобраться в диагнозе</h2>
+<p>
           Если после теста или изучения материалов остаются вопросы, специалист поможет сопоставить
           особенности речи, понимания и поведения ребёнка и определить, какое направление требует
           более подробной оценки.
         </p>
-      </div>
-      <a class="btn" href="#specialists">Записаться</a>
-    </div>
-  </div>
+</div>
+<a class="btn" href="#specialists">Записаться</a>
+</div>
+</div>
 </section>
-
-
-    <section class="section section-soft">
-      <div class="container">
-        <div class="text-container">
-          <p class="eyebrow">Для родителей</p>
-          <h2>Полезные материалы</h2>
-          <p>
+<section class="section section-soft">
+<div class="container">
+<div class="text-container">
+<p class="eyebrow">Для родителей</p>
+<h2>Полезные материалы</h2>
+<p>
             Если вы хотите сначала подробнее разобраться в теме, здесь будут собраны несколько основных статей
             и видеоматериалов. Мы не выводим большой каталог: только материалы, которые действительно помогают
             понять первые шаги, отличия между основными речевыми нарушениями и подготовиться к консультации.
           </p>
-        </div>
-
-        <div class="materials-split">
-          <section class="materials-group" aria-labelledby="articles-title">
-            <div class="materials-group-head">
-              <span class="material-format">Статьи</span>
-              <h3 id="articles-title">Почитать подробнее</h3>
-              <p>
+</div>
+<div class="materials-split">
+<section aria-labelledby="articles-title" class="materials-group">
+<div class="materials-group-head">
+<span class="material-format">Статьи</span>
+<h3 id="articles-title">Почитать подробнее</h3>
+<p>
                 Тексты для родителей, которые хотят спокойно разобраться в причинах задержки речи
                 и понять основные различия между речевыми нарушениями.
               </p>
-            </div>
-
-            <div class="materials-list">
-              <article class="material-row">
-                <div>
-                  <h3>Почему ребёнок не говорит</h3>
-                  <p>Основные группы причин и признаки, на которые стоит обратить внимание в первую очередь.</p>
-                </div>
-                <a class="text-link" href="#">Читать →</a>
-              </article>
-
-              <article class="material-row">
-                <div>
-                  <h3>Алалия или другая причина</h3>
-                  <p>Почему внешне похожие речевые трудности могут иметь разную природу и требуют разного маршрута помощи.</p>
-                </div>
-                <a class="text-link" href="#">Читать →</a>
-              </article>
-
-              <article class="material-row">
-                <div>
-                  <h3>Как оценить понимание речи</h3>
-                  <p>Какие бытовые наблюдения помогают понять, действительно ли ребёнок понимает слова и инструкции.</p>
-                </div>
-                <a class="text-link" href="#">Читать →</a>
-              </article>
-            </div>
-          </section>
-
-          <section class="materials-group" aria-labelledby="videos-title">
-            <div class="materials-group-head">
-              <span class="material-format">Видео</span>
-              <h3 id="videos-title">Посмотреть объяснения</h3>
-              <p>
+</div>
+<div class="materials-list">
+<article class="material-row">
+<div>
+<h3>Почему ребёнок не говорит</h3>
+<p>Основные группы причин и признаки, на которые стоит обратить внимание в первую очередь.</p>
+</div>
+<a class="text-link" href="#">Читать →</a>
+</article>
+<article class="material-row">
+<div>
+<h3>Алалия или другая причина</h3>
+<p>Почему внешне похожие речевые трудности могут иметь разную природу и требуют разного маршрута помощи.</p>
+</div>
+<a class="text-link" href="#">Читать →</a>
+</article>
+<article class="material-row">
+<div>
+<h3>Как оценить понимание речи</h3>
+<p>Какие бытовые наблюдения помогают понять, действительно ли ребёнок понимает слова и инструкции.</p>
+</div>
+<a class="text-link" href="#">Читать →</a>
+</article>
+</div>
+</section>
+<section aria-labelledby="videos-title" class="materials-group">
+<div class="materials-group-head">
+<span class="material-format">Видео</span>
+<h3 id="videos-title">Посмотреть объяснения</h3>
+<p>
                 Короткие видеоматериалы специалистов: примеры, разборы типичных ситуаций
                 и объяснение признаков, которые родителям трудно оценить только по тексту.
               </p>
-            </div>
-
-            <p class="youtube-random-note">
+</div>
+<p class="youtube-random-note">
               Здесь показываются разные ролики с нашего YouTube-канала. При обновлении страницы подборка меняется.
             </p>
-
-            <div class="video-material-grid" id="random-youtube-grid">
-              <article class="video-material-card random-youtube-card">
-                <div class="youtube-material-preview">
-                  <iframe class="random-youtube-frame" title="Видео с нашего YouTube-канала"
-                    src="https://www.youtube-nocookie.com/embed/9X7bKBQUA00?rel=0" loading="lazy"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                </div>
-                <h3 class="random-video-title">Видео с нашего канала</h3>
-              </article>
-
-              <article class="video-material-card random-youtube-card">
-                <div class="youtube-material-preview">
-                  <iframe class="random-youtube-frame" title="Видео с нашего YouTube-канала"
-                    src="https://www.youtube-nocookie.com/embed/Qu3hkOyIfKE?rel=0" loading="lazy"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                </div>
-                <h3 class="random-video-title">Видео с нашего канала</h3>
-              </article>
-
-              <article class="video-material-card random-youtube-card">
-                <div class="youtube-material-preview">
-                  <iframe class="random-youtube-frame" title="Видео с нашего YouTube-канала"
-                    src="https://www.youtube-nocookie.com/embed/ziNFGXaL2Xc?rel=0" loading="lazy"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                </div>
-                <h3 class="random-video-title">Видео с нашего канала</h3>
-              </article>
-            </div>
-          </section>
-        </div>
-      </div>
-    </section>
-
-    <section class="section specialists-section" id="specialists">
+<div class="video-material-grid" id="random-youtube-grid">
+<article class="video-material-card random-youtube-card">
+<div class="youtube-material-preview">
+<iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="random-youtube-frame" loading="lazy" src="https://www.youtube-nocookie.com/embed/9X7bKBQUA00?rel=0" title="Видео с нашего YouTube-канала"></iframe>
+</div>
+<h3 class="random-video-title">Видео с нашего канала</h3>
+</article>
+<article class="video-material-card random-youtube-card">
+<div class="youtube-material-preview">
+<iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="random-youtube-frame" loading="lazy" src="https://www.youtube-nocookie.com/embed/Qu3hkOyIfKE?rel=0" title="Видео с нашего YouTube-канала"></iframe>
+</div>
+<h3 class="random-video-title">Видео с нашего канала</h3>
+</article>
+<article class="video-material-card random-youtube-card">
+<div class="youtube-material-preview">
+<iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="random-youtube-frame" loading="lazy" src="https://www.youtube-nocookie.com/embed/ziNFGXaL2Xc?rel=0" title="Видео с нашего YouTube-канала"></iframe>
+</div>
+<h3 class="random-video-title">Видео с нашего канала</h3>
+</article>
+</div>
+</section>
+</div>
+</div>
+</section>
+<section class="section specialists-section" id="specialists">
 <div class="container">
 <div class="text-container section-intro">
 <p class="eyebrow">Команда</p>
@@ -3058,10 +3615,8 @@ h3,
 </div>
 </div>
 </section>
-
-  </main>
-
-  <footer class="site-footer">
+</main>
+<footer class="site-footer">
 <div class="container footer-main-grid">
 <div class="footer-about">
 <h3>Денисова Ирина Петровна и команда</h3>
@@ -3118,16 +3673,14 @@ h3,
 </div>
 </div>
 </footer>
-
-  <script>
+<script>
 
 const SYMPTOMS = [{"id": "S001", "screen": "Собственная речь", "order": 1, "tech_significance": "2 — ключевой", "text": "Ребёнок совсем не говорит.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S002", "screen": "Собственная речь", "order": 2, "tech_significance": "2 — ключевой", "text": "Ребёнок произносит только отдельные звуки.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S003", "screen": "Собственная речь", "order": 3, "tech_significance": "2 — ключевой", "text": "Ребёнок использует несколько простых слов или звукоподражания (ам-ам, би-би, ту-ту, ав-ав).", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S004", "screen": "Собственная речь", "order": 4, "tech_significance": "3 — сильный", "text": "Ребенок может повторить за вами звукоподражания и простые слова.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S005", "screen": "Собственная речь", "order": 5, "tech_significance": "3 — сильный", "text": "Новые слова появляются редко, после многократных повторов.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S006", "screen": "Собственная речь", "order": 6, "tech_significance": "3 — сильный", "text": "За несколько месяцев занятий речь не запустилась.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S007", "screen": "Собственная речь", "order": 7, "tech_significance": "2 — ключевой", "text": "Ребёнок говорит только первые части слов: «ма» вместо «машина». Или только последние слоги.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S008", "screen": "Собственная речь", "order": 8, "tech_significance": "3 — сильный", "text": "Ребёнок общается с помощью жестов.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S009", "screen": "Собственная речь", "order": 9, "tech_significance": "2 — ключевой", "text": "Ребёнок хочет что-то сказать, но у него не получается.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S010", "screen": "Собственная речь", "order": 10, "tech_significance": "2 — ключевой", "text": "Иногда ребёнок произносит слово или фразу, но потом не может повторить её.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S011", "screen": "Собственная речь", "order": 11, "tech_significance": "2 — ключевой", "text": "Одно и то же слово каждый раз звучит по-разному.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S012", "screen": "Собственная речь", "order": 12, "tech_significance": "2 — ключевой", "text": "Ребёнок знает слово, но часто путает/заменяет слова другими.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S013", "screen": "Собственная речь", "order": 13, "tech_significance": "2 — ключевой", "text": "Ребенок говорит отдельными словами, но нет фразы.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S014", "screen": "Собственная речь", "order": 14, "tech_significance": "2 — ключевой", "text": "Ребёнок пропускает во фразе важные слова.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S015", "screen": "Собственная речь", "order": 15, "tech_significance": "2 — ключевой", "text": "Ребёнок путает окончания слов.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S016", "screen": "Собственная речь", "order": 16, "tech_significance": "2 — ключевой", "text": "Ребёнок путает порядок слов во фразе.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S017", "screen": "Собственная речь", "order": 17, "tech_significance": "3 — сильный", "text": "Ребёнок говорит много лепетными словами и неразборчиво (\"на своем языке\")", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S018", "screen": "Собственная речь", "order": 18, "tech_significance": "3 — сильный", "text": "Ребёнок говорит, но как будто не к месту и не по ситуации", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S019", "screen": "Собственная речь", "order": 19, "tech_significance": "3 — сильный", "text": "Ребёнок отвечает не на тот вопрос, который ему задали.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S020", "screen": "Собственная речь", "order": 20, "tech_significance": "3 — сильный", "text": "Ребёнок вместо ответа повторяет заданный вопрос.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S021", "screen": "Собственная речь", "order": 21, "tech_significance": "3 — сильный", "text": "Ребёнок дословно повторяет услышанную фразу сразу или спустя время", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S022", "screen": "Собственная речь", "order": 22, "tech_significance": "3 — сильный", "text": "Ребёнок повторяет фразы из мультфильмов или рекламы.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S023", "screen": "Собственная речь", "order": 23, "tech_significance": "3 — сильный", "text": "Ребёнок разговаривает только заученными словами или фразами.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S024", "screen": "Собственная речь", "order": 24, "tech_significance": "3 — сильный", "text": "Ребёнок знает цифры и буквы, но нет самостоятельной речи.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S025", "screen": "Собственная речь", "order": 25, "tech_significance": "2 — ключевой", "text": "Ребёнок перестал пытаться говорить после того, как его часто просили повторять или исправляли.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S027", "screen": "Собственная речь", "order": 26, "tech_significance": "3 — сильный", "text": "У ребенка словно \"каша во рту\", трудно понять даже близким.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S028", "screen": "Собственная речь", "order": 27, "tech_significance": "2 — ключевой", "text": "Ребёнок заменяет/пропускает/искажает звуки", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S029", "screen": "Собственная речь", "order": 28, "tech_significance": "2 — ключевой", "text": "Ребенок выражает свою мысль одним словом и ожидает, что его и так поняли", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S026", "screen": "Собственная речь", "order": 29, "tech_significance": "1 — красный флаг", "text": "Была тяжелая черепно мозговой травма / опухоль / инсульт и речь пропала, хотя развивалась по возрасту", "red_flag": true, "show_comment": "Обычный чекбокс."}, {"id": "S129", "screen": "Понимание речи", "order": 1, "tech_significance": "1 — ключевой", "text": "Ребёнок совсем ничего не понимает: не выполняет даже простые привычные просьбы без жеста или показа.", "red_flag": false, "show_comment": "Показывать первым на экране понимания."}, {"id": "S030", "screen": "Понимание речи", "order": 2, "tech_significance": "2 — ключевой", "text": "Ребёнок понимает только привычные просьбы: «иди есть», «пойдём гулять», «включим мультики».", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S031", "screen": "Понимание речи", "order": 3, "tech_significance": "2 — ключевой", "text": "Ребёнок выполняет просьбу только в знакомой ситуации.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S032", "screen": "Понимание речи", "order": 4, "tech_significance": "2 — ключевой", "text": "Ребёнок не понимает новую просьбу, которую раньше не слышал.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S033", "screen": "Понимание речи", "order": 5, "tech_significance": "2 — ключевой", "text": "Без жеста или показа ребёнок не понимает, что от него хотят.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S034", "screen": "Понимание речи", "order": 6, "tech_significance": "2 — ключевой", "text": "Ребёнок приносит/смотрит не на  тот предмет, который назвал взрослый или долго ищет его взглядом", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S035", "screen": "Понимание речи", "order": 7, "tech_significance": "2 — ключевой", "text": "Ребёнок понимает отдельные слова, но не понимает целую фразу.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S036", "screen": "Понимание речи", "order": 8, "tech_significance": "2 — ключевой", "text": "Ребёнок понимает короткую просьбу, но теряется, если действий несколько (например, \"включи свет и позови папу\").", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S037", "screen": "Понимание речи", "order": 9, "tech_significance": "2 — ключевой", "text": "Ребёнок не понимает даже самые простые вопросы «кто?», «где?», «что делает?».", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S038", "screen": "Понимание речи", "order": 10, "tech_significance": "2 — ключевой", "text": "Ребенок не понимает полностью или не различает \"нет/да\"", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S039", "screen": "Понимание речи", "order": 11, "tech_significance": "3 — сильный", "text": "Ребёнок не играет / не понимает правила игры.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S040", "screen": "Понимание речи", "order": 12, "tech_significance": "2 — ключевой", "text": "Ребёнок путает просьбы, например «стой» и «иди»", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S041", "screen": "Понимание речи", "order": 13, "tech_significance": "2 — ключевой", "text": "Ребенок не ориентируется в пространстве, например, не понимает разницу между «на стуле» и «под стулом».", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S042", "screen": "Понимание речи", "order": 14, "tech_significance": "2 — ключевой", "text": "Ребёнок не понимает разницу между «один» и «много».", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S043", "screen": "Понимание речи", "order": 15, "tech_significance": "2 — ключевой", "text": "Ребенок выполняет выполняет только одно знакомое действие с предметом. Например, дать в руки молоточек, но попросить не стучать, а катить (не показывая действие)", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S044", "screen": "Понимание речи", "order": 16, "tech_significance": "2 — ключевой", "text": "Ребенок понимает только одну форму слова. Например, понимает \"киса\", но не понимает \"кот\".", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S045", "screen": "Понимание речи", "order": 17, "tech_significance": "2 — ключевой", "text": "Ребёнок понимает название только одного конкретного предмета. Например, словом «чашка» считает только свою чашку.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S046", "screen": "Понимание речи", "order": 18, "tech_significance": "3 — сильный", "text": "Ребёнок знает, как пользоваться предметом, но не понимает, как этот предмет называется.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S047", "screen": "Понимание речи", "order": 19, "tech_significance": "3 — сильный", "text": "Ребёнок понимает знакомого человека лучше, чем незнакомого.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S048", "screen": "Понимание речи", "order": 20, "tech_significance": "3 — сильный", "text": "Ребенок что-то понимает дома, но теряется в незнакомом пространостве", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S049", "screen": "Понимание речи", "order": 21, "tech_significance": "2 — ключевой", "text": "Ребёнок понимает настроение взрослого по голосу, но не понимает сами слова.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S050", "screen": "Понимание речи", "order": 22, "tech_significance": "2 — ключевой", "text": "Ребёнок понимает жесты и выражение лица, но не слова.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S051", "screen": "Понимание речи", "order": 23, "tech_significance": "3 — сильный", "text": "Ничего из вышеперечисленного не подходит, ребенок все понимает", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S052", "screen": "Слух, голос и произношение", "order": 1, "tech_significance": "2 — ключевой", "text": "Ребёнок часто переспрашивает или смотрит на губы говорящего.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S053", "screen": "Слух, голос и произношение", "order": 2, "tech_significance": "2 — ключевой", "text": "Ребёнок реагирует на звуки (например, хлопок двери, мультики, фантик или то, что ему интересно), но не реагирует на слова.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S054", "screen": "Слух, голос и произношение", "order": 3, "tech_significance": "2 — ключевой", "text": "Ребёнок не различает похожие слова.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S055", "screen": "Слух, голос и произношение", "order": 4, "tech_significance": "2 — ключевой", "text": "Ребёнок путает похожие слова, например отличающиеся одним звуком: например, «дом» и «том» / папа - баба", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S056", "screen": "Слух, голос и произношение", "order": 5, "tech_significance": "2 — ключевой", "text": "Ребёнок не откликается на своё имя.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S057", "screen": "Слух, голос и произношение", "order": 6, "tech_significance": "3 — сильный", "text": "Ребёнок закрывает уши при звуках / разговорах / постороннем шуме.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S058", "screen": "Слух, голос и произношение", "order": 7, "tech_significance": "2 — ключевой", "text": "Ребёнок закрывает рот взрослому, который говорит", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S059", "screen": "Слух, голос и произношение", "order": 8, "tech_significance": "2 — ключевой", "text": "Ребёнок начинает кричать (вокализировать/петь) когда кто-то говорит", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S060", "screen": "Слух, голос и произношение", "order": 9, "tech_significance": "2 — ключевой", "text": "Ребёнок пропускает звуки в словах.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S061", "screen": "Слух, голос и произношение", "order": 10, "tech_significance": "2 — ключевой", "text": "Ребёнок заменяет один звук другим / путает похожие звуки", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S062", "screen": "Слух, голос и произношение", "order": 11, "tech_significance": "2 — ключевой", "text": "Один и тот же звук всегда произносится неправильно.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S063", "screen": "Слух, голос и произношение", "order": 12, "tech_significance": "2 — ключевой", "text": "Ребёнок может произнести звук отдельно, но не может повторить его по просьбе или теряет в слове", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S064", "screen": "Слух, голос и произношение", "order": 13, "tech_significance": "2 — ключевой", "text": "Ребёнок переставляет слоги в слове.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S065", "screen": "Слух, голос и произношение", "order": 14, "tech_significance": "2 — ключевой", "text": "Ребёнок пропускает целые слоги.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S066", "screen": "Слух, голос и произношение", "order": 15, "tech_significance": "2 — ключевой", "text": "Ребёнок несколько раз начинает слово, прежде чем произнести его.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S067", "screen": "Слух, голос и произношение", "order": 16, "tech_significance": "3 — сильный", "text": "Перед словом ребёнок заметно ищет нужное положение губ и языка.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S068", "screen": "Слух, голос и произношение", "order": 17, "tech_significance": "2 — ключевой", "text": "Чем длиннее слово, тем труднее ребёнку его произнести.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S069", "screen": "Слух, голос и произношение", "order": 18, "tech_significance": "2 — ключевой", "text": "Ребенок может произнести длинное слово (например, черепаха), но не может прознести короткое (например, дом)", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S070", "screen": "Слух, голос и произношение", "order": 19, "tech_significance": "2 — ключевой", "text": "Речь ребёнка смазанная и нечёткая.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S071", "screen": "Слух, голос и произношение", "order": 20, "tech_significance": "2 — ключевой", "text": "Ребёнок говорит слишком медленно.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S072", "screen": "Слух, голос и произношение", "order": 21, "tech_significance": "2 — ключевой", "text": "Ребёнок говорит слишком быстро.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S073", "screen": "Слух, голос и произношение", "order": 22, "tech_significance": "3 — сильный", "text": "Ребенок говорит, но очень тихо и неуверенно (шепчет)", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S074", "screen": "Слух, голос и произношение", "order": 23, "tech_significance": "2 — ключевой", "text": "Ребёнок говорит рывками, на предыхании (как робот)", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S075", "screen": "Слух, голос и произношение", "order": 24, "tech_significance": "2 — ключевой", "text": "Речь сильно гнусавая, ребёнок постоянно говорит «в нос».", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S076", "screen": "Слух, голос и произношение", "order": 25, "tech_significance": "3 — сильный", "text": "Ребенок произносит слова, полностью копируя интонацию, с которой он эти слова услышал", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S077", "screen": "Слух, голос и произношение", "order": 26, "tech_significance": "1 — красный флаг", "text": "У ребенка вообще нет голоса (даже плач и смех - беззвучные)", "red_flag": true, "show_comment": "Не поднимать вверх только из-за медицинской значимости. Оставлять в естественном месте родительского сценария; при выборе выводить срочную плашку в результатах."}, {"id": "S078", "screen": "Слух, голос и произношение", "order": 27, "tech_significance": "2 — ключевой", "text": "Голос быстро слабеет или исчезает.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S079", "screen": "Слух, голос и произношение", "order": 28, "tech_significance": "2 — ключевой", "text": "Ребёнок не может по просьбе высунуть язык / улыбнуться / надуть щеки, но в игре или непроизвольно (просто так) может", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S080", "screen": "Слух, голос и произношение", "order": 29, "tech_significance": "2 — ключевой", "text": "Ребёнок совсем не может высунуть язык / улыбнуться / надуть щеки", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S081", "screen": "Слух, голос и произношение", "order": 30, "tech_significance": "3 — сильный", "text": "Ребенок не умеет дуть", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S082", "screen": "Слух, голос и произношение", "order": 31, "tech_significance": "2 — ключевой", "text": "У ребёнка при движении языка наблюдаются синкинезии - содружественные движения (вместе с языком поднимается, например, нижняя челюсть или голова)", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S083", "screen": "Слух, голос и произношение", "order": 32, "tech_significance": "2 — ключевой", "text": "Язык заметно отклоняется в одну сторону.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S084", "screen": "Поведение", "order": 1, "tech_significance": "3 — сильный", "text": "У ребенка нет указательного жеста", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S085", "screen": "Поведение", "order": 2, "tech_significance": "3 — сильный", "text": "Ребёнок не смотрит, куда показывает взрослый.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S086", "screen": "Поведение", "order": 3, "tech_significance": "5 — контрольный", "text": "Ребёнок приносит взрослому игрушки или найденные предметы, чтобы показать их.", "red_flag": false, "show_comment": "Контрольный ответ; не должен формировать результат сам по себе."}, {"id": "S087", "screen": "Поведение", "order": 4, "tech_significance": "5 — контрольный", "text": "Ребёнок использует кивок «да» и покачивание головой «нет».", "red_flag": false, "show_comment": "Контрольный ответ; не должен формировать результат сам по себе."}, {"id": "S088", "screen": "Поведение", "order": 5, "tech_significance": "3 — сильный", "text": "Ребёнок использует понятные жесты, без слов объяснит, чего хочет.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S089", "screen": "Поведение", "order": 6, "tech_significance": "4 — общий", "text": "Когда ребенку что-то нужно, он кричит или проявляет агрессию к взрослому, но не пытается показать или объяснить.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S090", "screen": "Поведение", "order": 7, "tech_significance": "3 — сильный", "text": "Ребёнок не пытается поделиться радостью или удивлением. Или во время испуга не обращается к взрослому.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S091", "screen": "Поведение", "order": 8, "tech_significance": "3 — сильный", "text": "Ребёнок не смотрит в глаза во время общения.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S092", "screen": "Поведение", "order": 9, "tech_significance": "4 — общий", "text": "Ребёнок реагирует на эмоции взрослого.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S093", "screen": "Поведение", "order": 10, "tech_significance": "4 — общий", "text": "Ребёнок любит объятия и сам ищет телесный контакт.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S094", "screen": "Поведение", "order": 11, "tech_significance": "3 — сильный", "text": "Ребёнок не подходит к детям и не пытается начать игру.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S095", "screen": "Поведение", "order": 12, "tech_significance": "4 — общий", "text": "Ребенок наоборот, \"пристает\" к другим детям (например, целует, обнимает, трогает)", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S096", "screen": "Поведение", "order": 13, "tech_significance": "4 — общий", "text": "Ребёнок наблюдает за играющими детьми, но не присоединяется.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S097", "screen": "Поведение", "order": 14, "tech_significance": "4 — общий", "text": "Ребёнок может играть в простые игры с другими детьми, но уходит если начинается игра с более сложными правилами", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S098", "screen": "Поведение", "order": 15, "tech_significance": "4 — общий", "text": "Даже после нескольких показов ребёнок не понимает, что нужно сделать.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S099", "screen": "Поведение", "order": 16, "tech_significance": "4 — общий", "text": "Ребенок не играет", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S100", "screen": "Поведение", "order": 17, "tech_significance": "4 — общий", "text": "Ребёнок долго повторяет с предметом одно и то же действие.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S101", "screen": "Поведение", "order": 18, "tech_significance": "3 — сильный", "text": "Ребёнок выстраивает предметы в ряд / сортирует предметы", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S102", "screen": "Поведение", "order": 19, "tech_significance": "4 — общий", "text": "Игры ребёнка больше похожи на игры значительно младших детей.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S103", "screen": "Поведение", "order": 20, "tech_significance": "3 — сильный", "text": "Ребёнок постоянно в движении, очень неусидчивый", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S104", "screen": "Поведение", "order": 21, "tech_significance": "3 — сильный", "text": "Ребёнок быстро бросает одно занятие и переходит к другому. При выполнении заданий ему требуется организующая помощь.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S105", "screen": "Поведение", "order": 22, "tech_significance": "4 — общий", "text": "При выполнении заданий ребенок хаотично хватает предметы.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S106", "screen": "Поведение", "order": 23, "tech_significance": "2 — ключевой", "text": "Ребёнок действует, не дожидаясь окончания просьбы / ему трудно ждать очереди / часто перебивает", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S107", "screen": "Поведение", "order": 24, "tech_significance": "4 — общий", "text": "Ребёнок легко отвлекается на любой звук или движение.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S108", "screen": "Поведение", "order": 25, "tech_significance": "5 — контрольный", "text": "Во время любимого занятия ребёнок может долго сохранять внимание.", "red_flag": false, "show_comment": "Контрольный ответ; не должен формировать результат сам по себе."}, {"id": "S109", "screen": "Поведение", "order": 26, "tech_significance": "4 — общий", "text": "У ребенка часто бывает \"полевое поведение\"", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S110", "screen": "Поведение", "order": 27, "tech_significance": "3 — сильный", "text": "Ребёнок злится, когда его не понимают / или просят повторить слово", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S111", "screen": "Поведение", "order": 28, "tech_significance": "4 — общий", "text": "Поведение заметно улучшается, когда ребёнок начинает понимать задание.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S112", "screen": "Поведение", "order": 29, "tech_significance": "4 — общий", "text": "Ребенок не понимает социальные нормы (может сесть на человека \"как на стул\", может обнять постороннего человека)", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S113", "screen": "Поведение", "order": 30, "tech_significance": "4 — общий", "text": "Ребёнок часто машет руками / раскачивается / кружится (или другие повторяющиеся движения), когда испытывает яркие эмоции (радость/злость/грусть)", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S114", "screen": "Поведение", "order": 31, "tech_significance": "3 — сильный", "text": "Ребёнок часто машет руками / раскачивается / кружится (или другие повторяющиеся движения), независимо от ситуации", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S115", "screen": "Поведение", "order": 32, "tech_significance": "3 — сильный", "text": "Ребёнок зациклен на своем порядке, тяжело переносит любые изменения (перестановка вещей, изменение маршрута, новая одежда)", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S116", "screen": "Поведение", "order": 33, "tech_significance": "3 — сильный", "text": "Ребёнок необычно сильно интересуется буквами, цифрами, значками.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S117", "screen": "Поведение", "order": 34, "tech_significance": "4 — общий", "text": "Ребёнок не любит, когда его стригут, расчёсывают или моют.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S118", "screen": "Поведение", "order": 35, "tech_significance": "4 — общий", "text": "Ребёнок отказывается пробовать новую еду.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S119", "screen": "Поведение", "order": 36, "tech_significance": "4 — общий", "text": "Ребёнок не чувствует опасности, не реагирует на попытки взрослого его остановить (например, может выбежать на проезжую часть с машинами)", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S120", "screen": "Поведение", "order": 37, "tech_significance": "3 — сильный", "text": "Ребёнок подносит предметы очень близко к лицу / или рассматривает предметы боковым зрением", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S121", "screen": "Поведение", "order": 38, "tech_significance": "3 — сильный", "text": "У ребенка нет совместно-разделенного внимания", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S122", "screen": "Поведение", "order": 39, "tech_significance": "3 — сильный", "text": "Ребёнку трудно повторить движение взрослого, нет подражательной деятельности.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S123", "screen": "Поведение", "order": 40, "tech_significance": "2 — ключевой", "text": "Ребёнок не может выполнить знакомое движение по просьбе", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S124", "screen": "Поведение", "order": 41, "tech_significance": "2 — ключевой", "text": "Ребёнку трудно переключиться с одного движения на другое.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S125", "screen": "Поведение", "order": 42, "tech_significance": "3 — сильный", "text": "Не может освоить навыки самообсуживания (не ест сам, не ходит на горшок, не одевается)", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S126", "screen": "Поведение", "order": 43, "tech_significance": "2 — ключевой", "text": "Речь, движения, игра и бытовые навыки отстают.", "red_flag": false, "show_comment": "Обычный чекбокс."}, {"id": "S127", "screen": "Поведение", "order": 44, "tech_significance": "1 — красный флаг", "text": "Речь резко ухудшилась после травмы головы / тяжелой инфекции / приступов", "red_flag": true, "show_comment": null}, {"id": "S128", "screen": "Поведение", "order": 45, "tech_significance": "1 — красный флаг", "text": "Ребёнок начал терять уже освоенные слова.", "red_flag": true, "show_comment": null}];
 const LINKS = [{"symptom_id": "S001", "marker": "Анартрия", "weight": 1, "role": "неспецифичный", "domain": "тяжёлая оральная моторика", "active": true, "hard_exclude": false, "comment": "Учитывается только как слабый фон; сам по себе результат не формирует."}, {"symptom_id": "S001", "marker": "Аутизм", "weight": 0, "role": "отключённый неспецифичный", "domain": "дополнительный", "active": false, "hard_exclude": false, "comment": "Не используется для РАС без сочетания специфичных поведенческих доменов."}, {"symptom_id": "S001", "marker": "Афония", "weight": 0, "role": "отключённый неспецифичный", "domain": "Собственная речь", "active": false, "hard_exclude": false, "comment": "Отсутствие речи не означает отсутствие голоса."}, {"symptom_id": "S001", "marker": "ДИС", "weight": 0, "role": "отключённый неспецифичный", "domain": "Собственная речь", "active": false, "hard_exclude": false, "comment": "Отсутствие речи без регресса не поддерживает приобретённую утрату."}, {"symptom_id": "S001", "marker": "ЗПР", "weight": 0, "role": "отключённый неспецифичный", "domain": "общее развитие", "active": false, "hard_exclude": false, "comment": "Ограниченная речь сама по себе не формирует ЗПР."}, {"symptom_id": "S001", "marker": "ЗРР", "weight": 3, "role": "ядро темповой задержки", "domain": "собственная речь", "active": true, "hard_exclude": false, "comment": "Активно только до 24 месяцев. С 24 месяцев карточка ЗРР полностью запрещена."}, {"symptom_id": "S001", "marker": "Моторная алалия", "weight": 1, "role": "неспецифичный моторный", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S001", "marker": "Нарушение слуха", "weight": 1, "role": "слабый слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Учитывается только как слабый фон; сам по себе результат не формирует."}, {"symptom_id": "S001", "marker": "Сенсорная алалия", "weight": 1, "role": "неспецифичный сенсорный", "domain": "Собственная речь", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S002", "marker": "Анартрия", "weight": 1, "role": "неспецифичный", "domain": "тяжёлая оральная моторика", "active": true, "hard_exclude": false, "comment": "Учитывается только как слабый фон; сам по себе результат не формирует."}, {"symptom_id": "S002", "marker": "Аутизм", "weight": 0, "role": "отключённый неспецифичный", "domain": "дополнительный", "active": false, "hard_exclude": false, "comment": "Не используется для РАС без сочетания специфичных поведенческих доменов."}, {"symptom_id": "S002", "marker": "Афония", "weight": 0, "role": "отключённый неспецифичный", "domain": "Собственная речь", "active": false, "hard_exclude": false, "comment": "Отсутствие речи не означает отсутствие голоса."}, {"symptom_id": "S002", "marker": "ДИС", "weight": 0, "role": "отключённый неспецифичный", "domain": "Собственная речь", "active": false, "hard_exclude": false, "comment": "Отсутствие речи без регресса не поддерживает приобретённую утрату."}, {"symptom_id": "S002", "marker": "ЗПР", "weight": 0, "role": "отключённый неспецифичный", "domain": "общее развитие", "active": false, "hard_exclude": false, "comment": "Ограниченная речь сама по себе не формирует ЗПР."}, {"symptom_id": "S002", "marker": "ЗРР", "weight": 3, "role": "ядро темповой задержки", "domain": "собственная речь", "active": true, "hard_exclude": false, "comment": "Активно только до 24 месяцев. С 24 месяцев карточка ЗРР полностью запрещена."}, {"symptom_id": "S002", "marker": "Моторная алалия", "weight": 1, "role": "неспецифичный моторный", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S002", "marker": "Нарушение слуха", "weight": 1, "role": "слабый слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Учитывается только как слабый фон; сам по себе результат не формирует."}, {"symptom_id": "S002", "marker": "Сенсорная алалия", "weight": 1, "role": "неспецифичный сенсорный", "domain": "Собственная речь", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S003", "marker": "Анартрия", "weight": 1, "role": "неспецифичный", "domain": "тяжёлая оральная моторика", "active": true, "hard_exclude": false, "comment": "Учитывается только как слабый фон; сам по себе результат не формирует."}, {"symptom_id": "S003", "marker": "Аутизм", "weight": 0, "role": "отключённый неспецифичный", "domain": "дополнительный", "active": false, "hard_exclude": false, "comment": "Не используется для РАС без сочетания специфичных поведенческих доменов."}, {"symptom_id": "S003", "marker": "Афония", "weight": 0, "role": "отключённый неспецифичный", "domain": "Собственная речь", "active": false, "hard_exclude": false, "comment": "Отсутствие речи не означает отсутствие голоса."}, {"symptom_id": "S003", "marker": "ДИС", "weight": 0, "role": "отключённый неспецифичный", "domain": "Собственная речь", "active": false, "hard_exclude": false, "comment": "Отсутствие речи без регресса не поддерживает приобретённую утрату."}, {"symptom_id": "S003", "marker": "ЗПР", "weight": 0, "role": "отключённый неспецифичный", "domain": "общее развитие", "active": false, "hard_exclude": false, "comment": "Ограниченная речь сама по себе не формирует ЗПР."}, {"symptom_id": "S003", "marker": "ЗРР", "weight": 3, "role": "ядро темповой задержки", "domain": "собственная речь", "active": true, "hard_exclude": false, "comment": "Активно только до 24 месяцев. С 24 месяцев карточка ЗРР полностью запрещена."}, {"symptom_id": "S003", "marker": "Моторная алалия", "weight": 1, "role": "неспецифичный моторный", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S003", "marker": "Нарушение слуха", "weight": 1, "role": "слабый слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Учитывается только как слабый фон; сам по себе результат не формирует."}, {"symptom_id": "S003", "marker": "Сенсорная алалия", "weight": 1, "role": "неспецифичный сенсорный", "domain": "Собственная речь", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S004", "marker": "ЗРР", "weight": 2, "role": "динамика", "domain": "собственная речь", "active": true, "hard_exclude": false, "comment": "Активно только до 24 месяцев. С 24 месяцев карточка ЗРР полностью запрещена."}, {"symptom_id": "S004", "marker": "Моторная алалия", "weight": 2, "role": "сильный моторный", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S004", "marker": "Сенсорная алалия", "weight": 1, "role": "неспецифичный сенсорный", "domain": "Собственная речь", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S005", "marker": "ЗРР", "weight": 2, "role": "динамика", "domain": "собственная речь", "active": true, "hard_exclude": false, "comment": "Активно только до 24 месяцев. С 24 месяцев карточка ЗРР полностью запрещена."}, {"symptom_id": "S005", "marker": "Моторная алалия", "weight": 2, "role": "сильный моторный", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S005", "marker": "Сенсорная алалия", "weight": 1, "role": "неспецифичный сенсорный", "domain": "Собственная речь", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S006", "marker": "ЗРР", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S006", "marker": "Моторная алалия", "weight": 2, "role": "сильный моторный", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S006", "marker": "Сенсорная алалия", "weight": 1, "role": "неспецифичный сенсорный", "domain": "Собственная речь", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S007", "marker": "Апраксия", "weight": 2, "role": "сильный моторный", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S007", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S008", "marker": "Аутизм", "weight": -1, "role": "контрпризнак РАС", "domain": "РАС — контрпризнак", "active": true, "hard_exclude": false, "comment": "Положительное социальное поведение не является жёстким исключением РАС; используется только как небольшой отрицательный вес."}, {"symptom_id": "S008", "marker": "Моторная алалия", "weight": 2, "role": "сильный моторный", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S008", "marker": "Нарушение слуха", "weight": 1, "role": "слабый слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S009", "marker": "Апраксия", "weight": 1, "role": "слабый моторный", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S009", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S010", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S010", "marker": "Сенсорная алалия", "weight": 1, "role": "неспецифичный сенсорный", "domain": "Собственная речь", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S011", "marker": "Апраксия", "weight": 3, "role": "ядро моторного планирования", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S011", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S012", "marker": "Апраксия", "weight": 2, "role": "сильный моторный", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S012", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S013", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S013", "marker": "Сенсорная алалия", "weight": 1, "role": "неспецифичный сенсорный", "domain": "Собственная речь", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S014", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S015", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S016", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S017", "marker": "Моторная алалия", "weight": 2, "role": "сильный моторный", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S018", "marker": "Аутизм", "weight": 1, "role": "РАС: дополнительный", "domain": "дополнительный", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S018", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S019", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S020", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S021", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S022", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S023", "marker": "Моторная алалия", "weight": 2, "role": "сильный моторный", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S023", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S024", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S025", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S026", "marker": "Детская афазия", "weight": 3, "role": "красный флаг регресса", "domain": "утрата навыка", "active": true, "hard_exclude": false, "comment": "Выводится как срочный маршрут, а не как диагноз."}, {"symptom_id": "S027", "marker": "Анартрия", "weight": 2, "role": "сильный моторный", "domain": "тяжёлая оральная моторика", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S027", "marker": "Апраксия", "weight": 2, "role": "сильный моторный", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S027", "marker": "Дизартрия", "weight": 2, "role": "сильный моторный", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S028", "marker": "Дизартрия", "weight": 1, "role": "слабый моторный", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S028", "marker": "Дислалия", "weight": 3, "role": "ядро звукопроизношения", "domain": "звукопроизношение", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S028", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S028", "marker": "Ринолалия", "weight": 1, "role": "слабый", "domain": "резонанс", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S029", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S030", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S031", "marker": "Нарушение слуха", "weight": 2, "role": "сильный слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S031", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S032", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S033", "marker": "Нарушение слуха", "weight": 2, "role": "сильный слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S033", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S034", "marker": "Нарушение слуха", "weight": 2, "role": "сильный слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S034", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S035", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S036", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S037", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S038", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S039", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S040", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S041", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S042", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S043", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S044", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S045", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S046", "marker": "Моторная алалия", "weight": 2, "role": "сильный моторный", "domain": "компенсация/поведение", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S046", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S047", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S048", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S049", "marker": "Нарушение слуха", "weight": 2, "role": "сильный слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S049", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S050", "marker": "Нарушение слуха", "weight": 2, "role": "сильный слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S050", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S051", "marker": "Моторная алалия", "weight": 3, "role": "сохранное понимание", "domain": "контроль понимания", "active": true, "hard_exclude": false, "comment": "Сохранное понимание усиливает моторный профиль только вместе с нарушением собственной речи."}, {"symptom_id": "S051", "marker": "Сенсорная алалия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S052", "marker": "Нарушение слуха", "weight": 3, "role": "ключевой слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S053", "marker": "Нарушение слуха", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S053", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S053", "marker": "ФФН", "weight": 2, "role": "поддерживающий", "domain": "фонематическое восприятие", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S054", "marker": "Речеслуховая агнозия", "weight": 3, "role": "ядро речеслухового восприятия", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S054", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S054", "marker": "ФФН", "weight": 3, "role": "ядро фонематического восприятия", "domain": "фонематическое восприятие", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S055", "marker": "ФФН", "weight": 3, "role": "ядро фонематического восприятия", "domain": "фонематическое восприятие", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S056", "marker": "Аутизм", "weight": 1, "role": "РАС: дополнительный", "domain": "дополнительный", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S056", "marker": "Нарушение слуха", "weight": 2, "role": "сильный слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S056", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S057", "marker": "Аутизм", "weight": 1, "role": "РАС: дополнительный", "domain": "дополнительный", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S057", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S058", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S059", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S060", "marker": "Апраксия", "weight": 2, "role": "сильный моторный", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S060", "marker": "Дизартрия", "weight": 2, "role": "сильный моторный", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S060", "marker": "Дислалия", "weight": 2, "role": "поддерживающий", "domain": "звукопроизношение", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S060", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S061", "marker": "Апраксия", "weight": 2, "role": "сильный моторный", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S061", "marker": "Дизартрия", "weight": 2, "role": "сильный моторный", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S061", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S061", "marker": "ФФН", "weight": 3, "role": "ядро фонематического восприятия", "domain": "фонематическое восприятие", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S062", "marker": "Апраксия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S062", "marker": "Дизартрия", "weight": 1, "role": "слабый моторный", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S062", "marker": "Дислалия", "weight": 3, "role": "ядро звукопроизношения", "domain": "звукопроизношение", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S063", "marker": "Апраксия", "weight": 3, "role": "ядро моторного планирования", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S063", "marker": "Дизартрия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S063", "marker": "Дислалия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S063", "marker": "ФФН", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S064", "marker": "Апраксия", "weight": 3, "role": "ядро моторного планирования", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S064", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S065", "marker": "Апраксия", "weight": 2, "role": "сильный моторный", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S065", "marker": "Дизартрия", "weight": 2, "role": "сильный моторный", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S065", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S066", "marker": "Апраксия", "weight": 3, "role": "ядро моторного планирования", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S066", "marker": "Дизартрия", "weight": 2, "role": "сильный моторный", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S066", "marker": "Заикание", "weight": 3, "role": "прямой признак плавности", "domain": "плавность", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S067", "marker": "Апраксия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S067", "marker": "Дизартрия", "weight": 1, "role": "слабый моторный", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S067", "marker": "Дислалия", "weight": 2, "role": "поддерживающий", "domain": "звукопроизношение", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S067", "marker": "Моторная алалия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S067", "marker": "Сенсорная алалия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S068", "marker": "Апраксия", "weight": 3, "role": "ядро моторного планирования", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S068", "marker": "Дизартрия", "weight": 2, "role": "сильный моторный", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S069", "marker": "Апраксия", "weight": 3, "role": "ядро моторного планирования", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S069", "marker": "Дизартрия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S069", "marker": "Моторная алалия", "weight": 3, "role": "ядро моторного профиля", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S070", "marker": "Апраксия", "weight": 2, "role": "сильный моторный", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S070", "marker": "Дизартрия", "weight": 3, "role": "ядро моторного исполнения", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S071", "marker": "Брадилалия", "weight": 3, "role": "прямой признак темпа", "domain": "темп", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S071", "marker": "Дизартрия", "weight": 2, "role": "сильный моторный", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S071", "marker": "Тахилалия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S072", "marker": "Брадилалия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S072", "marker": "Тахилалия", "weight": 3, "role": "прямой признак темпа", "domain": "темп", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S073", "marker": "Моторная алалия", "weight": 2, "role": "сильный моторный", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S073", "marker": "Сенсорная алалия", "weight": 1, "role": "неспецифичный сенсорный", "domain": "Слух, голос и произношение", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S074", "marker": "Апраксия", "weight": 3, "role": "ядро моторного планирования", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S074", "marker": "Дизартрия", "weight": 3, "role": "ядро моторного исполнения", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S075", "marker": "Ринолалия", "weight": 3, "role": "прямой резонансный признак", "domain": "резонанс", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S076", "marker": "Сенсорная алалия", "weight": 2, "role": "сильный сенсорный", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S077", "marker": "Анартрия", "weight": 1, "role": "неспецифичный", "domain": "тяжёлая оральная моторика", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S077", "marker": "Афония", "weight": 3, "role": "прямой голосовой признак", "domain": "голос", "active": true, "hard_exclude": false, "comment": "Прямой красный флаг: отсутствие голоса, плача и смеха."}, {"symptom_id": "S078", "marker": "Афония", "weight": 2, "role": "сильный голосовой", "domain": "голос", "active": true, "hard_exclude": false, "comment": "Ослабление или исчезновение голоса требует оценки ЛОР/фониатра."}, {"symptom_id": "S078", "marker": "Дизартрия", "weight": 3, "role": "ядро моторного исполнения", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S079", "marker": "Апраксия", "weight": 3, "role": "ядро моторного планирования", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S079", "marker": "Сенсорная алалия", "weight": 1, "role": "неспецифичный сенсорный", "domain": "Слух, голос и произношение", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S080", "marker": "Дизартрия", "weight": 3, "role": "ядро моторного исполнения", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S081", "marker": "Апраксия", "weight": 1, "role": "слабый моторный", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S081", "marker": "Дизартрия", "weight": 2, "role": "сильный моторный", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S081", "marker": "Моторная алалия", "weight": 1, "role": "неспецифичный моторный", "domain": "продукция речи", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S081", "marker": "Сенсорная алалия", "weight": 1, "role": "неспецифичный сенсорный", "domain": "Слух, голос и произношение", "active": true, "hard_exclude": false, "comment": "Для результата нужны минимум два ядерных признака понимания/речевого восприятия."}, {"symptom_id": "S082", "marker": "Апраксия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S082", "marker": "Дизартрия", "weight": 3, "role": "ядро моторного исполнения", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S083", "marker": "Анартрия", "weight": 3, "role": "ядро тяжёлой моторики", "domain": "тяжёлая оральная моторика", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S083", "marker": "Апраксия", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S083", "marker": "Дизартрия", "weight": 3, "role": "ядро моторного исполнения", "domain": "моторное исполнение/голос", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два признака, включая моторное исполнение или оральную моторику."}, {"symptom_id": "S084", "marker": "Аутизм", "weight": 3, "role": "РАС: социальная коммуникация", "domain": "РАС — социальная коммуникация", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S084", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S085", "marker": "Аутизм", "weight": 3, "role": "РАС: социальная коммуникация", "domain": "РАС — социальная коммуникация", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S085", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S086", "marker": "Аутизм", "weight": -2, "role": "контрпризнак РАС", "domain": "РАС — контрпризнак", "active": true, "hard_exclude": false, "comment": "Положительное социальное поведение не является жёстким исключением РАС; используется только как небольшой отрицательный вес."}, {"symptom_id": "S087", "marker": "Аутизм", "weight": -1, "role": "контрпризнак РАС", "domain": "РАС — контрпризнак", "active": true, "hard_exclude": false, "comment": "Положительное социальное поведение не является жёстким исключением РАС; используется только как небольшой отрицательный вес."}, {"symptom_id": "S088", "marker": "Моторная алалия", "weight": 2, "role": "сильный моторный", "domain": "компенсация/поведение", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S089", "marker": "Аутизм", "weight": 0, "role": "нейтральный для РАС", "domain": "РАС — контрпризнак", "active": false, "hard_exclude": false, "comment": "Положительное социальное поведение не является жёстким исключением РАС; используется только как небольшой отрицательный вес."}, {"symptom_id": "S089", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S090", "marker": "Аутизм", "weight": 3, "role": "РАС: социальная коммуникация", "domain": "РАС — социальная коммуникация", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S091", "marker": "Аутизм", "weight": 2, "role": "РАС: социальная коммуникация", "domain": "РАС — социальная коммуникация", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S091", "marker": "Нарушение зрения", "weight": 2, "role": "поддерживающий зрительный", "domain": "зрение", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S091", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S092", "marker": "Аутизм", "weight": -1, "role": "контрпризнак РАС", "domain": "РАС — контрпризнак", "active": true, "hard_exclude": false, "comment": "Положительное социальное поведение не является жёстким исключением РАС; используется только как небольшой отрицательный вес."}, {"symptom_id": "S092", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S093", "marker": "Аутизм", "weight": -1, "role": "контрпризнак РАС", "domain": "РАС — контрпризнак", "active": true, "hard_exclude": false, "comment": "Положительное социальное поведение не является жёстким исключением РАС; используется только как небольшой отрицательный вес."}, {"symptom_id": "S093", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S094", "marker": "Аутизм", "weight": 2, "role": "РАС: социальная коммуникация", "domain": "РАС — социальная коммуникация", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S094", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S095", "marker": "Аутизм", "weight": 0, "role": "нейтральный для РАС", "domain": "РАС — контрпризнак", "active": false, "hard_exclude": false, "comment": "Положительное социальное поведение не является жёстким исключением РАС; используется только как небольшой отрицательный вес."}, {"symptom_id": "S095", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S096", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S097", "marker": "Аутизм", "weight": -1, "role": "контрпризнак РАС", "domain": "РАС — контрпризнак", "active": true, "hard_exclude": false, "comment": "Положительное социальное поведение не является жёстким исключением РАС; используется только как небольшой отрицательный вес."}, {"symptom_id": "S097", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S098", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S099", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S100", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S101", "marker": "Аутизм", "weight": 2, "role": "РАС: повторяемость/сенсорика", "domain": "РАС — повторяемость/ригидность", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S101", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S102", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S103", "marker": "СДВГ", "weight": 2, "role": "сильный признак внимания", "domain": "внимание/импульсивность", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S103", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S104", "marker": "ЗПР", "weight": 2, "role": "поддерживающий развития", "domain": "общее развитие", "active": true, "hard_exclude": false, "comment": "Не выводить по речи без признаков общего отставания."}, {"symptom_id": "S104", "marker": "СДВГ", "weight": 2, "role": "сильный признак внимания", "domain": "внимание/импульсивность", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S104", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S105", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S106", "marker": "СДВГ", "weight": 3, "role": "ядро импульсивности", "domain": "внимание/импульсивность", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S106", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S107", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S108", "marker": "СДВГ", "weight": 0, "role": "жёсткое исключение", "domain": "исключение", "active": true, "hard_exclude": true, "comment": "Если выбрано, результат этого маркера полностью удаляется после подсчёта баллов."}, {"symptom_id": "S109", "marker": "Аутизм", "weight": 1, "role": "РАС: дополнительный", "domain": "дополнительный", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S109", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S110", "marker": "Моторная алалия", "weight": 2, "role": "сильный моторный", "domain": "компенсация/поведение", "active": true, "hard_exclude": false, "comment": "Порог моторного профиля рассчитывается независимо от возраста; название результата выбирается после возрастной развилки."}, {"symptom_id": "S111", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S112", "marker": "Аутизм", "weight": 1, "role": "РАС: дополнительный", "domain": "дополнительный", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S112", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S113", "marker": "Аутизм", "weight": -1, "role": "контрпризнак РАС", "domain": "РАС — контрпризнак", "active": true, "hard_exclude": false, "comment": "Положительное социальное поведение не является жёстким исключением РАС; используется только как небольшой отрицательный вес."}, {"symptom_id": "S113", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S114", "marker": "Аутизм", "weight": 3, "role": "РАС: повторяемость/ригидность", "domain": "РАС — повторяемость/ригидность", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S115", "marker": "Аутизм", "weight": 3, "role": "РАС: повторяемость/ригидность", "domain": "РАС — повторяемость/ригидность", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S115", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S116", "marker": "Аутизм", "weight": 3, "role": "РАС: повторяемость/ригидность", "domain": "РАС — повторяемость/ригидность", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S116", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S117", "marker": "Аутизм", "weight": 1, "role": "РАС: дополнительный", "domain": "дополнительный", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S117", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S118", "marker": "Аутизм", "weight": 1, "role": "РАС: дополнительный", "domain": "дополнительный", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S118", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S119", "marker": "Аутизм", "weight": 1, "role": "РАС: дополнительный", "domain": "дополнительный", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S119", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S120", "marker": "Аутизм", "weight": 2, "role": "РАС: повторяемость/сенсорика", "domain": "РАС — повторяемость/ригидность", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S120", "marker": "Нарушение зрения", "weight": 3, "role": "сильный зрительный", "domain": "зрение", "active": true, "hard_exclude": false, "comment": "Связь сохранена из исходной таблицы; вес можно редактировать."}, {"symptom_id": "S120", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S121", "marker": "Аутизм", "weight": 3, "role": "РАС: социальная коммуникация", "domain": "РАС — социальная коммуникация", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S121", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S122", "marker": "Апраксия", "weight": 2, "role": "сильный моторный", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S122", "marker": "Аутизм", "weight": 2, "role": "РАС: социальная коммуникация", "domain": "РАС — социальная коммуникация", "active": true, "hard_exclude": false, "comment": "РАС показывается только при сочетании двух доменов: социальная коммуникация + повторяемость/ригидность/сенсорные особенности."}, {"symptom_id": "S122", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S123", "marker": "Апраксия", "weight": 3, "role": "ядро моторного планирования", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S124", "marker": "Апраксия", "weight": 3, "role": "ядро моторного планирования", "domain": "моторное планирование", "active": true, "hard_exclude": false, "comment": "Для вывода нужны минимум два специфичных признака моторного планирования; один общий симптом не выводит апраксию."}, {"symptom_id": "S125", "marker": "ЗПР", "weight": 2, "role": "сильный общий", "domain": "общее развитие", "active": true, "hard_exclude": false, "comment": "Трудности самообслуживания важны для оценки общего развития."}, {"symptom_id": "S125", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S126", "marker": "ЗПР", "weight": 3, "role": "ядро общего развития", "domain": "общее развитие", "active": true, "hard_exclude": false, "comment": "Отставание нескольких сфер, а не только речи."}, {"symptom_id": "S126", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S127", "marker": "Детская афазия", "weight": 3, "role": "красный флаг регресса", "domain": "утрата навыка", "active": true, "hard_exclude": false, "comment": "Выводится как срочный маршрут, а не как диагноз."}, {"symptom_id": "S127", "marker": "ДИС", "weight": 3, "role": "красный флаг регресса", "domain": "утрата навыка", "active": true, "hard_exclude": false, "comment": "Выводится как срочный маршрут, а не как диагноз."}, {"symptom_id": "S128", "marker": "Детская афазия", "weight": 2, "role": "красный флаг регресса", "domain": "утрата навыка", "active": true, "hard_exclude": false, "comment": "Причина регресса уточняется очно; тест не различает приобретённые причины."}, {"symptom_id": "S128", "marker": "ДИС", "weight": 3, "role": "красный флаг регресса", "domain": "утрата навыка", "active": true, "hard_exclude": false, "comment": "Утрата ранее освоенных слов требует срочной очной оценки."}, {"symptom_id": "S128", "marker": "Сенсорная алалия", "weight": 1, "role": "поведенческий фон", "domain": "поведение", "active": true, "hard_exclude": false, "comment": "Поведенческий признак добавляет вес, но не выполняет обязательное условие по пониманию речи."}, {"symptom_id": "S129", "marker": "ЗПР", "weight": 1, "role": "слабый общий", "domain": "общее развитие", "active": true, "hard_exclude": false, "comment": "Само по себе непонимание речи не формирует ЗПР."}, {"symptom_id": "S129", "marker": "Нарушение слуха", "weight": 2, "role": "сильный слуховой", "domain": "слух/реакция на речь", "active": true, "hard_exclude": false, "comment": "Тяжёлое непонимание требует объективной проверки слуха."}, {"symptom_id": "S129", "marker": "Речеслуховая агнозия", "weight": 2, "role": "сильный речеслуховой", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Учитывается только вместе с другими признаками речеслухового восприятия."}, {"symptom_id": "S129", "marker": "Сенсорная алалия", "weight": 3, "role": "ядро понимания", "domain": "понимание/речевое восприятие", "active": true, "hard_exclude": false, "comment": "Новый самый первый симптом экрана понимания."}];
 const RESULTS = [{"marker": "СМА", "title": "Сенсомоторная алалия", "type": "производный ведущий", "priority": 5, "min_age_months": null, "max_age_months": null, "min_score": "по сочетанию", "min_symptoms": "по сочетанию", "required_condition": "активная после возрастной развилки МА + СА", "short_text": "Это похоже на языковое нарушение, при котором у ребёнка есть трудности и с собственной речью, и с пониманием того, что ему говорят. ", "materials": "Ссылки на материалы по СМА, МА и СА", "specialist": "Обследование у нашего специалиста", "comment": "Возраст отдельно к СМА не применяется: карточка появляется только если после развилки ЗРР ↔ МА активна именно МА и одновременно выполнен профиль СА."}, {"marker": "Моторная алалия", "title": "Моторная алалия", "type": "ведущий", "priority": 10, "min_age_months": 24, "max_age_months": null, "min_score": 6, "min_symptoms": 3, "required_condition": "минимум 2 признака ядра моторного профиля", "short_text": "Это похоже на языковое нарушение, при котором ребенку трудно формировать собственную речь и самостоятельно выстраивать слова и фразы.", "materials": "Ссылки на материалы по моторной алалии", "specialist": "Обследование у нашего специалиста", "comment": "Возрастной фильтр действует только здесь и у ЗРР. До 24 месяцев не показывать как установленный ведущий результат; использовать уточняющую плашку «Моторная алалия — под вопросом» рядом с ЗРР."}, {"marker": "Сенсорная алалия", "title": "Сенсорная алалия", "type": "ведущий", "priority": 11, "min_age_months": null, "max_age_months": null, "min_score": 7, "min_symptoms": 3, "required_condition": "минимум 2 признака ядра понимания/речевого восприятия; поведение отдельно не запускает", "short_text": "Это похоже на языковое нарушение, при котором у ребёнка есть трудности в понимании обращённой речи", "materials": "Ссылки на материалы по сенсорной алалии", "specialist": "Обследование у нашего специалиста + Проверка слуха", "comment": "Возраст не влияет на показ."}, {"marker": "ЗРР", "title": "Задержка речевого развития", "type": "ведущий", "priority": 12, "min_age_months": 0, "max_age_months": 23, "min_score": 5, "min_symptoms": 2, "required_condition": "только собственная речь; возраст меньше 24 месяцев", "short_text": "До 2 лет речь развивается медленнее, чем ожидается. Важно создать более подходящие условия для её развития и дальше смотреть на динамику.", "materials": "Ссылки на материалы по ЗРР, Как определить моторную алалию в раннем возрате, МА и ЗРР: в чем отличия", "specialist": "Обследование у нашего специалиста ", "comment": "С 24 месяцев карточка полностью запрещена, даже если набраны баллы."}, {"marker": "МА? до 24", "title": "Моторная алалия — под вопросом", "type": "уточняющая к ЗРР", "priority": 13, "min_age_months": 0, "max_age_months": 23, "min_score": 6, "min_symptoms": 3, "required_condition": "сырой моторный профиль: минимум 2 признака ядра МА", "short_text": "У ребёнка есть задержка речи и выраженные признаки, похожие на моторную алалию. До 2 лет это ещё не окончательное заключение: важно пройти диагностику у логопеда.", "materials": "Как определить моторную алалию в раннем возрате, МА и ЗРР: в чем отличия", "specialist": "Обследование у нашего специалиста ", "comment": "Показывать только вместе с ЗРР и только при выполненном сыром пороге МА. Это не отдельный равный диагноз. С 24 месяцев скрыть и использовать обычную карточку МА."}, {"marker": "Апраксия", "title": "Апраксия ", "type": "логопедический дополнительный", "priority": 20, "min_age_months": null, "max_age_months": null, "min_score": 6, "min_symptoms": 2, "required_condition": "минимум 2 признака ядра моторного планирования", "short_text": "Есть признаки апраксии: ребёнку трудно произвольно воспроизводить и соединять нужные звуки и слоги, даже если отдельно они иногда получаются.", "materials": "Ссылки на материалы по апраксии", "specialist": "Обследование у нашего специалиста ", "comment": "Один общий симптом, например «не умеет дуть», не выводит карточку."}, {"marker": "Дизартрия", "title": "Дизартрия", "type": "логопедический дополнительный", "priority": 21, "min_age_months": null, "max_age_months": null, "min_score": 6, "min_symptoms": 2, "required_condition": "минимум 1 ядерный признак моторного исполнения", "short_text": "Есть признаки дизартрии: ребёнку трудно чётко произносить звуки из-за нарушений работы речевых мышц.", "materials": "Ссылки на материалы по дизартрии", "specialist": null, "comment": "Не выводить по одному искажённому звуку."}, {"marker": "Анартрия", "title": "Анартрия", "type": "логопедический дополнительный", "priority": 22, "min_age_months": null, "max_age_months": null, "min_score": 5, "min_symptoms": 2, "required_condition": "минимум 1 признак тяжёлой оральной моторики", "short_text": "Есть признаки анартрии: ребёнку крайне трудно или невозможно произносить звуки и слова из-за выраженных нарушений работы речевого аппарата.", "materials": "Ссылки на материалы по анартрии", "specialist": null, "comment": "Отсутствие речи без моторных признаков не запускает карточку."}, {"marker": "Афония", "title": "Афония", "type": "срочный/голосовой", "priority": 1, "min_age_months": null, "max_age_months": null, "min_score": 3, "min_symptoms": 1, "required_condition": "только прямой голосовой признак", "short_text": "Есть признаки афонии: у ребёнка отсутствует голос или он может полностью пропадать.", "materials": "Ссылки на материалы об афонии", "specialist": "ЛОР/фониатр", "comment": "Полное отсутствие голоса — верхняя срочная плашка."}, {"marker": "Речеслуховая агнозия / ФФН", "title": "Фонетико-фонематическое нарушение ", "type": "дополнительная проверка", "priority": 30, "min_age_months": null, "max_age_months": null, "min_score": 5, "min_symptoms": 2, "required_condition": "не менее 2 признаков речеслухового восприятия", "short_text": "Это похоже на нарушение, при котором ребенку трудно различать и узнавать слова на слух.", "materials": "Ссылки на материалы по речеслуховой агнозии", "specialist": null, "comment": "Не ставить по одному смешению похожих слов."}, {"marker": "Дислалия", "title": "Дислалия", "type": "логопедический дополнительный", "priority": 32, "min_age_months": null, "max_age_months": null, "min_score": 5, "min_symptoms": 2, "required_condition": "минимум 2 признака звукопроизношения", "short_text": "Есть признаки, указывающие на нарушение звукопроизношения.", "materials": "Ссылки на материалы по звукопроизношению", "specialist": "Логопед", "comment": "Не смешивать с языковыми нарушениями."}, {"marker": "Ринолалия", "title": "Ринолалия", "type": "логопедический дополнительный", "priority": 33, "min_age_months": null, "max_age_months": null, "min_score": 3, "min_symptoms": 1, "required_condition": "прямой признак резонанса", "short_text": "Есть признаки ринолалии: голос звучит гнусаво, речь может быть неразборчивой из-за нарушения прохождения воздуха между ротовой и носовой полостями.", "materials": "Ссылки на материалы по ринолалии", "specialist": "Логопед; ЛОР; ", "comment": "Прямой узкий признак может дать карточку один."}, {"marker": "Заикание", "title": "Заикание", "type": "логопедический дополнительный", "priority": 34, "min_age_months": null, "max_age_months": null, "min_score": 3, "min_symptoms": 1, "required_condition": "прямой признак плавности", "short_text": "Есть признаки ринолалии: голос звучит гнусаво, речь может быть неразборчивой из-за нарушения прохождения воздуха между ротовой и носовой полостями.", "materials": "Ссылки на материалы по заиканию", "specialist": "Логопед", "comment": "Один прямой узкий признак допустим."}, {"marker": "Брадилалия", "title": "Брадилалия", "type": "логопедический дополнительный", "priority": 35, "min_age_months": null, "max_age_months": null, "min_score": 3, "min_symptoms": 1, "required_condition": "прямой признак темпа", "short_text": "Стоит оценить темп речи. Речь заметно замедлена", "materials": "Ссылки на материалы о брадилалии", "specialist": "Логопед; ", "comment": "Взаимоисключается с тахилалией по исходной таблице."}, {"marker": "Тахилалия", "title": "Тахилалия", "type": "логопедический дополнительный", "priority": 36, "min_age_months": null, "max_age_months": null, "min_score": 3, "min_symptoms": 1, "required_condition": "прямой признак темпа", "short_text": "Стоит оценить темп речи. Речь заметно ускорена", "materials": "Ссылки на материалы о тахилалии", "specialist": "Логопед;", "comment": "Взаимоисключается с брадилалией по исходной таблице."}, {"marker": "Нарушение слуха", "title": "Нужно проверить слух", "type": "дополнительная проверка", "priority": 40, "min_age_months": null, "max_age_months": null, "min_score": 4, "min_symptoms": 2, "required_condition": "минимум 2 слуховых признака или отдельный утверждённый красный флаг", "short_text": "Некоторые ответы могут быть связаны с тем, как ребёнок слышит речь. Необходимо проверить слух аппаратно.", "materials": "Ссылки на материалы о проверке слуха, Как отличить СА и нарушения слуха", "specialist": "ЛОР", "comment": "Не писать «слух нарушен»; бытовая реакция на звуки не заменяет обследование."}, {"marker": "Нарушение зрения", "title": "Нужно проверить зрение", "type": "дополнительная проверка", "priority": 41, "min_age_months": null, "max_age_months": null, "min_score": 3, "min_symptoms": 1, "required_condition": "сильный зрительный признак", "short_text": "Некоторые ответы требуют отдельной проверки зрения.", "materials": "Ссылки на материалы о зрении", "specialist": "Детский офтальмолог", "comment": "Не объяснять зрительные признаки только речевым нарушением."}, {"marker": "ЗПР", "title": "Нужно оценить общее развитие", "type": "дополнительная проверка", "priority": 42, "min_age_months": null, "max_age_months": null, "min_score": 5, "min_symptoms": 2, "required_condition": "признаки должны затрагивать не только речь", "short_text": "Есть признаки ЗПР: ребёнку может быть сложнее осваивать новые навыки, понимать задания, запоминать и удерживать внимание.", "materials": "Ссылки на материалы о ЗПР, разница между ЗРР, ЗПР и ЗПРР", "specialist": null, "comment": "Одна задержка речи не выводит ЗПР."}, {"marker": "Аутизм", "title": "Стоит дополнительно оценить социальную коммуникацию", "type": "дополнительная проверка", "priority": 43, "min_age_months": null, "max_age_months": null, "min_score": 8, "min_symptoms": 4, "required_condition": "не менее 2 социальных + не менее 2 повторяющихся/ригидных/сенсорных признаков", "short_text": "Есть особенности, которые могут встречаться при РАС", "materials": "Ссылки на материалы по РАС, как отличить РАС от алалии, сенсорная алалия", "specialist": null, "comment": "Никогда не показывать из-за отсутствия речи или только сенсорной алалии. Формулировка — только маршрут на оценку."}, {"marker": "СДВГ", "title": "Стоит оценить внимание и саморегуляцию", "type": "дополнительная проверка", "priority": 44, "min_age_months": null, "max_age_months": null, "min_score": 4, "min_symptoms": 2, "required_condition": "признаки минимум из 2 наблюдений", "short_text": "Есть сочетание признаков невнимательности или импульсивности, на которое нужно обратить внимание", "materials": "Ссылки на материалы по СДВГ, как отличить СДВГ от алалии, сенсорная алалия", "specialist": null, "comment": "Не выводить по одной неусидчивости."}, {"marker": "Детская афазия", "title": "Детская афазия", "type": "срочный маршрут", "priority": 0, "min_age_months": null, "max_age_months": null, "min_score": 3, "min_symptoms": 1, "required_condition": "прямой признак приобретённой утраты речи", "short_text": "Не откладывайте очную медицинскую оценку резкой утраты речи.", "materials": "Материалы о десткой афазии", "specialist": null, "comment": "Выводится выше всех обычных карточек; не является диагнозом."}, {"marker": "ДИС", "title": "Ребёнок теряет ранее освоенные навыки", "type": "срочный маршрут", "priority": 0, "min_age_months": null, "max_age_months": null, "min_score": 3, "min_symptoms": 1, "required_condition": "прямой признак регресса", "short_text": "Утрата слов или других навыков требует срочной оценки у специалиста.", "materials": "Материалы о регрессе навыков", "specialist": null, "comment": "В интерфейсе не использовать название диагноза как заключение; показывать только описание регресса."}];
 
   </script>
-
-  <script>
+<script>
 
 // Ported 1:1 from engine.py — keep both in sync if the scoring model changes.
 
@@ -3297,8 +3850,7 @@ function buildEngine(SYMPTOMS, LINKS, RESULTS) {
 
 
   </script>
-
-  <script>
+<script>
 
 const { compute, SYM_BY_ID, RES_BY_MARKER } = buildEngine(SYMPTOMS, LINKS, RESULTS);
 
@@ -3759,7 +4311,6 @@ document.querySelectorAll('a[href="#speech-test"]').forEach(link => {
 });
 
   </script>
-
 <script>
 (function() {
   const videos = [{"id": "7FvZi2aTFrg", "title": "Изучение второго языка при сенсорной и моторной алалии. Билингвизм и двуязычие у детей."}, {"id": "DvUeB6ALW8g", "title": "Логопедическая группа и алалия. Польза или вред?"}, {"id": "9X7bKBQUA00", "title": "Дневник мамы ребёнка с алалией. Успехи и трудности на занятиях."}, {"id": "Qu3hkOyIfKE", "title": "Заикание и запинки в речи у детей с моторной и сенсорной алалией."}, {"id": "ziNFGXaL2Xc", "title": "Как исправить звукопроизношение у ребёнка с моторной алалией?"}];
@@ -3788,8 +4339,6 @@ document.querySelectorAll('a[href="#speech-test"]').forEach(link => {
   });
 })();
 </script>
-
-
 <script>
 (function(){
   const videos=[{"id": "7FvZi2aTFrg", "title": "Изучение второго языка при сенсорной и моторной алалии"}, {"id": "DvUeB6ALW8g", "title": "Логопедическая группа и алалия"}, {"id": "9X7bKBQUA00", "title": "Дневник мамы ребёнка с алалией"}, {"id": "Qu3hkOyIfKE", "title": "Заикание и запинки при алалии"}, {"id": "ziNFGXaL2Xc", "title": "Звукопроизношение при моторной алалии"}];
@@ -3802,6 +4351,36 @@ document.querySelectorAll('a[href="#speech-test"]').forEach(link => {
   });
 })();
 </script>
+<script>
+(function(){
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  if (!menuToggle || !mainNav) return;
 
-</body>
+  function closeMenu(){
+    mainNav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded','false');
+    document.body.classList.remove('menu-open');
+    document.querySelectorAll('.nav-dropdown.is-open').forEach(drop => {
+      drop.classList.remove('is-open');
+      const btn = drop.querySelector('.dropdown-toggle');
+      if (btn) btn.setAttribute('aria-expanded','false');
+    });
+  }
+
+  document.addEventListener('click', function(event){
+    if (!mainNav.classList.contains('is-open')) return;
+    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
+  });
+
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape' && mainNav.classList.contains('is-open')){
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+
+  mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+})();
+</script></body>
 </html>
